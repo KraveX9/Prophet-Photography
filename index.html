@@ -10,26 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Kaushan+Script&display=swap" rel="stylesheet">
 <style>
-/* ============================================================ TOKENS ============================================================ */
 :root{
-  --bg:#08060A;
-  --bg-2:#0E0B0F;
-  --surface:#141015;
-  --surface-2:#1D181E;
-  --surface-3:#282128;
-  --cream:#F8F4EC;
-  --cream-2:#E5DDD0;
-  --text:#F8F4EC;
-  --text-2:#C8BDB0;
-  --muted:#8A7F73;
-  --line:rgba(248,244,236,.09);
-  --line-2:rgba(248,244,236,.22);
-  --gold:#F5C842;
-  --gold-2:#FFD966;
-  --gold-3:#C9A227;
-  --gold-glow:245,200,66;
-  --ink:#060406;
-  --max:1440px;
+  --bg:#08060A;--bg-2:#0E0B0F;--surface:#141015;--surface-2:#1D181E;--surface-3:#282128;
+  --cream:#F8F4EC;--cream-2:#E5DDD0;--text:#F8F4EC;--text-2:#C8BDB0;--muted:#8A7F73;
+  --line:rgba(248,244,236,.09);--line-2:rgba(248,244,236,.22);
+  --gold:#F5C842;--gold-2:#FFD966;--gold-3:#C9A227;--gold-glow:245,200,66;
+  --ink:#060406;--max:1440px;
   --font:'Inter',system-ui,-apple-system,sans-serif;
   --serif:'Playfair Display',Georgia,serif;
   --serif-2:'Cormorant Garamond',Georgia,serif;
@@ -50,9 +36,7 @@ p{margin:0}
 ::-webkit-scrollbar{width:10px;height:10px}
 ::-webkit-scrollbar-track{background:var(--bg-2)}
 ::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:20px}
-::-webkit-scrollbar-thumb:hover{background:var(--gold-3)}
 
-/* ============================================================ LAYOUT ============================================================ */
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
 .section{position:relative;padding:130px 0}
 .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.68rem;font-weight:800;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
@@ -66,17 +50,13 @@ p{margin:0}
 .head--center{text-align:center;justify-content:center;flex-direction:column;align-items:center;gap:0}
 .head--center .section-lead{margin-left:auto;margin-right:auto;text-align:center}
 
-/* script annotation */
-.script{font-family:var(--script);color:var(--gold);font-size:1.55rem;line-height:1.2}
-
-/* ============================================================ BUTTONS ============================================================ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 34px;font-family:var(--font);font-size:.72rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;transition:.35s var(--ease);white-space:nowrap;border:1.5px solid transparent;cursor:pointer;position:relative;overflow:hidden;border-radius:0}
 .btn--primary{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:#08060A;border-color:var(--gold);box-shadow:0 12px 40px -14px rgba(var(--gold-glow),.7)}
-.btn--primary:hover{transform:translateY(-3px);box-shadow:0 22px 50px -14px rgba(var(--gold-glow),.9);letter-spacing:.34em}
+.btn--primary:hover{transform:translateY(-3px);box-shadow:0 22px 50px -14px rgba(var(--gold-glow),.9)}
 .btn--outline{background:transparent;color:var(--text);border-color:var(--line-2)}
 .btn--outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
 .btn--wa{background:#25D366;color:#fff;border-color:#25D366}
-.btn--wa:hover{background:#1ea952;border-color:#1ea952;transform:translateY(-2px);box-shadow:0 20px 45px -14px rgba(37,211,102,.6)}
+.btn--wa:hover{background:#1ea952;border-color:#1ea952;transform:translateY(-2px)}
 .btn--ghostlight{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.28);backdrop-filter:blur(12px)}
 .btn--ghostlight:hover{background:var(--gold);color:#08060A;border-color:var(--gold)}
 .btn--sm{padding:13px 24px;font-size:.64rem}
@@ -86,19 +66,18 @@ p{margin:0}
 .btn--block{width:100%}
 .btn svg{width:15px;height:15px;flex-shrink:0}
 
-/* ============================================================ ANNOUNCEMENT ============================================================ */
 .ticker{background:linear-gradient(90deg,var(--gold-3),var(--gold),var(--gold-3));color:#08060A;padding:11px 0;overflow:hidden;position:relative;z-index:101}
 .ticker__track{display:flex;gap:64px;width:max-content;animation:marq 46s linear infinite;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;font-weight:800}
 .ticker__track span{display:flex;align-items:center;gap:64px;white-space:nowrap}
 .ticker__track span::after{content:'✦';color:#08060A;font-size:.9rem}
 @keyframes marq{to{transform:translateX(-50%)}}
 
-/* ============================================================ HEADER ============================================================ */
 .header{position:sticky;top:0;left:0;right:0;z-index:90;background:rgba(8,6,10,.88);backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--line);transition:.4s var(--ease)}
 .header__inner{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:18px 0}
 .brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
 .brand__mark{width:56px;height:56px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--surface);display:grid;place-items:center;border:1px solid var(--line-2);position:relative}
 .brand__mark img{width:100%;height:100%;object-fit:cover}
+.brand__mark svg{width:80%;height:80%}
 .brand__text{display:flex;flex-direction:column;line-height:1}
 .brand__name{font-family:var(--serif);font-weight:700;font-size:1.22rem;letter-spacing:.02em}
 .brand__name em{font-style:normal;color:var(--gold)}
@@ -122,7 +101,6 @@ p{margin:0}
 .mobile-nav a{font-family:var(--serif);font-size:2rem;padding:14px 0;color:var(--text-2);font-weight:500}
 .mobile-nav a:hover{color:var(--gold)}
 
-/* ============================================================ HERO ============================================================ */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:#050305}
 .hero__slides{position:absolute;inset:0}
 .hero__slide{position:absolute;inset:0;opacity:0;transition:opacity 1.5s var(--ease)}
@@ -168,13 +146,11 @@ p{margin:0}
 .hero__scroll i{display:block;width:1px;height:52px;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 2.4s infinite}
 @keyframes cue{0%{opacity:0;transform:scaleY(.2)}50%{opacity:1}100%{opacity:0;transform:scaleY(1)}}
 
-/* ============================================================ TAGLINE STRIP ============================================================ */
 .tagline-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:32px 0}
 .tagline-strip__track{display:flex;gap:90px;width:max-content;animation:marq 50s linear infinite}
 .tagline-strip__track span{font-family:var(--serif);font-size:1.9rem;font-style:italic;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:90px;font-weight:500}
 .tagline-strip__track span::after{content:'✦';color:var(--gold);font-size:1rem}
 
-/* ============================================================ ABOUT ============================================================ */
 .about{background:var(--bg)}
 .about__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:90px;align-items:center}
 .about__media{position:relative}
@@ -195,7 +171,6 @@ p{margin:0}
 .about__point b{display:block;font-family:var(--serif);font-size:2.4rem;color:var(--gold);line-height:1;font-weight:500;letter-spacing:-.03em}
 .about__point span{display:block;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:12px;font-weight:700}
 
-/* ============================================================ SERVICES ============================================================ */
 .services{background:var(--bg-2)}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border:1px solid var(--line-2)}
 .svc{position:relative;padding:52px 40px;background:var(--bg);border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);transition:.4s var(--ease);cursor:pointer}
@@ -213,7 +188,6 @@ p{margin:0}
 .svc__tags{display:flex;gap:6px;flex-wrap:wrap}
 .svc__tags span{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:100px;background:rgba(245,200,66,.1);color:var(--gold-2);border:1px solid rgba(245,200,66,.24)}
 
-/* ============================================================ MOMENT → DESTINY ============================================================ */
 .moment{background:var(--bg);padding:130px 0;position:relative;overflow:hidden}
 .moment::before{content:'';position:absolute;top:-50%;right:-15%;width:60%;height:200%;background:radial-gradient(circle,rgba(245,200,66,.1),transparent 65%);pointer-events:none}
 .moment__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;position:relative;z-index:2}
@@ -237,7 +211,6 @@ p{margin:0}
 .moment__label.before{left:26px}
 .moment__label.after{right:26px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#08060A;border-color:transparent;font-weight:700}
 
-/* ============================================================ GALLERY ============================================================ */
 .gallery{background:var(--bg-2)}
 .filters{display:flex;gap:0;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line-2)}
 .chip{padding:14px 26px;font-size:.66rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--text-2);border-right:1px solid var(--line);transition:.3s var(--ease)}
@@ -261,7 +234,6 @@ p{margin:0}
 .g-post:hover .g-post__cta svg{transform:translateX(6px)}
 .g-empty{grid-column:1/-1;padding:90px 24px;text-align:center;color:var(--muted);border:1px dashed var(--line-2);font-size:.9rem;font-family:var(--serif-2);font-style:italic}
 
-/* ============================================================ SHOWCASE ============================================================ */
 .showcase{padding:130px 0 140px;background:var(--bg);overflow:hidden;position:relative}
 .showcase::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(245,200,66,.06),transparent 60%)}
 .showcase__viewport{position:relative;overflow:hidden;padding:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
@@ -278,7 +250,6 @@ p{margin:0}
 .showcase__item__tag b{font-family:var(--serif);font-weight:500;font-size:1.1rem;color:#fff;line-height:1.25}
 .showcase__hint{text-align:center;margin-top:44px;font-family:var(--serif-2);font-style:italic;color:var(--muted);font-size:.9rem}
 
-/* ============================================================ TESTIMONIALS ============================================================ */
 .testimonials{background:var(--bg-2);padding:130px 0}
 .tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
 .tst{padding:48px 40px;background:var(--surface);border:1px solid var(--line);position:relative;transition:.4s var(--ease)}
@@ -293,7 +264,6 @@ p{margin:0}
 .tst__who b{display:block;font-family:var(--serif);font-size:1rem;font-weight:500}
 .tst__who small{font-size:.72rem;color:var(--muted);letter-spacing:.06em}
 
-/* ============================================================ BOOKING / CONTACT ============================================================ */
 .booking{background:var(--bg);padding:130px 0;position:relative;overflow:hidden}
 .booking::before{content:'';position:absolute;top:-40%;right:-15%;width:60%;height:180%;background:radial-gradient(circle,rgba(245,200,66,.08),transparent 65%);pointer-events:none}
 .booking__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;align-items:start;position:relative;z-index:2}
@@ -318,7 +288,6 @@ p{margin:0}
 .field textarea{resize:vertical;min-height:110px}
 .row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
-/* ============================================================ FOOTER ============================================================ */
 .footer{background:#040305;color:var(--text-2);padding:88px 0 34px;border-top:1px solid var(--line)}
 .footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:56px;margin-bottom:60px}
 .footer__brand{display:flex;align-items:center;gap:14px;margin-bottom:24px}
@@ -336,12 +305,10 @@ p{margin:0}
 .footer__bottom a:hover{color:var(--gold)}
 .footer__tagline{font-family:var(--script);color:var(--gold);font-size:1.35rem}
 
-/* ============================================================ FAB ============================================================ */
 .fab{position:fixed;bottom:26px;right:26px;z-index:88;width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;display:grid;place-items:center;box-shadow:0 16px 40px -10px rgba(37,211,102,.7);transition:.35s var(--ease)}
 .fab:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 24px 50px -10px rgba(37,211,102,.9)}
 .fab svg{width:30px;height:30px}
 
-/* ============================================================ LIGHTBOX ============================================================ */
 .lightbox{position:fixed;inset:0;z-index:400;background:rgba(4,3,5,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 40px 140px;opacity:0;visibility:hidden;transition:.4s var(--ease)}
 .lightbox.open{opacity:1;visibility:visible}
 .lb__stage{position:relative;width:100%;max-width:1300px;height:100%;display:flex;align-items:center;justify-content:center}
@@ -362,7 +329,6 @@ p{margin:0}
 .lb__thumb img{width:100%;height:100%;object-fit:cover}
 .lb__thumb.active{opacity:1;border-color:var(--gold);transform:scale(1.08)}
 
-/* ============================================================ MODAL ============================================================ */
 .modal{position:fixed;inset:0;z-index:500;background:rgba(4,3,5,.9);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;transition:.35s var(--ease);overflow-y:auto}
 .modal.open{opacity:1;visibility:visible}
 .modal__card{width:100%;max-width:620px;background:var(--surface);padding:44px;box-shadow:0 60px 120px -40px rgba(0,0,0,.9);transform:translateY(20px);transition:.4s var(--ease);max-height:92vh;overflow-y:auto;position:relative;border:1px solid var(--line-2)}
@@ -373,19 +339,15 @@ p{margin:0}
 .modal__head{margin-bottom:26px;padding-right:50px}
 .modal__head h3{font-family:var(--serif);font-size:1.7rem;font-weight:500;letter-spacing:-.02em}
 .modal__head p{font-family:var(--serif-2);font-style:italic;font-size:1rem;color:var(--gold);margin-top:8px}
-.sm__hero{aspect-ratio:16/9;overflow:hidden;margin-bottom:30px;background:var(--surface-2)}
-.sm__hero img{width:100%;height:100%;object-fit:cover}
 .sm__body h2{font-family:var(--serif);font-size:2.1rem;font-weight:500;letter-spacing:-.025em;margin-bottom:16px}
 .sm__body > p{color:var(--text-2);line-height:1.85;font-size:.98rem;margin-bottom:28px}
 .sm__list{list-style:none;padding:0;margin:0 0 32px;border-top:1px solid var(--line)}
 .sm__list li{padding:16px 0 16px 36px;font-size:.9rem;border-bottom:1px solid var(--line);position:relative;color:var(--text-2)}
 .sm__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:18px;height:18px;background:var(--gold);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
 
-/* ============================================================ REVEAL ============================================================ */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.reveal.in{opacity:1;transform:none}
+/* No more hidden reveals — always visible */
+.reveal{opacity:1;transform:none}
 
-/* ============================================================ ADMIN ============================================================ */
 .admin{position:fixed;inset:0;z-index:600;background:var(--bg);display:none;overflow:hidden}
 .admin.open{display:block}
 .admin__gate{position:absolute;inset:0;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 30%,rgba(245,200,66,.12),transparent 55%)}
@@ -430,7 +392,7 @@ p{margin:0}
 .card-box{padding:26px;background:var(--surface);border:1px solid var(--line);margin-bottom:20px}
 .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field-grid .full{grid-column:1/-1}
-.hint{font-size:.74rem;color:var(--muted);margin-top:12px;line-height:1.7;font-family:var(--serif-2);font-style:italic;font-size:.88rem}
+.hint{color:var(--muted);margin-top:12px;line-height:1.7;font-family:var(--serif-2);font-style:italic;font-size:.88rem}
 .hint a{color:var(--gold)}
 .uploader{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
 .uploader__preview{width:160px;height:160px;border-radius:50%;border:2px dashed var(--line-2);background:var(--bg);display:grid;place-items:center;overflow:hidden;flex-shrink:0;color:var(--muted);font-size:.7rem;padding:0;text-align:center}
@@ -473,7 +435,6 @@ p{margin:0}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .toast::before{content:'✦';font-size:1rem}
 
-/* ============================================================ RESPONSIVE ============================================================ */
 @media (max-width:1080px){
   .hero__inner{padding:130px 0 180px}
   .about__grid{grid-template-columns:1fr;gap:70px}
@@ -506,7 +467,6 @@ p{margin:0}
   .about__points{grid-template-columns:1fr 1fr}
   .svc-grid{grid-template-columns:1fr 1fr}
   .svc:nth-child(2n){border-right:0}
-  .svc:nth-child(2n){border-right:0}
   .g-grid{grid-template-columns:1fr}
   .showcase__item{height:320px}
   .row-2,.field-grid{grid-template-columns:1fr}
@@ -526,7 +486,6 @@ p{margin:0}
   .svc-grid{grid-template-columns:1fr}
   .svc{border-right:0 !important}
   .showcase__item{height:280px}
-  .cta{padding:70px 0}
   .tst{padding:36px 26px}
   .fab{width:54px;height:54px;bottom:22px;right:22px}
   .fab svg{width:26px;height:26px}
@@ -537,10 +496,8 @@ p{margin:0}
 </head>
 <body>
 
-<!-- TICKER -->
 <div class="ticker" aria-hidden="true"><div class="ticker__track" id="tickerTrack"></div></div>
 
-<!-- HEADER -->
 <header class="header" id="header">
   <div class="wrap header__inner">
     <a href="#top" class="brand">
@@ -579,7 +536,6 @@ p{margin:0}
   <button class="btn btn--primary" id="openAdminMobile" style="margin-top:24px">Admin</button>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="top">
   <div class="hero__slides" id="heroSlides"></div>
   <div class="hero__overlay"></div>
@@ -613,13 +569,11 @@ p{margin:0}
   </div>
 </section>
 
-<!-- TAGLINE STRIP -->
 <div class="tagline-strip" aria-hidden="true"><div class="tagline-strip__track" id="taglineTrack"></div></div>
 
-<!-- ABOUT -->
 <section class="section about" id="about">
   <div class="wrap about__grid">
-    <div class="about__media reveal">
+    <div class="about__media">
       <div class="about__media__img">
         <img id="aboutImage" src="" alt="Inside Prophetic Photography" onerror="this.src=imgFallback('Prophetic Photography')">
       </div>
@@ -628,7 +582,7 @@ p{margin:0}
         <small>Sessions Shot</small>
       </div>
     </div>
-    <div class="about__right reveal">
+    <div class="about__right">
       <span class="eyebrow">The Studio</span>
       <h2 id="aboutTitle">Photography with a <em>purpose.</em></h2>
       <p id="aboutText1"></p>
@@ -639,10 +593,9 @@ p{margin:0}
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section services" id="services">
   <div class="wrap">
-    <div class="head reveal">
+    <div class="head">
       <div>
         <span class="eyebrow">What We Shoot</span>
         <h2 class="section-title">Six <em>signature</em> services.</h2>
@@ -653,10 +606,9 @@ p{margin:0}
   </div>
 </section>
 
-<!-- MOMENT → DESTINY (slider) -->
 <section class="moment" id="moment">
   <div class="wrap moment__grid">
-    <div class="moment__left reveal">
+    <div class="moment__left">
       <span class="eyebrow">The Craft</span>
       <h2>From a <em>moment</em> to a <em>destiny.</em></h2>
       <p>Anyone can take a photo. Few can craft an image with weight. Every frame that leaves our studio passes through a signature post-production process — colour, contrast, texture, tone — designed to reveal the story underneath.</p>
@@ -677,7 +629,7 @@ p{margin:0}
       </div>
     </div>
 
-    <div class="moment__slider reveal" id="momentSlider">
+    <div class="moment__slider" id="momentSlider">
       <img class="moment__raw" id="momentBefore" src="" alt="Raw capture" onerror="this.src=imgFallback('Before')">
       <img class="moment__graded" id="momentAfter" src="" alt="Graded finish" onerror="this.src=imgFallback('After')">
       <div class="moment__handle" id="momentHandle"></div>
@@ -687,10 +639,9 @@ p{margin:0}
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="section gallery" id="gallery">
   <div class="wrap">
-    <div class="head reveal">
+    <div class="head">
       <div>
         <span class="eyebrow">The Portfolio</span>
         <h2 class="section-title">Frames that <em>tell stories.</em></h2>
@@ -702,10 +653,9 @@ p{margin:0}
   </div>
 </section>
 
-<!-- SHOWCASE -->
 <section class="showcase" id="showcase">
   <div class="wrap">
-    <div class="head head--center reveal">
+    <div class="head head--center">
       <span class="eyebrow eyebrow--center">In Motion</span>
       <h2 class="section-title">From the <em>archive.</em></h2>
       <p class="section-lead">A living filmstrip of every frame in the studio — hovering pauses the reel.</p>
@@ -715,10 +665,9 @@ p{margin:0}
   <p class="showcase__hint">Hover to pause · Click any frame to open its post</p>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="wrap">
-    <div class="head head--center reveal">
+    <div class="head head--center">
       <span class="eyebrow eyebrow--center">Kind Words</span>
       <h2 class="section-title">Stories from <em>clients.</em></h2>
     </div>
@@ -726,10 +675,9 @@ p{margin:0}
   </div>
 </section>
 
-<!-- BOOKING -->
 <section class="booking" id="booking">
   <div class="wrap booking__grid">
-    <div class="booking__info reveal">
+    <div class="booking__info">
       <span class="eyebrow">Book the Studio</span>
       <h2>Let's create something <em>timeless.</em></h2>
       <p>Fill the form and we'll confirm on WhatsApp within the hour during business hours. Same-day bookings often possible — just ask.</p>
@@ -753,7 +701,7 @@ p{margin:0}
       </a>
     </div>
 
-    <form class="form reveal" id="bookingForm">
+    <form class="form" id="bookingForm">
       <h3>Session Enquiry</h3>
       <p>Tell us about your story</p>
       <div class="row-2">
@@ -782,7 +730,6 @@ p{margin:0}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
@@ -836,7 +783,6 @@ p{margin:0}
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
 </a>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lb__close" id="lbClose">✕</button>
   <button class="lb__nav prev" id="lbPrev">‹</button>
@@ -850,7 +796,6 @@ p{margin:0}
   <div class="lb__thumbs" id="lbThumbs"></div>
 </div>
 
-<!-- SERVICE MODAL -->
 <div class="modal" id="svcModal">
   <div class="modal__card modal__card--wide">
     <button class="modal__close" id="svcClose">✕</button>
@@ -858,7 +803,6 @@ p{margin:0}
   </div>
 </div>
 
-<!-- ADMIN -->
 <div class="admin" id="admin" aria-hidden="true">
   <div class="admin__gate" id="adminGate">
     <form class="gate__card" id="gateForm">
@@ -906,7 +850,6 @@ p{margin:0}
 
       <div class="admin__panels">
 
-        <!-- BRANDING -->
         <section class="panel active" data-panel="branding">
           <h3>Logo — upload from your gallery</h3>
           <div class="card-box">
@@ -931,7 +874,6 @@ p{margin:0}
           </div>
         </section>
 
-        <!-- HERO -->
         <section class="panel" data-panel="hero">
           <h3>Hero copy</h3>
           <div class="card-box">
@@ -959,7 +901,6 @@ p{margin:0}
           </div>
         </section>
 
-        <!-- ABOUT -->
         <section class="panel" data-panel="about">
           <h3>About section</h3>
           <div class="card-box">
@@ -988,7 +929,6 @@ p{margin:0}
           </div>
         </section>
 
-        <!-- SERVICES -->
         <section class="panel" data-panel="services">
           <h3>Services list</h3>
           <div class="card-box">
@@ -998,7 +938,6 @@ p{margin:0}
           </div>
         </section>
 
-        <!-- MOMENT SLIDER -->
         <section class="panel" data-panel="moment">
           <h3>Craft slider — before / after</h3>
           <div class="card-box">
@@ -1024,7 +963,6 @@ p{margin:0}
           </div>
         </section>
 
-        <!-- GALLERY -->
         <section class="panel" data-panel="gallery">
           <h3>Create gallery post</h3>
           <div class="card-box">
@@ -1055,7 +993,6 @@ p{margin:0}
           <div id="gList"></div>
         </section>
 
-        <!-- DATA -->
         <section class="panel" data-panel="data">
           <h3>Backup &amp; restore</h3>
           <div class="card-box">
@@ -1087,7 +1024,6 @@ const $$ = (s,c)=>Array.from((c||document).querySelectorAll(s));
 const uid = ()=>Math.random().toString(36).slice(2,10);
 const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-/* ============================================================ IMG FALLBACK ============================================================ */
 window.imgFallback = function(label){
   const text = String(label||'Prophetic Photography').slice(0,26).toUpperCase();
   const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">' +
@@ -1104,7 +1040,6 @@ window.imgFallback = function(label){
   return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 };
 
-/* ============================================================ LOGO ============================================================ */
 function logoSVG(){
   return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
     '<defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD966"/><stop offset="100%" stop-color="#C9A227"/></linearGradient></defs>' +
@@ -1115,7 +1050,6 @@ function logoSVG(){
     '</svg>';
 }
 
-/* ============================================================ IMAGE LIBRARY ============================================================ */
 const U = (id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||1600}&q=80`;
 const HERO_IMAGES = [
   U('1519741497674-611481863552', 1920),
@@ -1128,7 +1062,6 @@ const ABOUT_IMG = U('1554048612-b6a482bc67e5', 1200);
 const MOMENT_RAW = U('1494790108377-be9c29b29330', 1200);
 const MOMENT_GRADED = U('1531123897727-8f129e1688ce', 1200);
 
-/* ============================================================ SEED DATA ============================================================ */
 function seedServices(){
   return [
     { id:'portrait', name:'Portrait Sessions', tagline:'Individuals, families, maternity',
@@ -1193,7 +1126,6 @@ function seedGallery(){
   ];
 }
 
-/* ============================================================ SERVICE ICONS ============================================================ */
 const SVC_ICONS = {
   portrait:'<circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/>',
   wedding:'<path d="M12 21s-7-4.4-7-9.4A3.6 3.6 0 0 1 12 8a3.6 3.6 0 0 1 7 2.6c0 5-7 9.4-7 9.4z"/>',
@@ -1203,7 +1135,6 @@ const SVC_ICONS = {
   story:'<rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/>'
 };
 
-/* ============================================================ DEFAULTS ============================================================ */
 const DEFAULTS = {
   brand: { name:'Prophetic Photography', sub:'Capturing Moments · Revealing Destiny', logo:'' },
   hero: {
@@ -1248,8 +1179,7 @@ const DEFAULTS = {
   password:'prophetic2025'
 };
 
-/* ============================================================ STATE ============================================================ */
-const STORE_KEY = 'prophetic.v1';
+const STORE_KEY = 'prophetic.v2';
 function loadState(){
   const base = JSON.parse(JSON.stringify(DEFAULTS));
   try{
@@ -1290,7 +1220,6 @@ function updateStorage(){
   if (txt) txt.textContent = (bytes/1024).toFixed(0)+' KB · '+pct+'%';
 }
 
-/* ============================================================ APPLY ============================================================ */
 function applyBrand(){
   const b = state.brand;
   $$('[data-logo]').forEach(el=>{
@@ -1298,7 +1227,6 @@ function applyBrand(){
     else el.innerHTML = logoSVG();
   });
   $$('[data-name]').forEach(el => {
-    // preserve <em> on the brand name
     const name = b.name;
     const idx = name.indexOf(' ');
     if (idx > 0) el.innerHTML = esc(name.slice(0, idx)) + ' <em>' + esc(name.slice(idx+1)) + '</em>';
@@ -1308,48 +1236,58 @@ function applyBrand(){
   document.title = b.name + ' — Capturing Moments, Revealing Destiny';
 }
 
-/* ============================================================ TICKER / TAGLINE ============================================================ */
 function renderTicker(){
-  const items = ['Now booking 2025 sessions','Portraits · Weddings · Events · Brands','Cinematic storytelling','WhatsApp 0705 273 1139','More Shots · More Stories','@PropheticPhotography'];
-  const b = '<span>'+items.join('</span><span>')+'</span>';
-  $('#tickerTrack').innerHTML = b + b;
-
-  const words = ['Capturing moments','Revealing destiny','More shots','More stories','Stay focused','Keep shooting'];
-  const m = '<span>'+words.join('</span><span>')+'</span>';
-  $('#taglineTrack').innerHTML = m + m;
+  try {
+    const items = ['Now booking 2025 sessions','Portraits · Weddings · Events · Brands','Cinematic storytelling','WhatsApp 0705 273 1139','More Shots · More Stories','@PropheticPhotography'];
+    const b = '<span>'+items.join('</span><span>')+'</span>';
+    const el = $('#tickerTrack'); if (el) el.innerHTML = b + b;
+    const words = ['Capturing moments','Revealing destiny','More shots','More stories','Stay focused','Keep shooting'];
+    const m = '<span>'+words.join('</span><span>')+'</span>';
+    const el2 = $('#taglineTrack'); if (el2) el2.innerHTML = m + m;
+  } catch(e) { console.error('ticker', e); }
 }
 
-/* ============================================================ HERO ============================================================ */
 let heroIdx = 0, heroTimer = null;
 function renderHero(){
-  const h = state.hero;
-  $('#heroBrandTag').textContent = h.brandTag;
-  $('#heroBadgeText').textContent = h.badgeText;
-  $('#heroLine1').textContent = h.line1;
-  $('#heroLine2').textContent = h.line2;
-  $('#heroSub').innerHTML = esc(h.sub).replace('cinematic soul', '<b>cinematic soul</b>');
-  $('#heroBtn1').textContent = h.btn1;
-  $('#heroBtn2').textContent = h.btn2;
+  try {
+    const h = state.hero;
+    const el = (id) => document.getElementById(id);
+    if (el('heroBrandTag')) el('heroBrandTag').textContent = h.brandTag || 'More shots. More stories.';
+    if (el('heroBadgeText')) el('heroBadgeText').textContent = h.badgeText || 'Now booking';
+    if (el('heroLine1')) el('heroLine1').textContent = h.line1 || 'Capturing moments.';
+    if (el('heroLine2')) el('heroLine2').textContent = h.line2 || 'Revealing destiny.';
+    if (el('heroSub')) el('heroSub').innerHTML = esc(h.sub || '').replace('cinematic soul', '<b>cinematic soul</b>');
+    if (el('heroBtn1')) el('heroBtn1').textContent = h.btn1 || 'Book a Session';
+    if (el('heroBtn2')) el('heroBtn2').textContent = h.btn2 || 'View Portfolio';
 
-  const slides = h.slides || [];
-  $('#heroSlides').innerHTML = slides.map((s,i)=>
-    '<div class="hero__slide'+(i===0?' active':'')+'"><img src="'+s.src+'" alt="'+esc(s.title||'')+'" '+(i===0?'fetchpriority="high"':'loading="lazy"')+' onerror="this.src=imgFallback(\''+esc(s.title||'Prophetic')+'\')"></div>'
-  ).join('');
-  $('#heroDots').innerHTML = slides.map((s,i)=>'<button class="hero__dot'+(i===0?' active':'')+'" data-i="'+i+'"></button>').join('');
-
-  const ICONS = {
-    star:'<path d="M12 2 15 8l6 1-4.5 4.5L17.7 20 12 17l-5.7 3 1.2-6.5L3 9l6-1z"/>',
-    camera:'<rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/>',
-    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
-  };
-  $('#heroMeta').innerHTML = (h.meta||[]).map(m=>
-    '<div class="hero__meta__item">' +
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(ICONS[m.icon]||ICONS.star)+'</svg>' +
-      '<div><b>'+esc(m.b)+'</b><small>'+esc(m.s)+'</small></div>' +
-    '</div>'
-  ).join('');
-
-  heroIdx = 0; startHero();
+    const slides = h.slides || [];
+    const slidesEl = el('heroSlides');
+    if (slidesEl && slides.length) {
+      slidesEl.innerHTML = slides.map((s,i)=>
+        '<div class="hero__slide'+(i===0?' active':'')+'"><img src="'+s.src+'" alt="" '+(i===0?'fetchpriority="high"':'loading="lazy"')+' onerror="this.src=imgFallback(\'Prophetic\')"></div>'
+      ).join('');
+    }
+    const dotsEl = el('heroDots');
+    if (dotsEl) {
+      dotsEl.innerHTML = slides.map((s,i)=>'<button class="hero__dot'+(i===0?' active':'')+'" data-i="'+i+'"></button>').join('');
+    }
+    const metaEl = el('heroMeta');
+    if (metaEl) {
+      const ICONS = {
+        star:'<path d="M12 2 15 8l6 1-4.5 4.5L17.7 20 12 17l-5.7 3 1.2-6.5L3 9l6-1z"/>',
+        camera:'<rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/>',
+        clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
+      };
+      metaEl.innerHTML = (h.meta||[]).map(m=>
+        '<div class="hero__meta__item">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(ICONS[m.icon]||ICONS.star)+'</svg>' +
+          '<div><b>'+esc(m.b)+'</b><small>'+esc(m.s)+'</small></div>' +
+        '</div>'
+      ).join('');
+    }
+    heroIdx = 0;
+    startHero();
+  } catch (err) { console.error('Hero render error:', err); }
 }
 function goHero(n){
   const s = state.hero.slides||[]; if (!s.length) return;
@@ -1365,37 +1303,38 @@ function startHero(){
   heroTimer = setTimeout(()=> goHero(heroIdx+1), 5500);
 }
 
-/* ============================================================ ABOUT ============================================================ */
 function renderAbout(){
-  const a = state.about;
-  $('#aboutTitle').innerHTML = esc(a.title).replace(/(purpose|destiny|story)/i, m => '<em>'+m+'</em>');
-  $('#aboutText1').textContent = a.text1;
-  $('#aboutText2').textContent = a.text2;
-  $('#aboutSig').textContent = a.sig;
-  $('#aboutBadgeNum').textContent = a.badge;
-  const img = $('#aboutImage');
-  img.src = a.image || '';
-  img.onerror = function(){ this.src = imgFallback('Prophetic Photography'); };
-  $('#aboutPoints').innerHTML = (a.points||[]).map(p=>
-    '<div class="about__point"><b>'+esc(p.n)+'</b><span>'+esc(p.l)+'</span></div>'
-  ).join('');
+  try {
+    const a = state.about;
+    const el = (id) => document.getElementById(id);
+    if (el('aboutTitle')) el('aboutTitle').innerHTML = esc(a.title).replace(/(purpose|destiny|story)/i, m => '<em>'+m+'</em>');
+    if (el('aboutText1')) el('aboutText1').textContent = a.text1;
+    if (el('aboutText2')) el('aboutText2').textContent = a.text2;
+    if (el('aboutSig')) el('aboutSig').textContent = a.sig;
+    if (el('aboutBadgeNum')) el('aboutBadgeNum').textContent = a.badge;
+    const img = el('aboutImage');
+    if (img) { img.src = a.image || ''; img.onerror = function(){ this.src = imgFallback('Prophetic Photography'); }; }
+    if (el('aboutPoints')) el('aboutPoints').innerHTML = (a.points||[]).map(p=>
+      '<div class="about__point"><b>'+esc(p.n)+'</b><span>'+esc(p.l)+'</span></div>'
+    ).join('');
+  } catch(e){ console.error('about', e); }
 }
 
-/* ============================================================ SERVICES ============================================================ */
 function renderServices(){
-  $('#svcGrid').innerHTML = state.services.map((s,i)=>
-    '<article class="svc" data-svc="'+s.id+'">' +
-      '<span class="svc__n">0'+(i+1)+'</span>' +
-      '<div class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(SVC_ICONS[s.id]||SVC_ICONS.portrait)+'</svg></div>' +
-      '<h3>'+esc(s.name)+'</h3>' +
-      '<p>'+esc(s.desc)+'</p>' +
-      '<div class="svc__tags">'+(s.tags||[]).map(t=>'<span>'+esc(t)+'</span>').join('')+'</div>' +
-    '</article>'
-  ).join('');
-  $$('#svcGrid .svc').forEach(el => el.addEventListener('click', ()=> openService(el.dataset.svc)));
-
-  // footer service links
-  const fSvc = $('#footerSvc'); if (fSvc) fSvc.innerHTML = state.services.map(s=>'<li><a href="#services">'+esc(s.name)+'</a></li>').join('');
+  try {
+    const el = $('#svcGrid'); if (!el) return;
+    el.innerHTML = state.services.map((s,i)=>
+      '<article class="svc" data-svc="'+s.id+'">' +
+        '<span class="svc__n">0'+(i+1)+'</span>' +
+        '<div class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(SVC_ICONS[s.id]||SVC_ICONS.portrait)+'</svg></div>' +
+        '<h3>'+esc(s.name)+'</h3>' +
+        '<p>'+esc(s.desc)+'</p>' +
+        '<div class="svc__tags">'+(s.tags||[]).map(t=>'<span>'+esc(t)+'</span>').join('')+'</div>' +
+      '</article>'
+    ).join('');
+    $$('#svcGrid .svc').forEach(e => e.addEventListener('click', ()=> openService(e.dataset.svc)));
+    const fSvc = $('#footerSvc'); if (fSvc) fSvc.innerHTML = state.services.map(s=>'<li><a href="#services">'+esc(s.name)+'</a></li>').join('');
+  } catch(e){ console.error('services', e); }
 }
 function openService(id){
   const s = state.services.find(x => x.id === id);
@@ -1415,15 +1354,15 @@ function openService(id){
   document.body.classList.add('locked');
 }
 
-/* ============================================================ MOMENT SLIDER ============================================================ */
 let momentPercent = 50;
 function renderMoment(){
-  const m = state.moment;
-  const before = $('#momentBefore'); const after = $('#momentAfter');
-  before.src = m.before || ''; after.src = m.after || '';
-  before.onerror = function(){ this.src = imgFallback('Raw'); };
-  after.onerror = function(){ this.src = imgFallback('Prophetic'); };
-  updateMoment();
+  try {
+    const m = state.moment;
+    const before = $('#momentBefore'); const after = $('#momentAfter');
+    if (before) { before.src = m.before || ''; before.onerror = function(){ this.src = imgFallback('Raw'); }; }
+    if (after) { after.src = m.after || ''; after.onerror = function(){ this.src = imgFallback('Prophetic'); }; }
+    updateMoment();
+  } catch(e){ console.error('moment', e); }
 }
 function updateMoment(){
   const after = $('.moment__graded'); const handle = $('#momentHandle');
@@ -1447,63 +1386,63 @@ function initMomentSlider(){
   s.addEventListener('touchend', ()=>{ dragging = false; });
 }
 
-/* ============================================================ GALLERY ============================================================ */
 let activeFilter = 'All';
 let visiblePosts = [];
 function renderFilters(){
-  const cats = ['All'].concat(state.gallery.cats);
-  $('#filters').innerHTML = cats.map(c=>
-    '<button class="chip'+(c===activeFilter?' active':'')+'" data-filter="'+esc(c)+'">'+esc(c)+'</button>'
-  ).join('');
-  $$('#filters .chip').forEach(b => b.addEventListener('click', ()=>{ activeFilter = b.dataset.filter; renderFilters(); renderGallery(); }));
+  try {
+    const cats = ['All'].concat(state.gallery.cats);
+    const el = $('#filters'); if (!el) return;
+    el.innerHTML = cats.map(c=>
+      '<button class="chip'+(c===activeFilter?' active':'')+'" data-filter="'+esc(c)+'">'+esc(c)+'</button>'
+    ).join('');
+    $$('#filters .chip').forEach(b => b.addEventListener('click', ()=>{ activeFilter = b.dataset.filter; renderFilters(); renderGallery(); }));
+  } catch(e){ console.error('filters', e); }
 }
 function coverOf(p){ return p.images && p.images[0] ? p.images[0].src : ''; }
 function renderGallery(){
-  const posts = state.gallery.posts || [];
-  visiblePosts = activeFilter === 'All' ? posts : posts.filter(p => p.cat === activeFilter);
-  const grid = $('#galleryGrid');
-  if (!visiblePosts.length){ grid.innerHTML = '<div class="g-empty">No posts in this category yet.</div>'; return; }
-  grid.innerHTML = visiblePosts.map((p,i)=>{
-    const n = (p.images||[]).length;
-    return '<figure class="g-post" data-post="'+p.id+'" style="animation-delay:'+(i*55)+'ms">' +
-      '<div class="g-post__cover">' +
-        '<span class="g-post__cat">'+esc(p.cat)+'</span>' +
-        '<span class="g-post__count">'+n+' '+(n===1?'photo':'photos')+'</span>' +
-        '<img src="'+coverOf(p)+'" alt="'+esc(p.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(p.cat)+'\')">' +
-        '<div class="g-post__info">' +
-          '<h3 class="g-post__title">'+esc(p.title)+'</h3>' +
-          '<p class="g-post__desc">'+esc(p.desc||'')+'</p>' +
-          '<span class="g-post__cta">Open Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>' +
+  try {
+    const posts = state.gallery.posts || [];
+    visiblePosts = activeFilter === 'All' ? posts : posts.filter(p => p.cat === activeFilter);
+    const grid = $('#galleryGrid'); if (!grid) return;
+    if (!visiblePosts.length){ grid.innerHTML = '<div class="g-empty">No posts in this category yet.</div>'; return; }
+    grid.innerHTML = visiblePosts.map((p,i)=>{
+      const n = (p.images||[]).length;
+      return '<figure class="g-post" data-post="'+p.id+'" style="animation-delay:'+(i*55)+'ms">' +
+        '<div class="g-post__cover">' +
+          '<span class="g-post__cat">'+esc(p.cat)+'</span>' +
+          '<span class="g-post__count">'+n+' '+(n===1?'photo':'photos')+'</span>' +
+          '<img src="'+coverOf(p)+'" alt="'+esc(p.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(p.cat)+'\')">' +
+          '<div class="g-post__info">' +
+            '<h3 class="g-post__title">'+esc(p.title)+'</h3>' +
+            '<p class="g-post__desc">'+esc(p.desc||'')+'</p>' +
+            '<span class="g-post__cta">Open Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>' +
+          '</div>' +
         '</div>' +
-      '</div>' +
-    '</figure>';
-  }).join('');
-  $$('#galleryGrid .g-post').forEach(el => el.addEventListener('click', ()=> openLightbox(el.dataset.post, 0)));
+      '</figure>';
+    }).join('');
+    $$('#galleryGrid .g-post').forEach(e => e.addEventListener('click', ()=> openLightbox(e.dataset.post, 0)));
+  } catch(e){ console.error('gallery', e); }
 }
 
-/* ============================================================ SHOWCASE ============================================================ */
 function renderShowcase(){
-  const track = $('#showcaseTrack');
-  const flat = [];
-  (state.gallery.posts||[]).forEach(p => {
-    (p.images||[]).forEach(img => flat.push({ src: img.src, title: p.title, cat: p.cat, postId: p.id }));
-  });
-  if (!flat.length){ track.innerHTML=''; return; }
-  const one = flat.map(f =>
-    '<figure class="showcase__item" data-post="'+f.postId+'">' +
-      '<img src="'+f.src+'" alt="'+esc(f.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(f.cat)+'\')">' +
-      '<figcaption class="showcase__item__tag"><small>'+esc(f.cat)+'</small><b>'+esc(f.title)+'</b></figcaption>' +
-    '</figure>'
-  ).join('');
-  track.innerHTML = one + one;
-  track.style.animation = 'none';
-  void track.offsetWidth;
-  track.style.animation = '';
-  track.classList.remove('paused');
-  $$('#showcaseTrack .showcase__item').forEach(el => el.addEventListener('click', ()=> openLightbox(el.dataset.post, 0)));
+  try {
+    const track = $('#showcaseTrack'); if (!track) return;
+    const flat = [];
+    (state.gallery.posts||[]).forEach(p => {
+      (p.images||[]).forEach(img => flat.push({ src: img.src, title: p.title, cat: p.cat, postId: p.id }));
+    });
+    if (!flat.length){ track.innerHTML=''; return; }
+    const one = flat.map(f =>
+      '<figure class="showcase__item" data-post="'+f.postId+'">' +
+        '<img src="'+f.src+'" alt="'+esc(f.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(f.cat)+'\')">' +
+        '<figcaption class="showcase__item__tag"><small>'+esc(f.cat)+'</small><b>'+esc(f.title)+'</b></figcaption>' +
+      '</figure>'
+    ).join('');
+    track.innerHTML = one + one;
+    $$('#showcaseTrack .showcase__item').forEach(el => el.addEventListener('click', ()=> openLightbox(el.dataset.post, 0)));
+  } catch(e){ console.error('showcase', e); }
 }
 
-/* ============================================================ LIGHTBOX ============================================================ */
 let lbPostId = null, lbIdx = 0, lbImages = [];
 function openLightbox(postId, imgIdx){
   const post = (state.gallery.posts||[]).find(p => p.id === postId);
@@ -1530,55 +1469,65 @@ function updateLightbox(){
 function closeLightbox(){ $('#lightbox').classList.remove('open'); document.body.classList.remove('locked'); }
 function stepLightbox(d){ if (!lbImages.length) return; lbIdx = (lbIdx + d + lbImages.length) % lbImages.length; updateLightbox(); }
 
-/* ============================================================ TESTIMONIALS ============================================================ */
 const TESTIMONIALS = [
-  { q:'The photos of our wedding are beyond anything I imagined. Every frame feels like a film still. Prophetic is exactly the right name.', n:'Ada & Kelechi', r:'Wedding · Lagos', a:'AK' },
+  { q:'The photos of our wedding are beyond anything I imagined. Every frame feels like a film still.', n:'Ada & Kelechi', r:'Wedding · Lagos', a:'AK' },
   { q:'Booked a portrait session and honestly — I didn\'t know I could look like this. The grading is on another level.', n:'Chiamaka O.', r:'Portrait Session', a:'CO' },
-  { q:'Coverage of our annual gala was impeccable. Every speaker, every candid, delivered within 48 hours. Worth every kobo.', n:'Ngozi M.', r:'Corporate Client', a:'NM' },
+  { q:'Coverage of our annual gala was impeccable. Every speaker, every candid, delivered within 48 hours.', n:'Ngozi M.', r:'Corporate Client', a:'NM' },
   { q:'They shot our brand lookbook and the images are stunning. Magazine-quality retouching, effortless process.', n:'Tunde A.', r:'Fashion Brand Owner', a:'TA' },
-  { q:'We booked them for our product launch. They understood the story we were trying to tell and made the visuals match.', n:'Fatima I.', r:'Marketing Director', a:'FI' },
+  { q:'We booked them for our product launch. They understood the story we were trying to tell.', n:'Fatima I.', r:'Marketing Director', a:'FI' },
   { q:'Fast, professional, and the final gallery was extraordinary. Every shot has weight. 100% recommend.', n:'Emeka N.', r:'Client', a:'EN' }
 ];
 function renderTestimonials(){
-  $('#tstGrid').innerHTML = TESTIMONIALS.map(t =>
-    '<div class="tst">' +
-      '<div class="tst__q">“</div>' +
-      '<div class="tst__stars">★★★★★</div>' +
-      '<p>'+esc(t.q)+'</p>' +
-      '<div class="tst__who"><div class="tst__av">'+t.a+'</div><div><b>'+esc(t.n)+'</b><small>'+esc(t.r)+'</small></div></div>' +
-    '</div>'
-  ).join('');
+  try {
+    const el = $('#tstGrid'); if (!el) return;
+    el.innerHTML = TESTIMONIALS.map(t =>
+      '<div class="tst">' +
+        '<div class="tst__q">“</div>' +
+        '<div class="tst__stars">★★★★★</div>' +
+        '<p>'+esc(t.q)+'</p>' +
+        '<div class="tst__who"><div class="tst__av">'+t.a+'</div><div><b>'+esc(t.n)+'</b><small>'+esc(t.r)+'</small></div></div>' +
+      '</div>'
+    ).join('');
+  } catch(e){ console.error('tst', e); }
 }
 
-/* ============================================================ CONTACT ============================================================ */
 function renderContact(){
-  const c = state.contact;
-  $('#contactPhone').innerHTML = '<a href="tel:+'+c.whatsapp+'">'+esc(c.phone)+'</a>';
-  $('#contactHours').textContent = c.hours;
+  try {
+    const c = state.contact;
+    if ($('#contactPhone')) $('#contactPhone').innerHTML = '<a href="tel:+'+c.whatsapp+'">'+esc(c.phone)+'</a>';
+    if ($('#contactHours')) $('#contactHours').textContent = c.hours;
+  } catch(e){ console.error('contact', e); }
 }
 
-/* ============================================================ MASTER RENDER ============================================================ */
 function renderSite(){
-  applyBrand(); renderTicker(); renderHero(); renderAbout(); renderServices();
-  renderMoment(); renderFilters(); renderGallery(); renderShowcase();
-  renderTestimonials(); renderContact();
-  syncAdminPreviews();
+  try { applyBrand(); } catch(e){ console.error('brand', e); }
+  try { renderTicker(); } catch(e){}
+  try { renderHero(); } catch(e){}
+  try { renderAbout(); } catch(e){}
+  try { renderServices(); } catch(e){}
+  try { renderMoment(); } catch(e){}
+  try { renderFilters(); } catch(e){}
+  try { renderGallery(); } catch(e){}
+  try { renderShowcase(); } catch(e){}
+  try { renderTestimonials(); } catch(e){}
+  try { renderContact(); } catch(e){}
+  try { syncAdminPreviews(); } catch(e){}
 }
 
-/* ============================================================ HEADER ============================================================ */
 function initHeader(){
   const h = $('#header');
   const burger = $('#burger'), mnav = $('#mobileNav');
-  burger.addEventListener('click', ()=>{
-    burger.classList.toggle('open'); mnav.classList.toggle('open');
-    document.body.classList.toggle('locked', mnav.classList.contains('open'));
-  });
-  $$('#mobileNav a').forEach(a => a.addEventListener('click', ()=>{
-    burger.classList.remove('open'); mnav.classList.remove('open'); document.body.classList.remove('locked');
-  }));
+  if (burger && mnav){
+    burger.addEventListener('click', ()=>{
+      burger.classList.toggle('open'); mnav.classList.toggle('open');
+      document.body.classList.toggle('locked', mnav.classList.contains('open'));
+    });
+    $$('#mobileNav a').forEach(a => a.addEventListener('click', ()=>{
+      burger.classList.remove('open'); mnav.classList.remove('open'); document.body.classList.remove('locked');
+    }));
+  }
 }
 
-/* ============================================================ ADMIN ============================================================ */
 let adminUnlocked = false;
 function openAdmin(){
   $('#admin').classList.add('open'); document.body.classList.add('locked');
@@ -1662,17 +1611,16 @@ function syncAdminForms(){
   renderGalleryAdmin(); renderCatSelect(); renderCatInput();
 }
 function syncAdminPreviews(){
-  setPreview('#logoPreview', state.brand.logo, 'No logo', false);
-  setPreview('#aboutImgPreview', state.about.image, 'None', false);
-  setPreview('#momentBeforePreview', state.moment.before, 'None', false);
-  setPreview('#momentAfterPreview', state.moment.after, 'None', false);
+  setPreview('#logoPreview', state.brand.logo, 'No logo');
+  setPreview('#aboutImgPreview', state.about.image, 'None');
+  setPreview('#momentBeforePreview', state.moment.before, 'None');
+  setPreview('#momentAfterPreview', state.moment.after, 'None');
 }
 function setPreview(sel, src, empty){
   const el = $(sel); if (!el) return;
   el.innerHTML = src ? '<img src="'+src+'" alt="preview" onerror="this.parentNode.innerHTML=\'<span>Failed</span>\'">' : '<span>'+empty+'</span>';
 }
 
-/* ============================================================ UPLOADS ============================================================ */
 function wireUpload(inputSel, handler){
   const input = $(inputSel); if (!input) return;
   input.addEventListener('change', async ()=>{
@@ -1702,14 +1650,12 @@ function optimiseImage(file, maxDim, quality){
   });
 }
 function initUploads(){
-  /* LOGO from gallery */
   wireUpload('#logoInput', async files=>{
     state.brand.logo = await optimiseImage(files[0], 600, .92);
     save(); applyBrand(); syncAdminPreviews(); toast('✓ Logo updated');
   });
   $('#logoRemove').addEventListener('click', ()=>{ state.brand.logo=''; save(); applyBrand(); syncAdminPreviews(); toast('Logo removed'); });
 
-  /* Hero slides */
   wireUpload('#heroSlideInput', async files=>{
     for (const f of files){
       const src = await optimiseImage(f, 1800, .8);
@@ -1718,14 +1664,12 @@ function initUploads(){
     save(); renderHero(); renderHeroSlideList(); toast(files.length+' slide(s) added');
   });
 
-  /* About image */
   wireUpload('#aboutImgInput', async files=>{
     state.about.image = await optimiseImage(files[0], 1400, .85);
     save(); renderAbout(); syncAdminPreviews(); toast('About image updated');
   });
   $('#aboutImgRemove').addEventListener('click', ()=>{ state.about.image=''; save(); renderAbout(); syncAdminPreviews(); toast('About image removed'); });
 
-  /* Moment slider */
   wireUpload('#momentBeforeInput', async files=>{
     state.moment.before = await optimiseImage(files[0], 1400, .82);
     save(); renderMoment(); syncAdminPreviews(); toast('Before image updated');
@@ -1737,7 +1681,6 @@ function initUploads(){
   });
   $('#momentAfterRemove').addEventListener('click', ()=>{ state.moment.after=''; save(); renderMoment(); syncAdminPreviews(); toast('After image removed'); });
 
-  /* Gallery upload from gallery */
   wireUpload('#gFileInput', async files=>{
     if (files.length > 8){ toast('Max 8 at a time'); return; }
     const title = $('#gTitle').value.trim();
@@ -1754,7 +1697,6 @@ function initUploads(){
   });
 }
 
-/* ============================================================ ADMIN EDITORS ============================================================ */
 function renderHeroSlideList(){
   const el = $('#heroSlideList'); if (!el) return;
   if (!state.hero.slides.length){ el.innerHTML = '<div class="empty-note">No slides yet.</div>'; return; }
@@ -1778,8 +1720,8 @@ function renderHeroMetaEditor(){
     '</div>'
   ).join('');
   $$('#heroMetaEditor [data-hm-idx]').forEach(inp=>{
-    inp.addEventListener('input', ()=>{ state.hero.meta[+inp.dataset.hmIdx][inp.dataset.hmField] = inp.value; save(); renderHero(); });
-    inp.addEventListener('change', ()=>{ state.hero.meta[+inp.dataset.hmIdx][inp.dataset.hmField] = inp.value; save(); renderHero(); });
+    const fn = ()=>{ state.hero.meta[+inp.dataset.hmIdx][inp.dataset.hmField] = inp.value; save(); renderHero(); };
+    inp.addEventListener('input', fn); inp.addEventListener('change', fn);
   });
   $$('#heroMetaEditor [data-rm-hm]').forEach(b=>{
     b.addEventListener('click', ()=>{ state.hero.meta.splice(+b.dataset.rmHm,1); save(); renderHeroMetaEditor(); renderHero(); });
@@ -1883,7 +1825,6 @@ function renderCatInput(){
   };
 }
 
-/* URL publish for gallery */
 function initUrlPublish(){
   $('#gModeFile').addEventListener('click', ()=>{
     $('#gFilePanel').style.display='block'; $('#gUrlPanel').style.display='none';
@@ -1910,7 +1851,6 @@ function initUrlPublish(){
   });
 }
 
-/* DATA */
 function initData(){
   $('#exportData').addEventListener('click', ()=>{
     const blob = new Blob([JSON.stringify(state, null, 2)], { type:'application/json' });
@@ -1950,67 +1890,75 @@ function initData(){
   });
 }
 
-/* ============================================================ INIT ============================================================ */
 function init(){
-  $('#year').textContent = new Date().getFullYear();
-  renderSite();
-  updateStorage();
+  try { $('#year').textContent = new Date().getFullYear(); } catch(e){}
+  try { renderSite(); } catch(e){ console.error('renderSite failed:', e); }
+  try { updateStorage(); } catch(e){}
+  try { initHeader(); } catch(e){ console.error('initHeader failed:', e); }
+  try { initGate(); } catch(e){}
+  try { initTabs(); } catch(e){}
+  try { initBindings(); } catch(e){}
+  try { initUploads(); } catch(e){}
+  try { initUrlPublish(); } catch(e){}
+  try { initData(); } catch(e){}
+  try { initMomentSlider(); } catch(e){}
 
-  initHeader();
-  initGate();
-  initTabs();
-  initBindings();
-  initUploads();
-  initUrlPublish();
-  initData();
-  initMomentSlider();
+  try {
+    $('#heroPrev').addEventListener('click', ()=> goHero(heroIdx-1));
+    $('#heroNext').addEventListener('click', ()=> goHero(heroIdx+1));
+    $('#heroDots').addEventListener('click', e=>{
+      const d = e.target.closest('.hero__dot'); if (d) goHero(Number(d.dataset.i));
+    });
+  } catch(e){}
 
-  $('#heroPrev').addEventListener('click', ()=> goHero(heroIdx-1));
-  $('#heroNext').addEventListener('click', ()=> goHero(heroIdx+1));
-  $('#heroDots').addEventListener('click', e=>{
-    const d = e.target.closest('.hero__dot'); if (d) goHero(Number(d.dataset.i));
-  });
+  try {
+    const st = $('#showcaseTrack');
+    st.addEventListener('mouseenter', ()=> st.classList.add('paused'));
+    st.addEventListener('mouseleave', ()=> st.classList.remove('paused'));
+  } catch(e){}
 
-  const st = $('#showcaseTrack');
-  st.addEventListener('mouseenter', ()=> st.classList.add('paused'));
-  st.addEventListener('mouseleave', ()=> st.classList.remove('paused'));
+  try {
+    $('#lbClose').addEventListener('click', closeLightbox);
+    $('#lbPrev').addEventListener('click', ()=> stepLightbox(-1));
+    $('#lbNext').addEventListener('click', ()=> stepLightbox(1));
+    $('#lightbox').addEventListener('click', e=>{ if (e.target.id === 'lightbox') closeLightbox(); });
+    $('#svcClose').addEventListener('click', ()=>{ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); });
+    $('#svcModal').addEventListener('click', e=>{ if (e.target.id === 'svcModal'){ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); } });
+    document.addEventListener('keydown', e=>{
+      if (e.key === 'Escape'){ closeLightbox(); $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); }
+      if (!$('#lightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+      if (e.key === 'ArrowRight') stepLightbox(1);
+    });
+  } catch(e){}
 
-  $('#lbClose').addEventListener('click', closeLightbox);
-  $('#lbPrev').addEventListener('click', ()=> stepLightbox(-1));
-  $('#lbNext').addEventListener('click', ()=> stepLightbox(1));
-  $('#lightbox').addEventListener('click', e=>{ if (e.target.id === 'lightbox') closeLightbox(); });
-  $('#svcClose').addEventListener('click', ()=>{ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); });
-  $('#svcModal').addEventListener('click', e=>{ if (e.target.id === 'svcModal'){ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); } });
-  document.addEventListener('keydown', e=>{
-    if (e.key === 'Escape'){ closeLightbox(); $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); }
-    if (!$('#lightbox').classList.contains('open')) return;
-    if (e.key === 'ArrowLeft') stepLightbox(-1);
-    if (e.key === 'ArrowRight') stepLightbox(1);
-  });
+  try {
+    $('#bookingForm').addEventListener('submit', e=>{
+      e.preventDefault();
+      const inputs = e.target.querySelectorAll('input, select, textarea');
+      const text = 'Hi Prophetic Photography! New booking enquiry.\n\n' +
+        'Name: ' + (inputs[0].value||'') + '\n' +
+        'WhatsApp: ' + (inputs[1].value||'') + '\n' +
+        'Date: ' + (inputs[2].value||'') + '\n' +
+        'Session: ' + (inputs[3].value||'') + '\n' +
+        'Location: ' + (inputs[4].value||'') + '\n' +
+        'Details: ' + (inputs[5].value||'');
+      window.open('https://wa.me/2347052731139?text=' + encodeURIComponent(text), '_blank');
+      toast('Opening WhatsApp...');
+      e.target.reset();
+    });
+  } catch(e){}
 
-  $('#bookingForm').addEventListener('submit', e=>{
-    e.preventDefault();
-    const inputs = e.target.querySelectorAll('input, select, textarea');
-    const text = 'Hi Prophetic Photography! New booking enquiry.\n\n' +
-      'Name: ' + (inputs[0].value||'') + '\n' +
-      'WhatsApp: ' + (inputs[1].value||'') + '\n' +
-      'Date: ' + (inputs[2].value||'') + '\n' +
-      'Session: ' + (inputs[3].value||'') + '\n' +
-      'Location: ' + (inputs[4].value||'') + '\n' +
-      'Details: ' + (inputs[5].value||'');
-    window.open('https://wa.me/2347052731139?text=' + encodeURIComponent(text), '_blank');
-    toast('Opening WhatsApp...');
-    e.target.reset();
-  });
-
-  ['#openAdmin','#openAdminMobile','#footerAdmin'].forEach(sel => {
-    const el = $(sel); if (el) el.addEventListener('click', e=>{ e.preventDefault(); openAdmin(); });
-  });
-  if (location.hash === '#admin') openAdmin();
+  try {
+    ['#openAdmin','#openAdminMobile','#footerAdmin'].forEach(sel => {
+      const el = $(sel); if (el) el.addEventListener('click', e=>{ e.preventDefault(); openAdmin(); });
+    });
+    if (location.hash === '#admin') openAdmin();
+  } catch(e){}
 }
 
 document.addEventListener('DOMContentLoaded', init);
 })();
 </script>
 </body>
-      </html>
+        </html>
