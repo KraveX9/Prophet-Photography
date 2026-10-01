@@ -4,527 +4,515 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prophetic Photography — Capturing Moments, Revealing Destiny</title>
-<meta name="description" content="Prophetic Photography — cinematic photography & visual storytelling. Portraits, weddings, events, brands. Book on WhatsApp 0705 273 1139.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0806'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23F5C842' font-family='Georgia' font-size='52' font-weight='700'%3EP%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Prophetic Photography — cinematic photography. Portraits, weddings, events, brands. WhatsApp 0705 273 1139.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231A1418'/%3E%3Ctext x='50' y='68' text-anchor='middle' fill='%23F5C842' font-family='Georgia' font-size='52' font-weight='700'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&family=Kaushan+Script&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0A0806;--bg-2:#100C0F;--surface:#1A1418;--surface-2:#231C22;--surface-3:#2E262E;
-  --cream:#F8F4EC;--cream-2:#E5DDD0;--text:#F8F4EC;--text-2:#C8BDB0;--muted:#8A7F73;
-  --line:rgba(248,244,236,.10);--line-2:rgba(248,244,236,.24);
-  --gold:#F5C842;--gold-2:#FFD966;--gold-3:#C9A227;--gold-glow:245,200,66;
-  --max:1440px;
+  --bg:#1A1418;
+  --bg-2:#221B20;
+  --surface:#2A2228;
+  --surface-2:#332930;
+  --text:#F8F4EC;
+  --text-2:#D4C8B8;
+  --muted:#9A8B7C;
+  --line:rgba(248,244,236,.10);
+  --line-2:rgba(248,244,236,.24);
+  --gold:#F5C842;
+  --gold-2:#FFD966;
+  --gold-3:#C9A227;
+  --max:1300px;
   --font:'Inter',system-ui,sans-serif;
   --serif:'Playfair Display',Georgia,serif;
-  --serif-2:'Cormorant Garamond',Georgia,serif;
   --script:'Kaushan Script',cursive;
   --ease:cubic-bezier(.22,.72,.24,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 input,textarea,select{font:inherit;color:inherit}
-h1,h2,h3,h4{margin:0;line-height:1.05;font-weight:600}
+h1,h2,h3,h4{margin:0;line-height:1.1}
 p{margin:0}
-::selection{background:var(--gold);color:#0A0806}
-::-webkit-scrollbar{width:10px;height:10px}
-::-webkit-scrollbar-track{background:var(--bg-2)}
-::-webkit-scrollbar-thumb{background:var(--surface-3);border-radius:20px}
+::selection{background:var(--gold);color:var(--bg)}
+
+/* ===================== PREMIUM IMAGE FRAME =====================
+   Every image slot uses this class. It shows a GOLD GRADIENT 
+   background + gold pattern + brand mark instantly.
+   No more black voids, ever. */
+.photo{
+  position:relative;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(245,200,66,.35), transparent 55%),
+    radial-gradient(circle at 75% 80%, rgba(201,162,39,.25), transparent 55%),
+    linear-gradient(135deg, #4A3A20 0%, #2E2418 45%, #1A1418 100%);
+  overflow:hidden;
+  isolation:isolate;
+}
+.photo::before{
+  content:'';
+  position:absolute;inset:0;z-index:1;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(245,200,66,.05) 0 2px, transparent 2px 24px),
+    repeating-linear-gradient(-45deg, rgba(245,200,66,.03) 0 2px, transparent 2px 32px);
+  pointer-events:none;
+}
+.photo::after{
+  content:'PPC';
+  position:absolute;inset:0;z-index:1;
+  display:grid;place-items:center;
+  font-family:var(--serif);font-style:italic;font-weight:700;
+  font-size:clamp(3rem,8vw,6rem);
+  letter-spacing:.1em;
+  color:rgba(245,200,66,.15);
+  pointer-events:none;
+}
+.photo img{
+  position:absolute;inset:0;z-index:2;
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 1.2s var(--ease), opacity .6s;
+  opacity:0;
+}
+.photo img.loaded{opacity:1}
+.photo:hover img{transform:scale(1.06)}
 
 /* ===================== LAYOUT ===================== */
-.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
-.section{position:relative;padding:110px 0}
-.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.68rem;font-weight:800;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
-.eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
-.eyebrow--center{justify-content:center}
-.eyebrow--center::after{content:'';width:36px;height:1px;background:var(--gold)}
-.section-title{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.6rem);letter-spacing:-.03em;line-height:1.02;font-weight:500}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px}
+.section{position:relative;padding:100px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.66rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.eyebrow::before{content:'';width:32px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--serif);font-size:clamp(1.9rem,4.4vw,3.4rem);letter-spacing:-.03em;line-height:1.05;font-weight:500}
 .section-title em{font-style:italic;color:var(--gold);font-weight:500}
-.section-lead{color:var(--text-2);max-width:600px;margin-top:20px;font-size:1.02rem;line-height:1.8}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:44px;flex-wrap:wrap;margin-bottom:52px}
+.section-lead{color:var(--text-2);max-width:560px;margin-top:18px;font-size:1rem;line-height:1.8}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:48px}
 .head--center{text-align:center;justify-content:center;flex-direction:column;align-items:center;gap:0}
 .head--center .section-lead{margin-left:auto;margin-right:auto;text-align:center}
 
 /* ===================== BUTTONS ===================== */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 32px;font-family:var(--font);font-size:.7rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;transition:.3s var(--ease);white-space:nowrap;border:1.5px solid transparent;cursor:pointer;position:relative;overflow:hidden}
-.btn--primary{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:#0A0806;border-color:var(--gold);box-shadow:0 12px 40px -14px rgba(var(--gold-glow),.7)}
-.btn--primary:hover{transform:translateY(-3px);box-shadow:0 22px 50px -14px rgba(var(--gold-glow),.9)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;font-size:.68rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;transition:.3s var(--ease);white-space:nowrap;border:1.5px solid transparent;cursor:pointer}
+.btn--primary{background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));color:var(--bg);border-color:var(--gold);box-shadow:0 12px 36px -14px rgba(245,200,66,.7)}
+.btn--primary:hover{transform:translateY(-3px);box-shadow:0 22px 48px -14px rgba(245,200,66,.9)}
 .btn--outline{background:transparent;color:var(--text);border-color:var(--line-2)}
-.btn--outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold)}
 .btn--wa{background:#25D366;color:#fff;border-color:#25D366}
-.btn--wa:hover{background:#1ea952;border-color:#1ea952;transform:translateY(-2px)}
-.btn--ghostlight{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.3);backdrop-filter:blur(12px)}
-.btn--ghostlight:hover{background:var(--gold);color:#0A0806;border-color:var(--gold)}
-.btn--sm{padding:12px 22px;font-size:.62rem}
-.btn--xs{padding:8px 14px;font-size:.56rem;letter-spacing:.22em}
-.btn--danger{background:transparent;color:#FF5C5C;border-color:rgba(255,92,92,.4)}
-.btn--danger:hover{background:#FF5C5C;color:#fff;border-color:#FF5C5C}
+.btn--wa:hover{background:#1ea952;border-color:#1ea952}
+.btn--sm{padding:11px 20px;font-size:.6rem}
 .btn--block{width:100%}
-.btn svg{width:15px;height:15px;flex-shrink:0}
+.btn svg{width:14px;height:14px;flex-shrink:0}
 
 /* ===================== TICKER ===================== */
-.ticker{background:linear-gradient(90deg,var(--gold-3),var(--gold),var(--gold-3));color:#0A0806;padding:11px 0;overflow:hidden}
-.ticker__track{display:flex;gap:60px;width:max-content;animation:marq 46s linear infinite;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;font-weight:800}
-.ticker__track span{display:flex;align-items:center;gap:60px;white-space:nowrap}
-.ticker__track span::after{content:'✦';font-size:.9rem}
+.ticker{background:linear-gradient(90deg,var(--gold-3),var(--gold),var(--gold-3));color:var(--bg);padding:10px 0;overflow:hidden}
+.ticker__track{display:flex;gap:56px;width:max-content;animation:marq 46s linear infinite;font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;font-weight:800}
+.ticker__track span{display:flex;align-items:center;gap:56px;white-space:nowrap}
+.ticker__track span::after{content:'✦'}
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* ===================== HEADER ===================== */
-.header{position:sticky;top:0;left:0;right:0;z-index:90;background:rgba(10,8,6,.9);backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--line)}
-.header__inner{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:16px 0}
-.brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
-.brand__mark{width:54px;height:54px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--surface),var(--bg));display:grid;place-items:center;border:1px solid var(--line-2)}
+.header{position:sticky;top:0;left:0;right:0;z-index:90;background:rgba(26,20,24,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand__mark{width:50px;height:50px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#4A3A20,#1A1418);display:grid;place-items:center;border:1.5px solid var(--gold)}
 .brand__mark img{width:100%;height:100%;object-fit:cover}
 .brand__mark svg{width:80%;height:80%}
 .brand__text{display:flex;flex-direction:column;line-height:1}
-.brand__name{font-family:var(--serif);font-weight:700;font-size:1.2rem;letter-spacing:.02em}
+.brand__name{font-family:var(--serif);font-weight:700;font-size:1.15rem;letter-spacing:.02em}
 .brand__name em{font-style:normal;color:var(--gold)}
-.brand__sub{font-size:.54rem;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);margin-top:6px;font-weight:700}
-.nav{display:flex;align-items:center;gap:30px}
-.nav a{font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--text-2);position:relative;padding:8px 0;transition:.3s}
-.nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease)}
+.brand__sub{font-size:.52rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-top:5px;font-weight:700}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-2);transition:.3s}
 .nav a:hover{color:var(--gold)}
-.nav a:hover::after{width:100%}
-.header__actions{display:flex;align-items:center;gap:10px}
-.burger{display:none;width:44px;height:44px;border-radius:8px;border:1px solid var(--line-2);position:relative}
-.burger span,.burger span::before,.burger span::after{position:absolute;left:50%;transform:translateX(-50%);width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:.3s var(--ease);content:''}
+.header__actions{display:flex;align-items:center;gap:8px}
+.burger{display:none;width:42px;height:42px;border-radius:6px;border:1px solid var(--line-2);position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:50%;transform:translateX(-50%);width:18px;height:1.5px;background:var(--text);border-radius:2px;transition:.3s;content:''}
 .burger span{top:50%;margin-top:-.75px}
-.burger span::before{top:-7px}
-.burger span::after{top:7px}
-.burger.open span{background:transparent}
-.burger.open span::before{top:0;transform:translateX(-50%) rotate(45deg)}
-.burger.open span::after{top:0;transform:translateX(-50%) rotate(-45deg)}
-.mobile-nav{position:fixed;inset:0;z-index:85;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;visibility:hidden;transition:.4s var(--ease)}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.mobile-nav{position:fixed;inset:0;z-index:85;background:var(--bg-2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;visibility:hidden;transition:.4s var(--ease)}
 .mobile-nav.open{opacity:1;visibility:visible}
-.mobile-nav a{font-family:var(--serif);font-size:1.9rem;padding:12px 0;color:var(--text-2);font-weight:500}
+.mobile-nav a{font-family:var(--serif);font-size:1.7rem;padding:10px 0;color:var(--text-2);font-weight:500}
 .mobile-nav a:hover{color:var(--gold)}
 
-/* ===================== HERO (2-COLUMN, NO FULL-SCREEN BLACK) ===================== */
-.hero{position:relative;padding:70px 0 90px;overflow:hidden;background:
-  radial-gradient(ellipse at 15% 20%,rgba(var(--gold-glow),.06),transparent 45%),
-  radial-gradient(ellipse at 85% 80%,rgba(var(--gold-glow),.05),transparent 45%),
-  var(--bg)}
-.hero__grid-bg{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.35;
-  background-image:linear-gradient(rgba(245,200,66,.04) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(245,200,66,.04) 1px,transparent 1px);
-  background-size:90px 90px;
-  -webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 25%,transparent 75%);
-  mask-image:radial-gradient(ellipse at 50% 50%,#000 25%,transparent 75%)}
-.hero__wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center}
-.hero__brand-tag{display:inline-flex;align-items:center;gap:14px;font-family:var(--script);font-size:1.35rem;color:var(--gold);margin-bottom:24px}
-.hero__brand-tag::before{content:'';width:44px;height:1px;background:var(--gold)}
-.hero__badge{display:inline-flex;align-items:center;gap:10px;font-size:.6rem;font-weight:800;letter-spacing:.4em;text-transform:uppercase;padding:10px 20px;border-radius:100px;background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.4);color:var(--gold-2);margin-bottom:28px}
-.hero__badge i{width:7px;height:7px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 12px var(--gold-2);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero__title{font-family:var(--serif);font-weight:600;letter-spacing:-.04em;font-size:clamp(2.4rem,5.6vw,4.6rem);line-height:.96;color:#fff;margin-bottom:26px}
+/* ===================== HERO ===================== */
+.hero{position:relative;padding:60px 0 80px;overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(245,200,66,.12), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(245,200,66,.08), transparent 45%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%)}
+.hero__wrap{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+.hero__brand-tag{display:inline-block;font-family:var(--script);font-size:1.25rem;color:var(--gold);margin-bottom:22px}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;font-size:.58rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;padding:9px 18px;border-radius:100px;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.4);color:var(--gold-2);margin-bottom:26px}
+.hero__badge i{width:6px;height:6px;border-radius:50%;background:var(--gold-2);box-shadow:0 0 10px var(--gold-2);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero__title{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;font-size:clamp(2.2rem,5.4vw,4.2rem);line-height:1;margin-bottom:24px}
 .hero__title em{font-style:italic;background:linear-gradient(135deg,var(--gold-2),var(--gold),var(--gold-3));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:500;display:block;margin-top:4px}
-.hero__sub{color:#D4C8B8;font-size:1.02rem;max-width:560px;line-height:1.85;margin-bottom:34px}
+.hero__sub{color:var(--text-2);font-size:1rem;max-width:520px;line-height:1.85;margin-bottom:32px}
 .hero__sub b{color:var(--gold-2);font-weight:600}
-.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
-.hero__meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:30px;border-top:1px solid rgba(245,200,66,.2);max-width:560px}
-.hero__meta__item b{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--gold);display:block;line-height:1}
-.hero__meta__item small{display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:700}
+.hero__cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.hero__meta{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:26px;border-top:1px solid rgba(245,200,66,.2);max-width:520px}
+.hero__meta b{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--gold);display:block;line-height:1}
+.hero__meta small{display:block;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:7px;font-weight:700}
 
-/* Hero visual — golden frame with rotating images */
-.hero__visual{position:relative}
-.hero__frame{position:relative;aspect-ratio:4/5;overflow:hidden;box-shadow:0 50px 100px -30px rgba(0,0,0,.9)}
-.hero__frame::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;border:1px solid rgba(245,200,66,.4);box-shadow:inset 0 0 100px rgba(0,0,0,.5)}
-.hero__carousel{position:absolute;inset:0}
-.hero__carousel .hero__photo{position:absolute;inset:0;opacity:0;transition:opacity 1.5s var(--ease);background:#1a1518}
-.hero__carousel .hero__photo.active{opacity:1}
-.hero__carousel .hero__photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.05)}
-.hero__carousel .hero__photo.active img{animation:kb 9s ease-out forwards}
-@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
-.hero__frame-caption{position:absolute;inset:auto 0 0 0;z-index:4;padding:26px 26px 24px;background:linear-gradient(transparent,rgba(10,8,6,.9));color:#fff}
-.hero__frame-caption small{font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:8px}
-.hero__frame-caption b{font-family:var(--serif);font-size:1.25rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
-.hero__frame-dots{position:absolute;bottom:20px;right:22px;z-index:5;display:flex;gap:6px}
-.hero__frame-dots button{width:26px;height:2px;background:rgba(255,255,255,.3);transition:.4s var(--ease)}
-.hero__frame-dots button.active{background:var(--gold);width:38px}
+/* Hero visual — rotating carousel with .photo fallback */
+.hero__visual{position:relative;z-index:1}
+.hero__frame{position:relative;aspect-ratio:4/5;overflow:hidden;box-shadow:0 50px 100px -30px rgba(0,0,0,.6);border:1px solid rgba(245,200,66,.35)}
+.hero__frame__dots{position:absolute;bottom:20px;left:0;right:0;z-index:6;display:flex;justify-content:center;gap:8px}
+.hero__frame__dots button{width:28px;height:3px;background:rgba(255,255,255,.4);transition:.4s var(--ease)}
+.hero__frame__dots button.active{background:var(--gold);width:44px}
+.hero__caption{position:absolute;left:0;right:0;bottom:0;z-index:5;padding:24px 26px;background:linear-gradient(transparent,rgba(26,20,24,.92));color:#fff}
+.hero__caption small{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:6px}
+.hero__caption b{font-family:var(--serif);font-size:1.15rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
 
-/* Gold geometric corner decorations */
-.hero__deco{position:absolute;pointer-events:none;z-index:1}
-.hero__deco--tl{top:-20px;left:-20px;width:140px;height:140px;border-left:1.5px solid var(--gold);border-top:1.5px solid var(--gold);opacity:.5}
-.hero__deco--br{bottom:-20px;right:-20px;width:140px;height:140px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);opacity:.5}
+/* rotating photos inside frame */
+.hero__photo{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);z-index:1}
+.hero__photo.active{opacity:1;z-index:2}
 
-/* ===================== FILM STRIP (Big photo marquee) ===================== */
-.film-strip{padding:0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
-.film-strip__head{padding:26px 0 22px;text-align:center}
-.film-strip__head span{font-family:var(--serif-2);font-style:italic;color:var(--gold);font-size:1rem;letter-spacing:.06em}
-.film-strip__viewport{position:relative;overflow:hidden;padding:0 0 30px;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.film-strip__track{display:flex;gap:18px;width:max-content;animation:film 80s linear infinite}
+/* ===================== STRIP ===================== */
+.strip{padding:24px 0 30px;background:var(--bg-2);overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip__label{text-align:center;font-family:var(--script);font-size:1.05rem;color:var(--gold);margin-bottom:18px}
+.strip__viewport{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.strip__track{display:flex;gap:16px;width:max-content;animation:film 70s linear infinite}
 @keyframes film{to{transform:translateX(-50%)}}
-.film-strip__item{position:relative;flex-shrink:0;height:280px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);cursor:pointer;transition:.5s var(--ease)}
-.film-strip__item img{height:100%;width:auto;object-fit:cover;display:block;transition:.6s var(--ease);filter:saturate(.9)}
-.film-strip__item:hover{transform:translateY(-6px);box-shadow:0 40px 80px -20px rgba(var(--gold-glow),.3)}
-.film-strip__item:hover img{filter:saturate(1.15) brightness(1.03)}
-.film-strip__item::after{content:'';position:absolute;inset:auto 0 0 0;height:50%;background:linear-gradient(transparent,rgba(10,8,6,.85));opacity:0;transition:.4s}
-.film-strip__item:hover::after{opacity:1}
-.film-strip__caption{position:absolute;bottom:14px;left:16px;right:16px;z-index:2;opacity:0;transition:.4s;transform:translateY(8px)}
-.film-strip__item:hover .film-strip__caption{opacity:1;transform:none}
-.film-strip__caption b{font-family:var(--serif);font-size:1rem;color:#fff;font-weight:500}
-.film-strip__caption small{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:4px}
+.strip__item{position:relative;flex-shrink:0;width:260px;height:190px;overflow:hidden;box-shadow:0 20px 50px -18px rgba(0,0,0,.6);cursor:pointer;transition:.5s var(--ease)}
+.strip__item:hover{transform:translateY(-6px)}
+.strip__item .photo{position:absolute;inset:0}
+.strip__item .photo::after{font-size:2.4rem}
+.strip__cap{position:absolute;bottom:0;left:0;right:0;z-index:5;padding:14px 16px;background:linear-gradient(transparent,rgba(26,20,24,.9));color:#fff;opacity:0;transition:.4s}
+.strip__item:hover .strip__cap{opacity:1}
+.strip__cap small{font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:4px}
+.strip__cap b{font-family:var(--serif);font-size:.9rem;font-weight:500}
 
 /* ===================== FEATURE 3-GRID ===================== */
-.feature{background:var(--bg);padding:100px 0}
-.feature__grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
-.feature__card{position:relative;overflow:hidden;background:var(--surface);transition:.5s var(--ease);cursor:pointer}
-.feature__card:hover{transform:translateY(-6px);box-shadow:0 40px 80px -30px rgba(0,0,0,.9)}
-.feature__card__img{aspect-ratio:4/5;overflow:hidden;position:relative;background:#1a1518}
-.feature__card:first-child .feature__card__img{aspect-ratio:4/6}
-.feature__card__img img{width:100%;height:100%;object-fit:cover;transition:.9s var(--ease)}
-.feature__card:hover .feature__card__img img{transform:scale(1.05);filter:brightness(.85)}
-.feature__card__img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,8,6,.95))}
-.feature__body{position:absolute;inset:auto 0 0 0;padding:26px 26px 24px;z-index:2}
-.feature__body small{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:10px}
-.feature__body h3{font-family:var(--serif);font-size:1.35rem;font-weight:500;letter-spacing:-.02em;color:#fff;margin-bottom:8px;line-height:1.2}
-.feature__body p{color:#C8BDB0;font-size:.82rem;line-height:1.55}
-
-/* ===================== PORTFOLIO SLIDER (Big slideshow) ===================== */
-.slider-sec{background:var(--bg-2);padding:110px 0;position:relative;overflow:hidden}
-.slider-sec::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:
-  radial-gradient(ellipse at 50% 20%,rgba(var(--gold-glow),.06),transparent 55%);
-  pointer-events:none}
-.portfolio-slider{position:relative;z-index:2;max-width:1200px;margin:0 auto}
-.portfolio-slider__stage{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1a1518;box-shadow:0 50px 100px -30px rgba(0,0,0,.9);border:1px solid rgba(245,200,66,.3)}
-.portfolio-slider__stage::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;box-shadow:inset 0 0 120px rgba(0,0,0,.5)}
-.portfolio-slider__img{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease)}
-.portfolio-slider__img.active{opacity:1}
-.portfolio-slider__img img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
-.portfolio-slider__img.active img{animation:kb 8s ease-out forwards}
-.portfolio-slider__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:40px 44px 34px;background:linear-gradient(transparent 20%,rgba(10,8,6,.92));color:#fff}
-.portfolio-slider__info small{font-size:.62rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:12px}
-.portfolio-slider__info h3{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,2rem);font-weight:500;letter-spacing:-.025em;line-height:1.15;margin-bottom:10px;color:#fff}
-.portfolio-slider__info p{color:#C8BDB0;font-size:.9rem;max-width:640px;line-height:1.65}
-.portfolio-slider__nav{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;border:1.5px solid rgba(245,200,66,.4);background:rgba(10,8,6,.6);backdrop-filter:blur(12px);color:var(--gold-2);display:grid;place-items:center;transition:.3s var(--ease);z-index:6;font-size:1.3rem;cursor:pointer}
-.portfolio-slider__nav.prev{left:20px}
-.portfolio-slider__nav.next{right:20px}
-.portfolio-slider__nav:hover{background:var(--gold);color:#0A0806;border-color:var(--gold)}
-.portfolio-slider__thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:10px;margin-top:20px;max-width:1000px;margin-left:auto;margin-right:auto}
-.portfolio-slider__thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:.35s var(--ease);opacity:.5;background:#1a1518}
-.portfolio-slider__thumb img{width:100%;height:100%;object-fit:cover}
-.portfolio-slider__thumb:hover{opacity:.85}
-.portfolio-slider__thumb.active{opacity:1;border-color:var(--gold);transform:scale(1.03)}
-.portfolio-slider__counter{position:absolute;top:24px;left:28px;z-index:5;font-family:var(--serif);font-size:.82rem;letter-spacing:.2em;color:var(--gold-2);background:rgba(10,8,6,.7);backdrop-filter:blur(10px);padding:8px 14px;border:1px solid rgba(245,200,66,.3)}
-.portfolio-slider__counter b{color:#fff}
+.feature{padding:90px 0;background:var(--bg)}
+.feature__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px}
+.feature__card{position:relative;overflow:hidden;cursor:pointer;transition:.5s var(--ease);border:1px solid var(--line)}
+.feature__card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.feature__card .photo{aspect-ratio:4/5}
+.feature__card:first-child .photo{aspect-ratio:4/6}
+.feature__body{position:absolute;inset:auto 0 0 0;z-index:5;padding:24px 22px;background:linear-gradient(transparent,rgba(26,20,24,.94))}
+.feature__body small{font-size:.54rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:8px}
+.feature__body h3{font-family:var(--serif);font-size:1.2rem;font-weight:500;color:#fff;margin-bottom:6px;line-height:1.2}
+.feature__body p{color:#D4C8B8;font-size:.78rem;line-height:1.55}
 
 /* ===================== SERVICES ===================== */
-.services{background:var(--bg)}
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border:1px solid var(--line-2)}
-.svc{position:relative;padding:48px 36px;background:var(--bg);border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);transition:.4s var(--ease);cursor:pointer}
-.svc:nth-child(3n){border-right:0}
-.svc:hover{background:var(--surface-2);z-index:2}
-.svc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold-2),var(--gold-3));transform:scaleY(0);transform-origin:top;transition:transform .5s var(--ease)}
+.services{padding:100px 0;background:var(--bg-2)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.svc{padding:32px 26px;background:linear-gradient(135deg,var(--surface),var(--surface-2));border:1px solid var(--line);transition:.4s var(--ease);cursor:pointer;position:relative;overflow:hidden}
+.svc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold-2),var(--gold-3));transform:scaleY(0);transform-origin:top;transition:.5s var(--ease)}
+.svc:hover{transform:translateY(-4px);border-color:var(--gold)}
 .svc:hover::before{transform:scaleY(1)}
-.svc__n{position:absolute;top:22px;right:26px;font-family:var(--serif);font-size:2.4rem;font-weight:500;color:var(--line-2);letter-spacing:-.02em;transition:.4s}
-.svc:hover .svc__n{color:var(--gold);opacity:.4}
-.svc__ic{width:56px;height:56px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);margin-bottom:24px;transition:.4s var(--ease)}
-.svc:hover .svc__ic{background:var(--gold);color:#0A0806;transform:rotate(-8deg) scale(1.05)}
-.svc__ic svg{width:24px;height:24px}
-.svc h3{font-family:var(--serif);font-size:1.4rem;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
-.svc p{color:var(--text-2);font-size:.88rem;line-height:1.7;margin-bottom:18px}
-.svc__tags{display:flex;gap:6px;flex-wrap:wrap}
-.svc__tags span{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;background:rgba(245,200,66,.1);color:var(--gold-2);border:1px solid rgba(245,200,66,.24)}
+.svc__ic{width:50px;height:50px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);margin-bottom:20px;transition:.4s}
+.svc:hover .svc__ic{background:var(--gold);color:var(--bg);transform:rotate(-8deg)}
+.svc__ic svg{width:22px;height:22px}
+.svc h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin-bottom:8px}
+.svc p{color:var(--text-2);font-size:.86rem;line-height:1.7;margin-bottom:14px}
+.svc__tags{display:flex;gap:5px;flex-wrap:wrap}
+.svc__tags span{font-size:.56rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;background:rgba(245,200,66,.12);color:var(--gold-2);border:1px solid rgba(245,200,66,.24)}
 
-/* ===================== MOMENT SLIDER ===================== */
-.moment{background:var(--bg-2);padding:110px 0;position:relative;overflow:hidden}
-.moment::before{content:'';position:absolute;top:-50%;right:-15%;width:60%;height:200%;background:radial-gradient(circle,rgba(var(--gold-glow),.08),transparent 65%);pointer-events:none}
-.moment__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center;position:relative;z-index:2}
-.moment__left h2{font-family:var(--serif);font-size:clamp(2rem,4.4vw,3.4rem);letter-spacing:-.035em;line-height:1;font-weight:500;margin-bottom:24px}
-.moment__left h2 em{font-style:italic;color:var(--gold);font-weight:500}
-.moment__left p{color:var(--text-2);font-size:1.02rem;line-height:1.85;margin-bottom:18px}
-.moment__features{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);margin-top:28px}
-.moment__feature{padding:20px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
-.moment__feature__num{font-family:var(--serif);font-size:1.35rem;color:var(--gold);font-weight:500;line-height:1}
-.moment__feature b{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:500;margin-bottom:5px}
-.moment__feature span{font-size:.84rem;color:var(--muted);line-height:1.6}
-.moment__slider{position:relative;aspect-ratio:4/5;overflow:hidden;user-select:none;cursor:ew-resize;box-shadow:0 50px 100px -30px rgba(0,0,0,.9);border:1px solid rgba(245,200,66,.3)}
-.moment__slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none}
-.moment__slider img.moment__raw{filter:brightness(.75) saturate(.55) contrast(.9)}
-.moment__slider .moment__graded{clip-path:inset(0 50% 0 0)}
-.moment__handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--gold);z-index:5;pointer-events:none;box-shadow:0 0 24px rgba(var(--gold-glow),.9)}
-.moment__handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));border-radius:50%;box-shadow:0 20px 45px -10px rgba(var(--gold-glow),.75);animation:rpl 2.4s ease-in-out infinite}
-.moment__handle::after{content:'‹›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#0A0806;font-size:1.5rem;font-weight:900;z-index:2;letter-spacing:-.28em;padding-left:.3em;padding-top:.1em}
-@keyframes rpl{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.08)}}
-.moment__label{position:absolute;bottom:24px;font-family:var(--serif-2);font-style:italic;font-size:.85rem;padding:9px 18px;background:rgba(10,8,6,.85);backdrop-filter:blur(10px);color:#fff;border:1px solid rgba(255,255,255,.16)}
-.moment__label.before{left:24px}
-.moment__label.after{right:24px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0A0806;border-color:transparent;font-weight:700}
+/* ===================== PORTFOLIO SLIDER ===================== */
+.portfolio{padding:100px 0;background:linear-gradient(180deg,var(--bg),var(--bg-2))}
+.ps{position:relative;max-width:1100px;margin:0 auto}
+.ps__stage{position:relative;aspect-ratio:16/10;overflow:hidden;border:1px solid rgba(245,200,66,.35);box-shadow:0 50px 100px -30px rgba(0,0,0,.65)}
+.ps__slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease);z-index:1}
+.ps__slide.active{opacity:1;z-index:2}
+.ps__slide .photo{position:absolute;inset:0}
+.ps__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:34px 40px 28px;background:linear-gradient(transparent 15%,rgba(26,20,24,.94));color:#fff}
+.ps__info small{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-2);font-weight:800;display:block;margin-bottom:10px}
+.ps__info h3{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.85rem);font-weight:500;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px;color:#fff}
+.ps__info p{color:#D4C8B8;font-size:.86rem;max-width:600px;line-height:1.65}
+.ps__nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(245,200,66,.5);background:rgba(26,20,24,.7);backdrop-filter:blur(10px);color:var(--gold-2);display:grid;place-items:center;transition:.3s var(--ease);z-index:6;font-size:1.2rem}
+.ps__nav.prev{left:16px}
+.ps__nav.next{right:16px}
+.ps__nav:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.ps__counter{position:absolute;top:20px;left:24px;z-index:6;font-family:var(--serif);font-size:.78rem;letter-spacing:.18em;color:var(--gold-2);background:rgba(26,20,24,.75);backdrop-filter:blur(8px);padding:7px 13px;border:1px solid rgba(245,200,66,.35)}
+.ps__counter b{color:#fff}
+.ps__thumbs{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:16px}
+.ps__thumb{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:.3s;opacity:.55}
+.ps__thumb .photo{position:absolute;inset:0}
+.ps__thumb .photo::after{font-size:1.4rem}
+.ps__thumb:hover{opacity:.85}
+.ps__thumb.active{opacity:1;border-color:var(--gold)}
 
-/* ===================== GRID GALLERY ===================== */
-.gallery{background:var(--bg)}
-.filters{display:flex;gap:0;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line-2)}
-.chip{padding:13px 24px;font-size:.64rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--text-2);border-right:1px solid var(--line);transition:.3s var(--ease)}
-.chip:last-child{border-right:0}
-.chip:hover{color:var(--gold);background:var(--surface-2)}
-.chip.active{background:var(--gold);color:#0A0806}
-.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-.g-post{position:relative;overflow:hidden;cursor:pointer;background:var(--surface);border:1px solid var(--line);transition:.5s var(--ease)}
-.g-post:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 50px 100px -40px rgba(0,0,0,.9),0 0 60px -20px rgba(var(--gold-glow),.35)}
-.g-post__cover{position:relative;aspect-ratio:4/5;overflow:hidden;background:#1a1518}
-.g-post__cover img{width:100%;height:100%;object-fit:cover;transition:.9s var(--ease)}
-.g-post:hover .g-post__cover img{transform:scale(1.05);filter:brightness(.82)}
-.g-post__cat{position:absolute;top:16px;left:16px;z-index:3;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;font-weight:800;padding:7px 13px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0A0806}
-.g-post__count{position:absolute;top:16px;right:16px;z-index:3;font-family:var(--serif);font-size:.7rem;font-weight:500;padding:7px 12px;background:rgba(10,8,6,.85);color:var(--gold-2);backdrop-filter:blur(8px);border:1px solid rgba(245,200,66,.4)}
-.g-post__info{position:absolute;inset:auto 0 0 0;padding:26px 24px 22px;z-index:3;background:linear-gradient(transparent,rgba(10,8,6,.95))}
-.g-post__title{font-family:var(--serif);font-size:1.28rem;font-weight:500;line-height:1.2;letter-spacing:-.02em;color:#fff;margin-bottom:8px}
-.g-post__desc{color:#C8BDB0;font-size:.82rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px}
-.g-post__cta{display:inline-flex;align-items:center;gap:10px;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);font-weight:800;padding-top:12px;border-top:1px solid rgba(245,200,66,.28)}
-.g-post__cta svg{width:13px;height:13px;transition:transform .4s var(--ease)}
-.g-post:hover .g-post__cta svg{transform:translateX(6px)}
-.g-empty{grid-column:1/-1;padding:80px 24px;text-align:center;color:var(--muted);border:1px dashed var(--line-2);font-size:.9rem;font-family:var(--serif-2);font-style:italic}
+/* ===================== CRAFT (Before/After) ===================== */
+.craft{padding:100px 0;background:var(--bg-2)}
+.craft__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.craft__left h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.2rem);letter-spacing:-.035em;line-height:1.02;font-weight:500;margin-bottom:22px}
+.craft__left h2 em{font-style:italic;color:var(--gold);font-weight:500}
+.craft__left p{color:var(--text-2);font-size:1rem;line-height:1.85;margin-bottom:16px}
+.craft__points{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);margin-top:24px}
+.craft__point{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.craft__point__n{font-family:var(--serif);font-size:1.25rem;color:var(--gold);font-weight:500;line-height:1}
+.craft__point b{display:block;font-family:var(--serif);font-size:1rem;font-weight:500;margin-bottom:4px}
+.craft__point span{font-size:.82rem;color:var(--muted);line-height:1.6}
+.craft__slider{position:relative;aspect-ratio:4/5;overflow:hidden;user-select:none;cursor:ew-resize;border:1px solid rgba(245,200,66,.35);box-shadow:0 50px 100px -30px rgba(0,0,0,.65)}
+.craft__slider .photo{position:absolute;inset:0}
+.craft__slider .photo.graded::before{background:none}
+.craft__slider .photo.graded{filter:saturate(1.2) contrast(1.05)}
+.craft__slider .photo.raw{filter:brightness(.78) saturate(.5) contrast(.9)}
+.craft__slider .graded-clip{clip-path:inset(0 50% 0 0)}
+.craft__handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--gold);z-index:8;box-shadow:0 0 20px rgba(245,200,66,.9)}
+.craft__handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));border-radius:50%;box-shadow:0 15px 35px -8px rgba(245,200,66,.8)}
+.craft__handle::after{content:'‹›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--bg);font-size:1.3rem;font-weight:900;letter-spacing:-.24em;padding-left:.24em;padding-top:.1em}
+.craft__labels{position:absolute;bottom:18px;left:0;right:0;display:flex;justify-content:space-between;padding:0 18px;z-index:9}
+.craft__labels span{font-family:var(--script);font-size:.9rem;padding:8px 16px;background:rgba(26,20,24,.85);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.craft__labels span.gold{background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:var(--bg);border-color:transparent;font-weight:700}
+
+/* ===================== GALLERY GRID ===================== */
+.gallery{padding:100px 0;background:var(--bg)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:10px 20px;font-size:.6rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--text-2);border:1px solid var(--line-2);transition:.3s var(--ease);background:transparent}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.chip.active{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.g-post{position:relative;overflow:hidden;cursor:pointer;border:1px solid var(--line);transition:.5s var(--ease)}
+.g-post:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.g-post .photo{aspect-ratio:4/5}
+.g-post__cat{position:absolute;top:14px;left:14px;z-index:6;font-size:.54rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;padding:6px 12px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:var(--bg)}
+.g-post__count{position:absolute;top:14px;right:14px;z-index:6;font-family:var(--serif);font-size:.68rem;font-weight:500;padding:6px 11px;background:rgba(26,20,24,.9);color:var(--gold-2);border:1px solid rgba(245,200,66,.4)}
+.g-post__info{position:absolute;inset:auto 0 0 0;z-index:5;padding:22px 20px 20px;background:linear-gradient(transparent,rgba(26,20,24,.95))}
+.g-post__title{font-family:var(--serif);font-size:1.2rem;font-weight:500;line-height:1.2;letter-spacing:-.02em;color:#fff;margin-bottom:6px}
+.g-post__desc{color:#C8BDB0;font-size:.78rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.g-post__cta{display:inline-block;margin-top:10px;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);font-weight:800}
+.g-empty{grid-column:1/-1;padding:60px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line-2);font-family:var(--script);font-size:1.1rem}
 
 /* ===================== TESTIMONIALS ===================== */
-.testimonials{background:var(--bg-2);padding:110px 0}
-.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.tst{padding:42px 36px;background:var(--surface);border:1px solid var(--line);position:relative;transition:.4s var(--ease)}
-.tst:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 40px 80px -40px rgba(0,0,0,.9)}
-.tst::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-2),var(--gold-3));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.tst:hover::before{transform:scaleX(1)}
-.tst__q{font-family:var(--serif);font-size:5.5rem;line-height:.5;color:var(--gold);opacity:.22;margin-bottom:16px;font-weight:700}
-.tst p{color:var(--text);font-family:var(--serif-2);font-style:italic;font-size:1.1rem;line-height:1.8;margin-bottom:26px}
-.tst__stars{color:var(--gold-2);letter-spacing:5px;font-size:.9rem;margin-bottom:14px}
-.tst__who{display:flex;align-items:center;gap:14px;padding-top:22px;border-top:1px solid var(--line)}
-.tst__av{width:50px;height:50px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0A0806;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1rem;border-radius:50%;flex-shrink:0}
-.tst__who b{display:block;font-family:var(--serif);font-size:.95rem;font-weight:500}
-.tst__who small{font-size:.7rem;color:var(--muted);letter-spacing:.06em}
+.testimonials{padding:100px 0;background:var(--bg-2)}
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.tst{padding:34px 30px;background:var(--surface);border:1px solid var(--line);transition:.4s var(--ease)}
+.tst:hover{border-color:var(--gold);transform:translateY(-4px)}
+.tst__stars{color:var(--gold-2);letter-spacing:4px;font-size:.88rem;margin-bottom:14px}
+.tst p{color:var(--text);font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.75;margin-bottom:22px}
+.tst__who{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--line)}
+.tst__av{width:44px;height:44px;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:var(--bg);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:.95rem;border-radius:50%;flex-shrink:0}
+.tst__who b{display:block;font-family:var(--serif);font-size:.9rem;font-weight:500}
+.tst__who small{font-size:.68rem;color:var(--muted)}
 
 /* ===================== BOOKING ===================== */
-.booking{background:var(--bg);padding:120px 0;position:relative;overflow:hidden}
-.booking::before{content:'';position:absolute;top:-40%;right:-15%;width:60%;height:180%;background:radial-gradient(circle,rgba(var(--gold-glow),.08),transparent 65%);pointer-events:none}
-.booking__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:start;position:relative;z-index:2}
-.booking__info h2{font-family:var(--serif);font-size:clamp(2rem,4.4vw,3.4rem);letter-spacing:-.035em;line-height:1;font-weight:500;margin-bottom:22px}
+.booking{padding:100px 0;background:linear-gradient(180deg,var(--bg),var(--bg-2))}
+.booking__grid{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:start}
+.booking__info h2{font-family:var(--serif);font-size:clamp(1.9rem,4.2vw,3.2rem);letter-spacing:-.035em;line-height:1.02;font-weight:500;margin-bottom:20px}
 .booking__info h2 em{font-style:italic;color:var(--gold);font-weight:500}
-.booking__info > p{color:var(--text-2);font-size:1.02rem;line-height:1.85;margin-bottom:32px}
-.booking__info__block{display:flex;gap:16px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);margin-bottom:12px;transition:.3s var(--ease)}
-.booking__info__block:hover{border-color:var(--gold);transform:translateX(5px)}
-.booking__info__ic{width:44px;height:44px;border-radius:50%;background:rgba(245,200,66,.12);display:grid;place-items:center;color:var(--gold);flex-shrink:0;border:1px solid rgba(245,200,66,.3)}
-.booking__info__ic svg{width:20px;height:20px}
-.booking__info__block b{display:block;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:5px}
-.booking__info__block span{font-family:var(--serif);font-size:1.1rem;font-weight:500}
-.booking__info__block span a:hover{color:var(--gold)}
-.form{padding:40px;background:var(--surface);border:1px solid var(--line-2);position:relative}
+.booking__info > p{color:var(--text-2);font-size:1rem;line-height:1.8;margin-bottom:28px}
+.booking__block{display:flex;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);margin-bottom:10px;transition:.3s}
+.booking__block:hover{border-color:var(--gold)}
+.booking__ic{width:40px;height:40px;border-radius:50%;background:rgba(245,200,66,.14);display:grid;place-items:center;color:var(--gold);flex-shrink:0;border:1px solid rgba(245,200,66,.32)}
+.booking__ic svg{width:18px;height:18px}
+.booking__block b{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:4px}
+.booking__block span{font-family:var(--serif);font-size:1.02rem;font-weight:500}
+.booking__block span a:hover{color:var(--gold)}
+.form{padding:32px;background:var(--surface);border:1px solid var(--line-2);position:relative}
 .form::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:linear-gradient(90deg,var(--gold-2),var(--gold-3))}
-.form h3{font-family:var(--serif);font-size:1.65rem;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
-.form > p{font-family:var(--serif-2);font-style:italic;font-size:1rem;color:var(--gold);margin-bottom:26px}
-.field{margin-bottom:18px;display:block}
-.field>span{display:block;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;font-weight:800}
-.field input,.field textarea,.field select{width:100%;padding:14px 16px;background:var(--bg);border:1px solid var(--line-2);color:var(--text);font-size:.94rem;outline:none;transition:.3s;font-family:inherit}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(var(--gold-glow),.12)}
-.field textarea{resize:vertical;min-height:100px}
-.row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form h3{font-family:var(--serif);font-size:1.45rem;font-weight:500;margin-bottom:6px}
+.form > p{font-family:var(--script);font-size:1rem;color:var(--gold);margin-bottom:22px}
+.field{margin-bottom:16px;display:block}
+.field > span{display:block;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:800}
+.field input,.field textarea,.field select{width:100%;padding:13px 15px;background:var(--bg);border:1px solid var(--line-2);color:var(--text);font-size:.92rem;outline:none;transition:.3s;font-family:inherit}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,200,66,.14)}
+.field textarea{resize:vertical;min-height:90px}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
 /* ===================== FOOTER ===================== */
-.footer{background:#050305;color:var(--text-2);padding:80px 0 32px;border-top:1px solid var(--line)}
-.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:50px;margin-bottom:56px}
-.footer__brand{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.footer__brand .brand__mark{width:50px;height:50px}
-.footer h4{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:800}
-.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:13px}
-.footer ul a{font-size:.86rem;color:var(--text-2);transition:.3s}
+.footer{background:linear-gradient(180deg,var(--bg-2),#0E0A0C);padding:70px 0 30px;border-top:1px solid var(--line)}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;margin-bottom:50px}
+.footer__brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.footer__brand .brand__mark{width:46px;height:46px}
+.footer h4{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:800}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+.footer ul a{font-size:.84rem;color:var(--text-2);transition:.3s}
 .footer ul a:hover{color:var(--gold)}
-.footer__about{font-size:.86rem;line-height:1.85;color:var(--muted);max-width:340px}
-.socials{display:flex;gap:10px;margin-top:24px}
-.socials a{width:44px;height:44px;border-radius:8px;border:1px solid var(--line-2);display:grid;place-items:center;transition:.35s var(--ease);color:var(--text-2)}
-.socials a:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0A0806;border-color:var(--gold);transform:translateY(-3px)}
-.socials svg{width:17px;height:17px}
-.footer__bottom{padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.74rem;color:var(--muted)}
+.footer__about{font-size:.84rem;line-height:1.8;color:var(--muted);max-width:320px}
+.socials{display:flex;gap:8px;margin-top:20px}
+.socials a{width:42px;height:42px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--text-2);transition:.3s}
+.socials a:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:var(--bg);border-color:var(--gold)}
+.socials svg{width:16px;height:16px}
+.footer__bottom{padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;color:var(--muted)}
 .footer__bottom a:hover{color:var(--gold)}
-.footer__tagline{font-family:var(--script);color:var(--gold);font-size:1.25rem}
+.footer__tagline{font-family:var(--script);color:var(--gold);font-size:1.15rem}
 
 /* ===================== FAB ===================== */
-.fab{position:fixed;bottom:24px;right:24px;z-index:88;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;display:grid;place-items:center;box-shadow:0 16px 40px -10px rgba(37,211,102,.75);transition:.35s var(--ease)}
-.fab:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 24px 50px -10px rgba(37,211,102,.95)}
-.fab svg{width:28px;height:28px}
+.fab{position:fixed;bottom:22px;right:22px;z-index:88;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;display:grid;place-items:center;box-shadow:0 14px 36px -8px rgba(37,211,102,.75);transition:.3s}
+.fab:hover{transform:translateY(-3px) scale(1.05)}
+.fab svg{width:26px;height:26px}
 
 /* ===================== LIGHTBOX ===================== */
-.lightbox{position:fixed;inset:0;z-index:400;background:rgba(5,3,5,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 40px 140px;opacity:0;visibility:hidden;transition:.4s var(--ease)}
+.lightbox{position:fixed;inset:0;z-index:400;background:rgba(14,10,12,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 30px 130px;opacity:0;visibility:hidden;transition:.4s var(--ease)}
 .lightbox.open{opacity:1;visibility:visible}
-.lb__stage{position:relative;width:100%;max-width:1300px;height:100%;display:flex;align-items:center;justify-content:center}
-.lb__img{max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 60px 120px -40px #000,0 0 80px -30px rgba(var(--gold-glow),.4)}
-.lb__close,.lb__nav{position:absolute;width:54px;height:54px;border-radius:50%;border:1px solid rgba(245,200,66,.32);background:rgba(245,200,66,.06);backdrop-filter:blur(12px);color:var(--gold-2);display:grid;place-items:center;transition:.3s var(--ease);z-index:5;font-size:1.2rem}
-.lb__close{top:24px;right:24px}
-.lb__nav.prev{left:20px;top:50%;transform:translateY(-50%)}
-.lb__nav.next{right:20px;top:50%;transform:translateY(-50%)}
-.lb__close:hover,.lb__nav:hover{background:var(--gold);border-color:var(--gold);color:#0A0806}
-.lb__info{position:absolute;bottom:126px;left:0;right:0;text-align:center;padding:0 24px;pointer-events:none}
-.lb__cat{display:inline-block;font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-2);font-weight:800;margin-bottom:12px}
-.lb__title{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);color:#fff;letter-spacing:-.02em;margin-bottom:8px;font-weight:500}
-.lb__desc{color:var(--text-2);font-size:.9rem;max-width:660px;margin:0 auto;line-height:1.65}
-.lb__thumbs{position:absolute;bottom:28px;left:0;right:0;display:flex;justify-content:center;gap:8px;padding:0 24px;overflow-x:auto;scrollbar-width:none}
+.lb__stage{position:relative;width:100%;max-width:1100px;height:100%;display:flex;align-items:center;justify-content:center}
+.lb__stage .photo{max-width:100%;max-height:100%;width:auto;height:auto;aspect-ratio:4/3;min-width:280px;min-height:210px;max-width:min(1000px,90vw);max-height:72vh;box-shadow:0 40px 100px -30px rgba(0,0,0,.85)}
+.lb__close,.lb__nav{position:absolute;width:50px;height:50px;border-radius:50%;border:1px solid rgba(245,200,66,.35);background:rgba(26,20,24,.7);color:var(--gold-2);display:grid;place-items:center;transition:.3s;z-index:8;font-size:1.15rem}
+.lb__close{top:20px;right:20px}
+.lb__nav.prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb__nav.next{right:16px;top:50%;transform:translateY(-50%)}
+.lb__close:hover,.lb__nav:hover{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.lb__info{position:absolute;bottom:100px;left:0;right:0;text-align:center;padding:0 20px;pointer-events:none}
+.lb__cat{display:inline-block;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-2);font-weight:800;margin-bottom:10px}
+.lb__title{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);color:#fff;letter-spacing:-.02em;margin-bottom:6px;font-weight:500}
+.lb__desc{color:var(--text-2);font-size:.86rem;max-width:600px;margin:0 auto;line-height:1.6}
+.lb__thumbs{position:absolute;bottom:22px;left:0;right:0;display:flex;justify-content:center;gap:8px;padding:0 20px;overflow-x:auto;scrollbar-width:none}
 .lb__thumbs::-webkit-scrollbar{display:none}
-.lb__thumb{width:70px;height:52px;overflow:hidden;flex-shrink:0;border:2px solid transparent;opacity:.45;transition:.3s var(--ease);cursor:pointer;background:#1a1518}
-.lb__thumb img{width:100%;height:100%;object-fit:cover}
-.lb__thumb.active{opacity:1;border-color:var(--gold);transform:scale(1.08)}
+.lb__thumb{width:64px;height:48px;overflow:hidden;flex-shrink:0;border:2px solid transparent;opacity:.45;transition:.3s;cursor:pointer;position:relative}
+.lb__thumb .photo{position:absolute;inset:0}
+.lb__thumb .photo::after{font-size:1.1rem}
+.lb__thumb.active{opacity:1;border-color:var(--gold)}
 
 /* ===================== MODAL ===================== */
-.modal{position:fixed;inset:0;z-index:500;background:rgba(5,3,5,.9);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.35s var(--ease);overflow-y:auto}
+.modal{position:fixed;inset:0;z-index:500;background:rgba(14,10,12,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;transition:.35s var(--ease);overflow-y:auto}
 .modal.open{opacity:1;visibility:visible}
-.modal__card{width:100%;max-width:600px;background:var(--surface);padding:40px;box-shadow:0 60px 120px -40px rgba(0,0,0,.9);transform:translateY(18px);transition:.4s var(--ease);max-height:92vh;overflow-y:auto;position:relative;border:1px solid var(--line-2)}
+.modal__card{width:100%;max-width:560px;background:var(--surface);padding:36px;box-shadow:0 50px 100px -30px rgba(0,0,0,.85);transform:translateY(16px);transition:.4s;max-height:90vh;overflow-y:auto;position:relative;border:1px solid var(--line-2)}
 .modal.open .modal__card{transform:none}
-.modal__close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);transition:.3s;font-size:1.05rem}
-.modal__close:hover{color:var(--gold);border-color:var(--gold);transform:rotate(90deg)}
-.sm__body h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;letter-spacing:-.025em;margin-bottom:14px}
-.sm__body > p{color:var(--text-2);line-height:1.85;font-size:.98rem;margin-bottom:24px}
-.sm__list{list-style:none;padding:0;margin:0 0 28px;border-top:1px solid var(--line)}
-.sm__list li{padding:14px 0 14px 34px;font-size:.9rem;border-bottom:1px solid var(--line);position:relative;color:var(--text-2)}
-.sm__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:16px;height:16px;background:var(--gold);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
+.modal__close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);transition:.3s;font-size:1rem}
+.modal__close:hover{color:var(--gold);border-color:var(--gold)}
+.sm__body h2{font-family:var(--serif);font-size:1.7rem;font-weight:500;margin-bottom:12px}
+.sm__body > p{color:var(--text-2);line-height:1.8;font-size:.95rem;margin-bottom:22px}
+.sm__list{list-style:none;padding:0;margin:0 0 24px;border-top:1px solid var(--line)}
+.sm__list li{padding:13px 0 13px 30px;font-size:.88rem;border-bottom:1px solid var(--line);position:relative;color:var(--text-2)}
+.sm__list li::before{content:'✦';position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--gold);font-size:.8rem}
 
 /* ===================== ADMIN ===================== */
 .admin{position:fixed;inset:0;z-index:600;background:var(--bg);display:none;overflow:hidden}
 .admin.open{display:block}
-.admin__gate{position:absolute;inset:0;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 30%,rgba(245,200,66,.12),transparent 55%)}
-.gate__card{width:100%;max-width:420px;padding:48px 40px;background:var(--surface);border:1px solid var(--line-2);text-align:center;position:relative}
+.admin__gate{position:absolute;inset:0;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 30%,rgba(245,200,66,.14),transparent 55%)}
+.gate__card{width:100%;max-width:400px;padding:40px 32px;background:var(--surface);border:1px solid var(--line-2);text-align:center;position:relative}
 .gate__card::before{content:'';position:absolute;top:-1px;left:-1px;right:-1px;height:4px;background:linear-gradient(90deg,var(--gold-2),var(--gold-3))}
-.gate__logo{width:76px;height:76px;border-radius:50%;margin:0 auto 22px;background:var(--bg);display:grid;place-items:center;overflow:hidden;border:2px solid var(--gold)}
+.gate__logo{width:70px;height:70px;border-radius:50%;margin:0 auto 20px;background:var(--bg);display:grid;place-items:center;overflow:hidden;border:2px solid var(--gold)}
 .gate__logo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .gate__logo svg{width:80%;height:80%}
-.gate__card h2{font-family:var(--serif);font-size:1.7rem;font-weight:500;margin-bottom:8px}
-.gate__card p{font-family:var(--serif-2);font-style:italic;color:var(--gold);font-size:1rem;margin-bottom:24px}
-.gate__card input{width:100%;padding:15px 18px;background:var(--bg);border:1px solid var(--line-2);text-align:center;letter-spacing:.28em;outline:none;margin-bottom:16px;color:var(--text);font-size:1rem}
-.gate__card input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(var(--gold-glow),.12)}
-.gate__hint{margin-top:22px !important;font-family:var(--font) !important;font-style:normal !important;color:var(--muted) !important;font-size:.74rem !important}
-.gate__hint code{background:var(--surface-2);color:var(--gold);padding:5px 11px;letter-spacing:.1em;font-weight:800}
-.gate__err{color:#FF5C5C;font-size:.82rem;margin-top:14px;display:none}
+.gate__card h2{font-family:var(--serif);font-size:1.5rem;font-weight:500;margin-bottom:6px}
+.gate__card p{font-family:var(--script);color:var(--gold);font-size:.95rem;margin-bottom:22px}
+.gate__card input{width:100%;padding:13px 16px;background:var(--bg);border:1px solid var(--line-2);text-align:center;letter-spacing:.24em;outline:none;margin-bottom:14px;color:var(--text);font-size:.95rem}
+.gate__card input:focus{border-color:var(--gold)}
+.gate__hint{margin-top:18px;font-size:.72rem;color:var(--muted);font-family:var(--font);font-style:normal}
+.gate__hint code{background:var(--surface-2);color:var(--gold);padding:4px 9px;letter-spacing:.08em;font-weight:800}
+.gate__err{color:#FF5C5C;font-size:.78rem;margin-top:12px;display:none}
 .gate__err.show{display:block}
-.admin__shell{display:grid;grid-template-columns:250px 1fr;height:100%}
-.admin__side{border-right:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;padding:24px 18px;overflow-y:auto}
-.admin__brand{display:flex;align-items:center;gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:22px}
-.admin__brand .mk{width:44px;height:44px;border-radius:50%;background:var(--bg);display:grid;place-items:center;overflow:hidden;flex-shrink:0;border:1px solid var(--gold)}
+.admin__shell{display:grid;grid-template-columns:240px 1fr;height:100%}
+.admin__side{border-right:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;padding:22px 16px;overflow-y:auto}
+.admin__brand{display:flex;align-items:center;gap:10px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.admin__brand .mk{width:40px;height:40px;border-radius:50%;background:var(--bg);display:grid;place-items:center;overflow:hidden;flex-shrink:0;border:1px solid var(--gold)}
 .admin__brand .mk img{width:100%;height:100%;object-fit:cover}
 .admin__brand .mk svg{width:80%;height:80%}
-.admin__brand b{font-family:var(--serif);font-size:.88rem;font-weight:500;display:block}
-.admin__brand small{font-size:.54rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-top:4px;display:block}
+.admin__brand b{font-family:var(--serif);font-size:.85rem;font-weight:500;display:block}
+.admin__brand small{font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-top:3px;display:block}
 .admin__tabs{display:flex;flex-direction:column;gap:3px;flex:1}
-.admin__tabs button{display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:.8rem;color:var(--muted);text-align:left;transition:.25s var(--ease);font-weight:600;border-left:2px solid transparent}
+.admin__tabs button{display:flex;align-items:center;gap:10px;padding:11px 12px;font-size:.78rem;color:var(--muted);text-align:left;transition:.25s;font-weight:600;border-left:2px solid transparent}
 .admin__tabs button svg{width:16px;height:16px;flex-shrink:0}
 .admin__tabs button:hover{background:var(--surface-2);color:var(--text)}
 .admin__tabs button.active{background:linear-gradient(90deg,rgba(245,200,66,.14),transparent);color:var(--gold);border-left-color:var(--gold)}
-.admin__side-foot{display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid var(--line);margin-top:16px}
+.admin__side-foot{display:flex;flex-direction:column;gap:6px;padding-top:16px;border-top:1px solid var(--line);margin-top:14px}
 .admin__main{display:flex;flex-direction:column;overflow:hidden}
-.admin__top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 32px;border-bottom:1px solid var(--line);background:var(--surface)}
-.admin__top h2{font-family:var(--serif);font-size:1.3rem;font-weight:500}
-.admin__top p{font-family:var(--serif-2);font-style:italic;font-size:.88rem;color:var(--gold);margin-top:4px}
-.admin__top-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.admin__panels{flex:1;overflow-y:auto;padding:30px 34px 90px}
+.admin__top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 26px;border-bottom:1px solid var(--line);background:var(--surface)}
+.admin__top h2{font-family:var(--serif);font-size:1.2rem;font-weight:500}
+.admin__top p{font-family:var(--script);font-size:.85rem;color:var(--gold);margin-top:2px}
+.admin__top-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.admin__panels{flex:1;overflow-y:auto;padding:24px 26px 80px}
 .panel{display:none}
 .panel.active{display:block}
-.panel h3{font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:30px 0 14px;font-weight:800}
+.panel h3{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:24px 0 12px;font-weight:800}
 .panel h3:first-child{margin-top:0}
-.card-box{padding:24px;background:var(--surface);border:1px solid var(--line);margin-bottom:18px}
-.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card-box{padding:20px;background:var(--surface);border:1px solid var(--line);margin-bottom:16px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .field-grid .full{grid-column:1/-1}
-.hint{color:var(--muted);margin-top:10px;line-height:1.7;font-family:var(--serif-2);font-style:italic;font-size:.86rem}
+.hint{color:var(--muted);margin-top:10px;line-height:1.65;font-family:var(--script);font-size:.9rem}
 .hint a{color:var(--gold)}
-.uploader{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
-.uploader__preview{width:150px;height:150px;border-radius:50%;border:2px dashed var(--line-2);background:var(--bg);display:grid;place-items:center;overflow:hidden;flex-shrink:0;color:var(--muted);font-size:.7rem;text-align:center;padding:0}
-.uploader__preview.square{border-radius:12px;width:150px;height:110px}
+.uploader{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.uploader__preview{width:140px;height:140px;border-radius:50%;border:2px dashed var(--line-2);background:var(--bg);display:grid;place-items:center;overflow:hidden;flex-shrink:0;color:var(--muted);font-size:.68rem;text-align:center}
+.uploader__preview.square{border-radius:12px;width:140px;height:100px}
 .uploader__preview img{width:100%;height:100%;object-fit:cover}
 .uploader__actions{display:flex;flex-direction:column;gap:10px;flex:1;min-width:200px}
 .uploader__actions .row{display:flex;gap:8px;flex-wrap:wrap}
-.ap-row{display:flex;gap:14px;padding:14px;background:var(--bg);border:1px solid var(--line);margin-bottom:8px;align-items:flex-start}
+.ap-row{display:flex;gap:12px;padding:12px;background:var(--bg);border:1px solid var(--line);margin-bottom:8px;align-items:flex-start}
 .ap-row:hover{border-color:var(--gold)}
-.ap-row__cover{width:100px;height:75px;overflow:hidden;flex-shrink:0;background:var(--surface-2);position:relative}
-.ap-row__cover img{width:100%;height:100%;object-fit:cover}
-.ap-row__count{position:absolute;top:4px;right:4px;background:rgba(10,8,6,.9);padding:2px 7px;font-size:.54rem;font-weight:800;color:var(--gold-2)}
+.ap-row__cover{width:90px;height:68px;overflow:hidden;flex-shrink:0;position:relative;background:var(--surface-2)}
+.ap-row__cover .photo{position:absolute;inset:0}
+.ap-row__cover .photo::after{font-size:1.2rem}
 .ap-row__body{flex:1;min-width:0}
-.ap-row__cat{font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:800}
-.ap-row__title{font-family:var(--serif);font-size:1rem;font-weight:500;margin-top:4px;line-height:1.25}
-.ap-row__desc{font-size:.72rem;color:var(--muted);margin-top:4px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ap-row__cat{font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:800}
+.ap-row__title{font-family:var(--serif);font-size:.95rem;font-weight:500;margin-top:3px;line-height:1.25}
+.ap-row__desc{font-size:.7rem;color:var(--muted);margin-top:4px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ap-row__actions{display:flex;gap:6px;flex-shrink:0}
-.ap-row__actions button{width:32px;height:32px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);border-radius:50%;transition:.25s}
+.ap-row__actions button{width:30px;height:30px;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--muted);border-radius:50%;transition:.25s}
 .ap-row__actions button:hover{border-color:var(--gold);color:var(--gold)}
 .ap-row__actions button.danger:hover{border-color:#FF5C5C;color:#FF5C5C}
-.ap-row__actions svg{width:14px;height:14px}
-.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
-.thumb{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--bg);aspect-ratio:4/3}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.thumb__x{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;background:rgba(10,8,6,.9);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:.85rem;color:#ff9a9a}
-.thumb__x:hover{background:var(--gold);color:#0A0806}
-.empty-note{padding:36px;text-align:center;color:var(--muted);font-family:var(--serif-2);font-style:italic;border:1px dashed var(--line-2);font-size:.96rem}
-.storage-meter{display:inline-flex;align-items:center;gap:8px;font-size:.62rem;font-weight:700;color:var(--muted);background:var(--bg);border:1px solid var(--line);padding:7px 13px}
-.storage-meter b{font-weight:800;color:var(--gold)}
-.storage-bar{width:56px;height:6px;background:var(--line);overflow:hidden;display:inline-block}
-.storage-bar i{display:block;height:100%;background:var(--gold);transition:width .4s}
-.admin-badge{display:inline-flex;align-items:center;gap:7px;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#50DC8C;background:rgba(80,220,140,.12);padding:7px 13px;font-weight:800}
-.admin-badge::before{content:'';width:6px;height:6px;background:#50DC8C;border-radius:50%;box-shadow:0 0 8px #50DC8C;animation:pulse 2s infinite}
+.ap-row__actions svg{width:13px;height:13px}
+.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.thumb{position:relative;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--surface-2)}
+.thumb .photo{position:absolute;inset:0}
+.thumb .photo::after{font-size:1.4rem}
+.thumb__x{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;background:rgba(26,20,24,.9);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:.8rem;color:#ff9a9a;z-index:10}
+.thumb__x:hover{background:var(--gold);color:var(--bg)}
+.empty-note{padding:30px;text-align:center;color:var(--muted);font-family:var(--script);border:1px dashed var(--line-2);font-size:.95rem}
+.admin-badge{display:inline-flex;align-items:center;gap:6px;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#50DC8C;background:rgba(80,220,140,.12);padding:6px 12px;font-weight:800}
 
-.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,30px);z-index:900;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:#0A0806;padding:14px 26px;font-size:.82rem;font-weight:800;letter-spacing:.04em;opacity:0;transition:.4s var(--ease);pointer-events:none;box-shadow:0 30px 60px -20px rgba(var(--gold-glow),.6);display:flex;align-items:center;gap:10px;max-width:90vw}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,30px);z-index:900;background:linear-gradient(135deg,var(--gold-2),var(--gold-3));color:var(--bg);padding:13px 24px;font-size:.8rem;font-weight:800;letter-spacing:.04em;opacity:0;transition:.4s;pointer-events:none;box-shadow:0 24px 50px -18px rgba(245,200,66,.6);max-width:90vw;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-.toast::before{content:'✦'}
 
 /* ===================== RESPONSIVE ===================== */
-@media (max-width:1100px){
-  .hero__wrap{grid-template-columns:1fr;gap:50px}
-  .hero__visual{max-width:520px;margin:0 auto;width:100%}
+@media (max-width:1024px){
+  .hero__wrap{grid-template-columns:1fr;gap:40px}
+  .hero__visual{max-width:460px;margin:0 auto;width:100%}
   .feature__grid{grid-template-columns:1fr 1fr}
   .feature__card:first-child{grid-column:span 2}
-  .moment__grid{grid-template-columns:1fr;gap:50px}
-  .booking__grid{grid-template-columns:1fr;gap:50px}
-  .footer__grid{grid-template-columns:1fr 1fr;gap:40px}
+  .craft__grid{grid-template-columns:1fr;gap:40px}
+  .booking__grid{grid-template-columns:1fr;gap:36px}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:30px}
   .admin__shell{grid-template-columns:1fr}
-  .admin__side{flex-direction:row;align-items:center;padding:14px 18px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;gap:12px}
-  .admin__brand{border:0;padding:0 14px 0 0;margin:0;border-right:1px solid var(--line);flex-shrink:0}
+  .admin__side{flex-direction:row;align-items:center;padding:12px 16px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;gap:10px}
+  .admin__brand{border:0;padding:0 12px 0 0;margin:0;border-right:1px solid var(--line);flex-shrink:0}
   .admin__brand .txt{display:none}
   .admin__tabs{flex-direction:row;flex:0 0 auto;gap:4px}
-  .admin__tabs button{white-space:nowrap;padding:10px 13px;border-left:0;border-bottom:2px solid transparent}
+  .admin__tabs button{white-space:nowrap;padding:9px 12px;border-left:0;border-bottom:2px solid transparent}
   .admin__tabs button.active{border-left:0;border-bottom-color:var(--gold)}
   .admin__tabs button span{display:none}
   .admin__side-foot{flex-direction:row;border:0;padding:0;margin:0;flex-shrink:0}
   .admin__side-foot .btn span{display:none}
+  .ps__thumbs{grid-template-columns:repeat(4,1fr)}
 }
-@media (max-width:860px){
-  .wrap{padding:0 20px}
+@media (max-width:768px){
+  .wrap{padding:0 18px}
   .nav{display:none}
   .burger{display:block}
-  .header__actions .btn--sm{display:none}
-  .section{padding:80px 0}
-  .hero{padding:50px 0 70px}
-  .hero__title{font-size:2.4rem}
-  .hero__meta{gap:16px}
-  .hero__meta__item b{font-size:1.25rem}
-  .feature__grid{grid-template-columns:1fr;gap:16px}
+  .header__actions .btn--sm:not(.btn--primary){display:none}
+  .section{padding:70px 0}
+  .hero{padding:40px 0 60px}
+  .hero__title{font-size:2rem}
+  .hero__meta{gap:14px}
+  .hero__meta b{font-size:1.15rem}
+  .feature__grid{grid-template-columns:1fr;gap:14px}
   .feature__card:first-child{grid-column:auto}
-  .feature__card__img, .feature__card:first-child .feature__card__img{aspect-ratio:4/3}
-  .portfolio-slider__stage{aspect-ratio:4/3}
-  .portfolio-slider__info{padding:26px 24px 22px}
-  .portfolio-slider__nav{width:44px;height:44px;font-size:1rem}
-  .portfolio-slider__nav.prev{left:10px}
-  .portfolio-slider__nav.next{right:10px}
-  .portfolio-slider__thumbs{grid-template-columns:repeat(auto-fit,minmax(60px,1fr));gap:6px}
-  .svc-grid{grid-template-columns:1fr 1fr}
-  .svc:nth-child(3n){border-right:1px solid var(--line-2)}
-  .svc:nth-child(2n){border-right:0}
+  .feature__card .photo, .feature__card:first-child .photo{aspect-ratio:4/3}
+  .ps__stage{aspect-ratio:4/3}
+  .ps__info{padding:20px 18px 18px}
+  .ps__nav{width:40px;height:40px;font-size:1rem}
+  .ps__nav.prev{left:8px}
+  .ps__nav.next{right:8px}
+  .ps__thumbs{grid-template-columns:repeat(4,1fr);gap:6px}
   .g-grid{grid-template-columns:1fr}
   .row-2,.field-grid{grid-template-columns:1fr}
-  .admin__panels{padding:22px 20px 90px}
-  .admin__top{padding:16px 20px}
-  .footer__grid{grid-template-columns:1fr;gap:36px}
+  .admin__panels{padding:18px 16px 80px}
+  .admin__top{padding:14px 16px}
+  .footer__grid{grid-template-columns:1fr;gap:28px}
   .ap-row{flex-direction:column}
-  .ap-row__cover{width:100%;height:150px}
-  .form{padding:26px}
-  .film-strip__item{height:220px}
+  .ap-row__cover{width:100%;height:130px}
+  .form{padding:22px}
+  .strip__item{width:220px;height:160px}
 }
-@media (max-width:520px){
-  .wrap{padding:0 16px}
-  .hero__title{font-size:2rem}
-  .section-title{font-size:1.75rem}
+@media (max-width:480px){
+  .wrap{padding:0 14px}
+  .hero__title{font-size:1.75rem}
+  .section-title{font-size:1.5rem}
   .hero__cta .btn{flex:1}
-  .hero__meta{grid-template-columns:1fr;gap:14px}
+  .hero__meta{grid-template-columns:1fr;gap:10px}
   .svc-grid{grid-template-columns:1fr}
-  .svc{border-right:0 !important}
-  .film-strip__item{height:190px}
-  .tst{padding:32px 24px}
-  .fab{width:52px;height:52px;bottom:20px;right:20px}
-  .fab svg{width:24px;height:24px}
-  .btn{padding:13px 22px;font-size:.62rem}
+  .strip__item{width:180px;height:130px}
+  .tst{padding:26px 20px}
+  .fab{width:48px;height:48px;bottom:16px;right:16px}
+  .fab svg{width:22px;height:22px}
+  .btn{padding:12px 20px;font-size:.6rem}
+  .ps__thumbs{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
@@ -532,7 +520,7 @@ p{margin:0}
 
 <div class="ticker" aria-hidden="true"><div class="ticker__track" id="tickerTrack"></div></div>
 
-<header class="header" id="header">
+<header class="header">
   <div class="wrap header__inner">
     <a href="#top" class="brand">
       <span class="brand__mark" data-logo></span>
@@ -542,7 +530,6 @@ p{margin:0}
       </span>
     </a>
     <nav class="nav">
-      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#craft">The Craft</a>
@@ -551,7 +538,7 @@ p{margin:0}
     </nav>
     <div class="header__actions">
       <a href="https://wa.me/2347052731139" target="_blank" rel="noopener" class="btn btn--wa btn--sm">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5zM12.2 20a9.7 9.7 0 0 1-4.9-1.3l-.4-.2-2.9 1 .9-2.8-.2-.4A9.7 9.7 0 1 1 12.2 20z"/></svg>
         WhatsApp
       </a>
       <a href="#booking" class="btn btn--primary btn--sm">Book Now</a>
@@ -561,18 +548,16 @@ p{margin:0}
 </header>
 
 <div class="mobile-nav" id="mobileNav">
-  <a href="#about">About</a>
   <a href="#services">Services</a>
   <a href="#portfolio">Portfolio</a>
   <a href="#craft">The Craft</a>
   <a href="#gallery">Gallery</a>
   <a href="#booking">Book</a>
-  <button class="btn btn--primary" id="openAdminMobile" style="margin-top:22px">Admin</button>
+  <button class="btn btn--primary" id="openAdminMobile" style="margin-top:20px">Admin</button>
 </div>
 
-<!-- HERO — two column, no full-screen black -->
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero__grid-bg"></div>
   <div class="wrap hero__wrap">
     <div class="hero__content">
       <span class="hero__brand-tag" id="heroBrandTag">More shots. More stories.</span>
@@ -581,43 +566,40 @@ p{margin:0}
         <span id="heroLine1">Capturing moments.</span>
         <em id="heroLine2">Revealing destiny.</em>
       </h1>
-      <p class="hero__sub" id="heroSub">Every face has a story. Every frame has a destiny. We shoot with intention — portraits, weddings, events and brands told with <b>cinematic soul</b> and obsessive detail.</p>
+      <p class="hero__sub" id="heroSub">Every face has a story. Every frame has a destiny. We shoot with intention — portraits, weddings, events and brands told with <b>cinematic soul</b>.</p>
       <div class="hero__cta">
         <a href="#booking" class="btn btn--primary" id="heroBtn1">Book a Session</a>
         <a href="#portfolio" class="btn btn--outline" id="heroBtn2">View Portfolio</a>
       </div>
       <div class="hero__meta" id="heroMeta"></div>
     </div>
-
     <div class="hero__visual">
-      <div class="hero__deco hero__deco--tl"></div>
-      <div class="hero__deco hero__deco--br"></div>
       <div class="hero__frame">
-        <div class="hero__carousel" id="heroCarousel"></div>
-        <div class="hero__frame-caption">
+        <div id="heroCarousel"></div>
+        <div class="hero__caption">
           <small id="heroPhotoSmall">Featured Work</small>
           <b id="heroPhotoTitle">Latest from the studio</b>
         </div>
-        <div class="hero__frame-dots" id="heroDots"></div>
+        <div class="hero__frame__dots" id="heroDots"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FILM STRIP — big real photos marquee -->
-<section class="film-strip">
-  <div class="film-strip__head"><span>Selected frames from the studio — scroll to explore</span></div>
-  <div class="film-strip__viewport"><div class="film-strip__track" id="filmStrip"></div></div>
-</section>
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip__label">Selected frames from the studio — scroll to explore</div>
+  <div class="strip__viewport"><div class="strip__track" id="stripTrack"></div></div>
+</div>
 
-<!-- 3-FEATURE GRID -->
-<section class="feature" id="about">
+<!-- FEATURE 3-GRID -->
+<section class="feature">
   <div class="wrap">
     <div class="head">
       <div>
-        <span class="eyebrow">About the Studio</span>
+        <span class="eyebrow">The Studio</span>
         <h2 class="section-title">Photography with a <em>purpose.</em></h2>
-        <p class="section-lead">Prophetic Photography is a full-service studio built on one belief: every image should reveal something true. We shoot with cinematic soul and obsessive detail.</p>
+        <p class="section-lead">Prophetic Photography is a full-service studio built on one belief: every image should reveal something true.</p>
       </div>
       <a href="#booking" class="btn btn--outline btn--sm">Book a Session</a>
     </div>
@@ -626,67 +608,66 @@ p{margin:0}
 </section>
 
 <!-- SERVICES -->
-<section class="section services" id="services">
+<section class="services" id="services">
   <div class="wrap">
     <div class="head head--center">
-      <span class="eyebrow eyebrow--center">What We Shoot</span>
+      <span class="eyebrow">What We Shoot</span>
       <h2 class="section-title">Six <em>signature</em> services.</h2>
-      <p class="section-lead">Choose a service, tell us your story, and we'll bring the vision. Every session is shot with a purpose.</p>
+      <p class="section-lead">Choose a service, tell us your story, and we'll bring the vision.</p>
     </div>
     <div class="svc-grid" id="svcGrid"></div>
   </div>
 </section>
 
-<!-- PORTFOLIO SLIDER — big autoplay slideshow of their work -->
-<section class="slider-sec" id="portfolio">
+<!-- PORTFOLIO SLIDER -->
+<section class="portfolio" id="portfolio">
   <div class="wrap">
     <div class="head head--center">
-      <span class="eyebrow eyebrow--center">Portfolio Showcase</span>
+      <span class="eyebrow">Portfolio Showcase</span>
       <h2 class="section-title">Our work in <em>full frame.</em></h2>
       <p class="section-lead">A curated slideshow of recent sessions — click any thumbnail to jump in, or let it play.</p>
     </div>
-    <div class="portfolio-slider">
-      <div class="portfolio-slider__stage" id="portfolioStage">
-        <div class="portfolio-slider__counter" id="portfolioCounter">01 / 08</div>
-        <button class="portfolio-slider__nav prev" id="portfolioPrev">‹</button>
-        <button class="portfolio-slider__nav next" id="portfolioNext">›</button>
-        <div class="portfolio-slider__info">
-          <small id="portfolioCat">Portraits</small>
-          <h3 id="portfolioTitle">Editorial Portrait Series</h3>
-          <p id="portfolioDesc">A refined studio series exploring warm light, soft textures and honest expression.</p>
+    <div class="ps">
+      <div class="ps__stage" id="psStage">
+        <div class="ps__counter" id="psCounter">01 / 08</div>
+        <button class="ps__nav prev" id="psPrev">‹</button>
+        <button class="ps__nav next" id="psNext">›</button>
+        <div class="ps__info">
+          <small id="psCat">Portraits</small>
+          <h3 id="psTitle">Editorial Portrait Series</h3>
+          <p id="psDesc">A refined studio series exploring warm light, soft textures and honest expression.</p>
         </div>
       </div>
-      <div class="portfolio-slider__thumbs" id="portfolioThumbs"></div>
+      <div class="ps__thumbs" id="psThumbs"></div>
     </div>
   </div>
 </section>
 
-<!-- CRAFT SLIDER -->
-<section class="moment" id="craft">
-  <div class="wrap moment__grid">
-    <div class="moment__left">
+<!-- CRAFT -->
+<section class="craft" id="craft">
+  <div class="wrap craft__grid">
+    <div class="craft__left">
       <span class="eyebrow">The Craft</span>
       <h2>From a <em>moment</em> to a <em>destiny.</em></h2>
-      <p>Anyone can take a photo. Few can craft an image with weight. Every frame that leaves our studio passes through a signature post-production process — colour, contrast, texture, tone — designed to reveal the story underneath.</p>
+      <p>Anyone can take a photo. Few can craft an image with weight. Every frame that leaves our studio passes through a signature post-production process — colour, contrast, texture, tone.</p>
       <p>Drag the slider to see the difference between the raw capture and the Prophetic finish.</p>
-      <div class="moment__features">
-        <div class="moment__feature"><span class="moment__feature__num">01</span><div><b>Cinematic Colour Grade</b><span>Bespoke tone matched to your story — warm, cold, faded or rich. Never a preset.</span></div></div>
-        <div class="moment__feature"><span class="moment__feature__num">02</span><div><b>Hand Retouching</b><span>Skin, texture, light refined frame by frame. No plastic, no over-smoothing.</span></div></div>
-        <div class="moment__feature"><span class="moment__feature__num">03</span><div><b>Destiny-Ready Files</b><span>Print, web and social formats — sized, cropped and packaged for wherever the story travels.</span></div></div>
+      <div class="craft__points">
+        <div class="craft__point"><span class="craft__point__n">01</span><div><b>Cinematic Colour Grade</b><span>Bespoke tone matched to your story — warm, cold, faded or rich. Never a preset.</span></div></div>
+        <div class="craft__point"><span class="craft__point__n">02</span><div><b>Hand Retouching</b><span>Skin, texture, light refined frame by frame. No plastic, no over-smoothing.</span></div></div>
+        <div class="craft__point"><span class="craft__point__n">03</span><div><b>Destiny-Ready Files</b><span>Print, web and social formats — sized, cropped and packaged for wherever the story travels.</span></div></div>
       </div>
     </div>
-    <div class="moment__slider" id="momentSlider">
-      <img class="moment__raw" id="momentBefore" src="" alt="" onerror="this.src=imgFallback('Before')">
-      <img class="moment__graded" id="momentAfter" src="" alt="" onerror="this.src=imgFallback('After')">
-      <div class="moment__handle" id="momentHandle"></div>
-      <span class="moment__label before">Raw</span>
-      <span class="moment__label after">Prophetic</span>
+    <div class="craft__slider" id="craftSlider">
+      <div class="photo raw" id="craftBefore"><img alt=""></div>
+      <div class="photo graded graded-clip" id="craftAfter"><img alt=""></div>
+      <div class="craft__handle" id="craftHandle"></div>
+      <div class="craft__labels"><span>Raw</span><span class="gold">Prophetic</span></div>
     </div>
   </div>
 </section>
 
-<!-- GRID GALLERY — multi-image posts -->
-<section class="section gallery" id="gallery">
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
   <div class="wrap">
     <div class="head">
       <div>
@@ -704,7 +685,7 @@ p{margin:0}
 <section class="testimonials">
   <div class="wrap">
     <div class="head head--center">
-      <span class="eyebrow eyebrow--center">Kind Words</span>
+      <span class="eyebrow">Kind Words</span>
       <h2 class="section-title">Stories from <em>clients.</em></h2>
     </div>
     <div class="tst-grid" id="tstGrid"></div>
@@ -718,19 +699,19 @@ p{margin:0}
       <span class="eyebrow">Book the Studio</span>
       <h2>Let's create something <em>timeless.</em></h2>
       <p>Fill the form and we'll confirm on WhatsApp within the hour. Same-day bookings often possible — just ask.</p>
-      <div class="booking__info__block">
-        <div class="booking__info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div>
+      <div class="booking__block">
+        <div class="booking__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div>
         <div><b>WhatsApp / Call</b><span id="contactPhone">0705 273 1139</span></div>
       </div>
-      <div class="booking__info__block">
-        <div class="booking__info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
+      <div class="booking__block">
+        <div class="booking__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div>
         <div><b>Follow the Studio</b><span><a href="https://instagram.com/propheticphotography" target="_blank" rel="noopener">@PropheticPhotography</a></span></div>
       </div>
-      <div class="booking__info__block">
-        <div class="booking__info__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div class="booking__block">
+        <div class="booking__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div><b>Response Time</b><span id="contactHours">Within 1 hour · 7 days a week</span></div>
       </div>
-      <a href="https://wa.me/2347052731139?text=Hi%20Prophetic%20Photography%2C%20I%20want%20to%20book%20a%20session" target="_blank" rel="noopener" class="btn btn--wa btn--block" style="margin-top:20px">
+      <a href="https://wa.me/2347052731139?text=Hi%20Prophetic%20Photography" target="_blank" rel="noopener" class="btn btn--wa btn--block" style="margin-top:16px">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>
         Chat on WhatsApp
       </a>
@@ -775,11 +756,10 @@ p{margin:0}
             <span class="brand__sub" data-sub>Capturing Moments · Revealing Destiny</span>
           </span>
         </div>
-        <p class="footer__about">Photography with a purpose. Portraits, weddings, events and brands told with cinematic soul and obsessive detail.</p>
+        <p class="footer__about">Photography with a purpose. Portraits, weddings, events and brands told with cinematic soul.</p>
         <div class="socials">
-          <a href="https://instagram.com/propheticphotography" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://instagram.com/propheticphotography" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
           <a href="https://facebook.com/propheticphotography" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://tiktok.com/@propheticphotography" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 3v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M15 3a4 4 0 0 0 4 4v3"/></svg></a>
           <a href="https://wa.me/2347052731139" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5A8.4 8.4 0 0 1 12.5 20a8.4 8.4 0 0 1-3.9-.9L3 21l1.9-5.6a8.4 8.4 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3a8.4 8.4 0 0 1 8.5 8.5z"/></svg></a>
         </div>
       </div>
@@ -790,10 +770,10 @@ p{margin:0}
       <div>
         <h4>Studio</h4>
         <ul>
-          <li><a href="#about">About</a></li>
           <li><a href="#craft">The Craft</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#booking">Book</a></li>
         </ul>
       </div>
       <div>
@@ -821,7 +801,7 @@ p{margin:0}
   <button class="lb__close" id="lbClose">✕</button>
   <button class="lb__nav prev" id="lbPrev">‹</button>
   <button class="lb__nav next" id="lbNext">›</button>
-  <div class="lb__stage"><img class="lb__img" id="lbImg" src="" alt=""></div>
+  <div class="lb__stage"><div class="photo" id="lbStage"><img id="lbImg" alt=""></div></div>
   <div class="lb__info">
     <span class="lb__cat" id="lbCat"></span>
     <h3 class="lb__title" id="lbTitle"></h3>
@@ -842,12 +822,12 @@ p{margin:0}
     <form class="gate__card" id="gateForm">
       <div class="gate__logo" data-logo></div>
       <h2>Admin Studio</h2>
-      <p>Enter your passcode to manage the site.</p>
+      <p>Enter passcode to manage the site</p>
       <input type="password" id="gatePass" placeholder="••••••••">
       <button class="btn btn--primary btn--block" type="submit">Unlock Dashboard</button>
       <div class="gate__err" id="gateErr">Incorrect passcode.</div>
-      <p class="hint gate__hint">Demo passcode: <code>prophetic2025</code></p>
-      <p class="hint"><a href="#" id="gateExit" style="color:var(--gold)">← Back to site</a></p>
+      <p class="gate__hint">Demo passcode: <code>prophetic2025</code></p>
+      <p class="gate__hint"><a href="#" id="gateExit" style="color:var(--gold)">← Back to site</a></p>
     </form>
   </div>
 
@@ -855,12 +835,11 @@ p{margin:0}
     <aside class="admin__side">
       <div class="admin__brand">
         <span class="mk" data-logo></span>
-        <span class="txt"><b>Prophetic</b><small>Admin Studio</small></span>
+        <span class="txt"><b>Prophetic</b><small>Admin</small></span>
       </div>
       <nav class="admin__tabs" id="adminTabs">
         <button class="active" data-tab="branding"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><span>Branding</span></button>
         <button data-tab="hero"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg><span>Hero</span></button>
-        <button data-tab="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/></svg><span>About</span></button>
         <button data-tab="services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg><span>Services</span></button>
         <button data-tab="gallery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Gallery</span></button>
         <button data-tab="data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg><span>Data</span></button>
@@ -875,25 +854,23 @@ p{margin:0}
       <header class="admin__top">
         <div><h2 id="panelTitle">Branding</h2><p id="panelSub">Logo, name and identity</p></div>
         <div class="admin__top-actions">
-          <span class="storage-meter" id="storageMeter"><span>Storage</span><span class="storage-bar"><i id="storageBarFill" style="width:0%"></i></span><b id="storageText">0 KB</b></span>
-          <span class="admin-badge">Live</span>
+          <span class="admin-badge">● Live</span>
           <button class="btn btn--danger btn--sm" id="resetAll">Reset</button>
         </div>
       </header>
-
       <div class="admin__panels">
 
         <section class="panel active" data-panel="branding">
-          <h3>Logo — upload from your gallery</h3>
+          <h3>Logo — upload from gallery</h3>
           <div class="card-box">
             <div class="uploader">
               <div class="uploader__preview" id="logoPreview">No logo</div>
               <div class="uploader__actions">
                 <div class="row">
-                  <label class="btn btn--primary btn--sm">📁 Upload Logo from Gallery<input type="file" accept="image/*" id="logoInput" hidden></label>
+                  <label class="btn btn--primary btn--sm">📁 Upload Logo<input type="file" accept="image/*" id="logoInput" hidden></label>
                   <button class="btn btn--outline btn--sm" id="logoRemove">Remove</button>
                 </div>
-                <p class="hint">Pick any image from your phone — appears instantly in the header, footer, admin sidebar and login gate.</p>
+                <p class="hint">Pick any image from your phone — appears instantly everywhere.</p>
               </div>
             </div>
           </div>
@@ -901,7 +878,7 @@ p{margin:0}
           <div class="card-box">
             <div class="field-grid">
               <label class="field"><span>Studio name</span><input type="text" data-bind="brand.name"></label>
-              <label class="field"><span>Sub-line / tagline</span><input type="text" data-bind="brand.sub"></label>
+              <label class="field"><span>Tagline</span><input type="text" data-bind="brand.sub"></label>
             </div>
           </div>
         </section>
@@ -910,67 +887,25 @@ p{margin:0}
           <h3>Hero copy</h3>
           <div class="card-box">
             <div class="field-grid">
-              <label class="field full"><span>Top tagline (script)</span><input type="text" data-bind="hero.brandTag"></label>
+              <label class="field full"><span>Script tagline</span><input type="text" data-bind="hero.brandTag"></label>
               <label class="field full"><span>Badge text</span><input type="text" data-bind="hero.badgeText"></label>
               <label class="field full"><span>Headline line 1</span><input type="text" data-bind="hero.line1"></label>
-              <label class="field full"><span>Headline line 2 (gold italic)</span><input type="text" data-bind="hero.line2"></label>
+              <label class="field full"><span>Headline line 2</span><input type="text" data-bind="hero.line2"></label>
               <label class="field full"><span>Sub-headline</span><textarea data-bind="hero.sub" rows="3"></textarea></label>
-              <label class="field"><span>Primary button</span><input type="text" data-bind="hero.btn1"></label>
-              <label class="field"><span>Secondary button</span><input type="text" data-bind="hero.btn2"></label>
             </div>
           </div>
           <h3>Hero slider images</h3>
           <div class="card-box">
-            <label class="btn btn--primary btn--sm">📁 Add Hero Slides from Gallery<input type="file" accept="image/*" multiple id="heroSlideInput" hidden></label>
-            <div class="thumb-grid" id="heroSlideList" style="margin-top:16px"></div>
-          </div>
-          <h3>Hero meta items</h3>
-          <div class="card-box">
-            <div id="heroMetaEditor"></div>
-            <button class="btn btn--outline btn--sm" id="heroMetaAdd" style="margin-top:12px">+ Add meta item</button>
-          </div>
-        </section>
-
-        <section class="panel" data-panel="about">
-          <h3>About feature images</h3>
-          <div class="card-box">
-            <p class="hint" style="margin-top:0">Three featured images shown in the About section right after the hero. Upload from your gallery.</p>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px">
-              <div>
-                <div class="uploader__preview square" id="featureImg1Preview" style="width:100%;height:130px">None</div>
-                <label class="btn btn--primary btn--xs" style="margin-top:8px;display:inline-flex">📁 Upload<input type="file" accept="image/*" id="featureImg1Input" hidden></label>
-              </div>
-              <div>
-                <div class="uploader__preview square" id="featureImg2Preview" style="width:100%;height:130px">None</div>
-                <label class="btn btn--primary btn--xs" style="margin-top:8px;display:inline-flex">📁 Upload<input type="file" accept="image/*" id="featureImg2Input" hidden></label>
-              </div>
-              <div>
-                <div class="uploader__preview square" id="featureImg3Preview" style="width:100%;height:130px">None</div>
-                <label class="btn btn--primary btn--xs" style="margin-top:8px;display:inline-flex">📁 Upload<input type="file" accept="image/*" id="featureImg3Input" hidden></label>
-              </div>
-            </div>
-          </div>
-          <h3>About text</h3>
-          <div class="card-box">
-            <div class="field-grid">
-              <label class="field full"><span>Section headline</span><input type="text" data-bind="about.title"></label>
-              <label class="field full"><span>Paragraph 1</span><textarea data-bind="about.text1" rows="3"></textarea></label>
-              <label class="field full"><span>Paragraph 2</span><textarea data-bind="about.text2" rows="3"></textarea></label>
-              <label class="field"><span>Signature</span><input type="text" data-bind="about.sig"></label>
-            </div>
-          </div>
-          <h3>About stat points</h3>
-          <div class="card-box">
-            <div id="aboutPointsEditor"></div>
-            <button class="btn btn--outline btn--sm" id="aboutPointAdd" style="margin-top:12px">+ Add point</button>
+            <label class="btn btn--primary btn--sm">📁 Add Slides<input type="file" accept="image/*" multiple id="heroSlideInput" hidden></label>
+            <div class="thumb-grid" id="heroSlideList" style="margin-top:14px"></div>
           </div>
         </section>
 
         <section class="panel" data-panel="services">
-          <h3>Services list</h3>
+          <h3>Services</h3>
           <div class="card-box">
             <div id="svcEditor"></div>
-            <button class="btn btn--primary btn--sm" id="svcAdd" style="margin-top:14px">+ Add service</button>
+            <button class="btn btn--primary btn--sm" id="svcAdd" style="margin-top:12px">+ Add Service</button>
           </div>
         </section>
 
@@ -978,27 +913,15 @@ p{margin:0}
           <h3>Create gallery post</h3>
           <div class="card-box">
             <div class="field-grid">
-              <label class="field full"><span>Bold title</span><input type="text" id="gTitle" placeholder="e.g. Wedding — The First Look"></label>
-              <label class="field full"><span>Description</span><textarea id="gDesc" rows="3"></textarea></label>
+              <label class="field full"><span>Title</span><input type="text" id="gTitle"></label>
+              <label class="field full"><span>Description</span><textarea id="gDesc" rows="2"></textarea></label>
               <label class="field"><span>Category</span><select id="gCat"></select></label>
             </div>
-            <div style="margin-top:16px">
-              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
-                <button type="button" class="btn btn--primary btn--sm" id="gModeUrl">🔗 URLs</button>
-                <button type="button" class="btn btn--outline btn--sm" id="gModeFile">📁 Upload from Gallery</button>
-              </div>
-              <div id="gUrlPanel">
-                <label class="field"><span>Direct image URLs — one per line</span><textarea id="gUrlInput" rows="4"></textarea></label>
-                <button type="button" class="btn btn--primary btn--sm" id="gPublishUrl">Publish Post</button>
-              </div>
-              <div id="gFilePanel" style="display:none">
-                <label class="btn btn--primary btn--sm">📁 Select Photos from Gallery<input type="file" accept="image/*" multiple id="gFileInput" hidden></label>
-              </div>
+            <div style="margin-top:14px">
+              <label class="btn btn--primary btn--sm">📁 Upload Photos<input type="file" accept="image/*" multiple id="gFileInput" hidden></label>
             </div>
           </div>
-          <h3>Categories</h3>
-          <div class="card-box"><input type="text" id="gCatInput" style="width:100%;padding:12px;background:var(--bg);border:1px solid var(--line-2);color:var(--text);outline:none;font-family:inherit"></div>
-          <h3>Published posts <span id="gCount" style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none;font-family:inherit"></span></h3>
+          <h3>Posts <span id="gCount" style="color:var(--muted);font-weight:400;letter-spacing:0;text-transform:none"></span></h3>
           <div id="gList"></div>
         </section>
 
@@ -1006,7 +929,7 @@ p{margin:0}
           <h3>Backup &amp; restore</h3>
           <div class="card-box">
             <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <button class="btn btn--primary btn--sm" id="exportData">Export (.json)</button>
+              <button class="btn btn--primary btn--sm" id="exportData">Export JSON</button>
               <label class="btn btn--outline btn--sm">Import<input type="file" accept="application/json" id="importData" hidden></label>
               <button class="btn btn--danger btn--sm" id="resetAll2">Reset Everything</button>
             </div>
@@ -1014,7 +937,7 @@ p{margin:0}
           <h3>Admin passcode</h3>
           <div class="card-box">
             <label class="field"><span>New passcode</span><input type="text" id="passInput"></label>
-            <button class="btn btn--primary btn--sm" id="passSave">Update Passcode</button>
+            <button class="btn btn--primary btn--sm" id="passSave">Update</button>
           </div>
         </section>
 
@@ -1033,22 +956,6 @@ const $$ = (s,c)=>Array.from((c||document).querySelectorAll(s));
 const uid = ()=>Math.random().toString(36).slice(2,10);
 const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-window.imgFallback = function(label){
-  const text = String(label||'Prophetic Photography').slice(0,24).toUpperCase();
-  const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">' +
-    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-    '<stop offset="0%" stop-color="#241C22"/><stop offset="100%" stop-color="#0A0806"/></linearGradient></defs>' +
-    '<rect width="800" height="1000" fill="url(#g)"/>' +
-    '<circle cx="400" cy="440" r="140" fill="none" stroke="#F5C842" stroke-opacity=".6" stroke-width="2"/>' +
-    '<text x="400" y="465" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="76" ' +
-    'fill="#F5C842" font-style="italic" font-weight="600">PPC</text>' +
-    '<text x="400" y="540" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="26" ' +
-    'fill="#F8F4EC" font-style="italic">Prophetic Photography</text>' +
-    '<text x="400" y="800" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" ' +
-    'letter-spacing="8" fill="#8A7F73">' + text + '</text></svg>';
-  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
-};
-
 function logoSVG(){
   return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
     '<defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD966"/><stop offset="100%" stop-color="#C9A227"/></linearGradient></defs>' +
@@ -1059,127 +966,78 @@ function logoSVG(){
     '</svg>';
 }
 
-const U = (id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||1600}&q=80`;
-
-/* ALL verified Unsplash IDs — curated for quality */
-const PHOTOS = {
-  bride:      U('1519741497674-611481863552',1920),
-  portrait:   U('1531746020798-e6953c6e8e04',1920),
-  golden:     U('1524504388940-b1c1722653e1',1920),
-  dress:      U('1511285560929-80b456fea0bc',1920),
-  editorial:  U('1596704017254-9b121068fb31',1920),
-  couple:     U('1519225421980-715cb0215aed',1920),
-  beauty:     U('1531123897727-8f129e1688ce',1920),
-  rooftop:    U('1533174072545-7a4b6ad7a6c3',1600),
-  corporate:  U('1552664730-d307ca884978',1600),
-  family:     U('1522673607200-164d1b6ce486',1600),
-  product:    U('1600185365483-26d7a4cc7519',1600),
-  cake:       U('1530103862676-de8c9debad1d',1600),
-  girl:       U('1521572163474-6864f9cf17ab',1600),
-  groom:      U('1583939003579-730e3918a45a',1600),
-  friends:    U('1464366400600-7168b8af9bc3',1600),
-  wedding2:   U('1522673607200-164d1b6ce486',1600),
-  model2:     U('1494790108377-be9c29b29330',1600),
-  indoor:     U('1493663284031-b7e3aefcae8e',1600),
-  outdoor:    U('1506794778202-cad84cf45f1d',1600),
-  conf:       U('1540575467063-178a50c2df87',1600),
-  hands:      U('1511578314322-379afb476865',1600),
-  laptop:     U('1519389950473-47ba0277781c',1600)
+const U = (id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||1400}&q=80`;
+const P = {
+  bride: U('1519741497674-611481863552',1600),
+  portrait: U('1531746020798-e6953c6e8e04',1600),
+  golden: U('1524504388940-b1c1722653e1',1600),
+  dress: U('1511285560929-80b456fea0bc',1600),
+  editorial: U('1596704017254-9b121068fb31',1600),
+  couple: U('1519225421980-715cb0215aed',1600),
+  beauty: U('1531123897727-8f129e1688ce',1600),
+  rooftop: U('1533174072545-7a4b6ad7a6c3',1600),
+  corporate: U('1552664730-d307ca884978',1600),
+  family: U('1522673607200-164d1b6ce486',1600),
+  product: U('1600185365483-26d7a4cc7519',1600),
+  girl: U('1521572163474-6864f9cf17ab',1600),
+  groom: U('1583939003579-730e3918a45a',1600),
+  friends: U('1464366400600-7168b8af9bc3',1600),
+  model: U('1494790108377-be9c29b29330',1600),
+  conf: U('1540575467063-178a50c2df87',1600)
 };
 
-const HERO_IMAGES = [PHOTOS.bride, PHOTOS.portrait, PHOTOS.golden, PHOTOS.editorial, PHOTOS.beauty];
-const FILM_STRIP_IMAGES = [
-  {src:PHOTOS.bride, title:'Wedding — The First Look', cat:'Weddings'},
-  {src:PHOTOS.portrait, title:'Editorial Portrait', cat:'Portraits'},
-  {src:PHOTOS.golden, title:'Golden Hour Session', cat:'Portraits'},
-  {src:PHOTOS.editorial, title:'Brand Editorial', cat:'Fashion'},
-  {src:PHOTOS.couple, title:'The Vow Season', cat:'Weddings'},
-  {src:PHOTOS.beauty, title:'Beauty Close-Up', cat:'Portraits'},
-  {src:PHOTOS.rooftop, title:'Rooftop Celebration', cat:'Events'},
-  {src:PHOTOS.corporate, title:'Executive Headshot', cat:'Commercial'},
-  {src:PHOTOS.dress, title:'Bridal Portrait', cat:'Weddings'},
-  {src:PHOTOS.groom, title:'Traditional Rites', cat:'Weddings'},
-  {src:PHOTOS.product, title:'Product Story', cat:'Commercial'},
-  {src:PHOTOS.family, title:'Family Portrait', cat:'Portraits'}
+const HERO_IMAGES = [P.bride, P.portrait, P.golden, P.editorial, P.beauty];
+
+const STRIP_ITEMS = [
+  {src:P.bride, title:'The First Look', cat:'Weddings'},
+  {src:P.portrait, title:'Editorial Portrait', cat:'Portraits'},
+  {src:P.golden, title:'Golden Hour', cat:'Portraits'},
+  {src:P.editorial, title:'Brand Editorial', cat:'Fashion'},
+  {src:P.couple, title:'Vow Season', cat:'Weddings'},
+  {src:P.beauty, title:'Beauty Close-Up', cat:'Portraits'},
+  {src:P.rooftop, title:'Rooftop Celebration', cat:'Events'},
+  {src:P.corporate, title:'Executive Headshot', cat:'Commercial'},
+  {src:P.dress, title:'Bridal Portrait', cat:'Weddings'},
+  {src:P.groom, title:'Traditional Rites', cat:'Weddings'}
 ];
-const FEATURE_IMAGES = [
-  {src:PHOTOS.bride, cat:'Weddings', title:'The Wedding Edit', desc:'Full-day documentary coverage from prep to the last dance.'},
-  {src:PHOTOS.portrait, cat:'Portraits', title:'Editorial Portraits', desc:'Studio sessions with cinematic colour grading.'},
-  {src:PHOTOS.corporate, cat:'Commercial', title:'Brand & Corporate', desc:'Headshots, campaigns and product stories.'}
+
+const FEATURE = [
+  {src:P.bride, cat:'Weddings', title:'The Wedding Edit', desc:'Full-day documentary coverage from prep to last dance.'},
+  {src:P.portrait, cat:'Portraits', title:'Editorial Portraits', desc:'Studio sessions with cinematic colour grading.'},
+  {src:P.corporate, cat:'Commercial', title:'Brand & Corporate', desc:'Headshots, campaigns and product stories.'}
 ];
 
 function seedServices(){
   return [
-    { id:'portrait', name:'Portrait Sessions', tagline:'Individuals, families, maternity',
-      desc:'Clean, natural-light portraits that actually look like you. Studio or on location.',
-      tags:['Studio','Outdoor','Family'],
-      list:['Individual & family portraits','Maternity & newborn','Graduation & milestones','Personal brand headshots'] },
-    { id:'wedding', name:'Weddings', tagline:'Full-day documentary coverage',
-      desc:'Your wedding day told honestly from morning prep to the last dance.',
-      tags:['Full-day','Traditional','Engagement'],
-      list:['Full-day coverage (10–14 hrs)','Pre-wedding engagement shoot','Traditional & white wedding','Highlight film edits available'] },
-    { id:'event', name:'Events', tagline:'Conferences, parties, ceremonies',
-      desc:'Multi-camera coverage of your event from start to finish.',
-      tags:['Corporate','Birthdays','Concerts'],
-      list:['Corporate conferences & galas','Birthdays & anniversaries','Concerts & live shows','Same-day highlight edits'] },
-    { id:'brand', name:'Brand & Commercial', tagline:'Products, brands, corporate',
-      desc:'Product photography, brand storytelling and corporate imagery.',
-      tags:['Product','Editorial','Corporate'],
-      list:['Product & lifestyle photography','Brand & campaign imagery','Interior & architectural','Executive headshots'] },
-    { id:'fashion', name:'Fashion Editorial', tagline:'Lookbooks, magazines, campaigns',
-      desc:'Full editorial production — styling, set design, lighting, post.',
-      tags:['Editorial','Lookbook','Creative'],
-      list:['Fashion & lookbook shoots','Beauty & close-up retouching','Magazine-ready editorials','Creative direction support'] },
-    { id:'story', name:'Story Films', tagline:'Cinematic video storytelling',
-      desc:'Brand films, documentaries and event highlight reels graded end-to-end.',
-      tags:['Cinematic','Multi-cam','Documentary'],
-      list:['Brand films & corporate video','Event highlight reels','Documentary & narrative','Wireless audio + multi-cam'] }
+    { id:'portrait', name:'Portrait Sessions', desc:'Clean, natural-light portraits that actually look like you.', tags:['Studio','Outdoor','Family'] },
+    { id:'wedding', name:'Weddings', desc:'Your wedding day told honestly from prep to the last dance.', tags:['Full-day','Traditional'] },
+    { id:'event', name:'Events', desc:'Multi-camera coverage of conferences, parties and ceremonies.', tags:['Corporate','Concerts'] },
+    { id:'brand', name:'Brand & Commercial', desc:'Product photography, brand storytelling and corporate imagery.', tags:['Product','Editorial'] },
+    { id:'fashion', name:'Fashion Editorial', desc:'Full editorial production for lookbooks and magazine features.', tags:['Editorial','Creative'] },
+    { id:'story', name:'Story Films', desc:'Brand films, documentaries and event highlight reels.', tags:['Cinematic','Multi-cam'] }
   ];
 }
 
 function seedGallery(){
   return [
-    { id:uid(), title:'Wedding — The First Look', cat:'Weddings',
-      desc:'The most electric second of the day, captured from three angles and finished in our signature warm cinematic grade.',
-      images:[{id:uid(), src:PHOTOS.bride},{id:uid(), src:PHOTOS.dress},{id:uid(), src:PHOTOS.couple}] },
-    { id:uid(), title:'Editorial Portrait Series', cat:'Portraits',
-      desc:'A refined studio series exploring warm light, soft textures and honest expression.',
-      images:[{id:uid(), src:PHOTOS.beauty},{id:uid(), src:PHOTOS.golden},{id:uid(), src:PHOTOS.girl}] },
-    { id:uid(), title:'Corporate Headshots — Executive', cat:'Commercial',
-      desc:'Executive headshots for a leadership team — clean, consistent, finished in a single afternoon.',
-      images:[{id:uid(), src:PHOTOS.corporate},{id:uid(), src:PHOTOS.laptop}] },
-    { id:uid(), title:'Rooftop Birthday — Golden Hour', cat:'Events',
-      desc:'An intimate rooftop celebration documented in warm natural light.',
-      images:[{id:uid(), src:PHOTOS.rooftop},{id:uid(), src:PHOTOS.cake},{id:uid(), src:PHOTOS.friends}] },
-    { id:uid(), title:'Family Portrait — At Home', cat:'Portraits',
-      desc:'A relaxed family session in natural light — real connection, real laughter.',
-      images:[{id:uid(), src:PHOTOS.family},{id:uid(), src:PHOTOS.wedding2}] },
-    { id:uid(), title:'Traditional Wedding Rites', cat:'Weddings',
-      desc:'A vibrant documentation of a traditional Nigerian wedding — colour, ceremony, family.',
-      images:[{id:uid(), src:PHOTOS.groom},{id:uid(), src:PHOTOS.dress},{id:uid(), src:PHOTOS.couple}] },
-    { id:uid(), title:'Annual Corporate Gala', cat:'Events',
-      desc:'Coverage of an evening gala — speaker moments, candid connection, closing celebration.',
-      images:[{id:uid(), src:PHOTOS.conf},{id:uid(), src:PHOTOS.hands}] },
-    { id:uid(), title:'Fashion Editorial — Studio Series', cat:'Fashion',
-      desc:'A fashion editorial with styling and set design for a brand campaign.',
-      images:[{id:uid(), src:PHOTOS.editorial},{id:uid(), src:PHOTOS.outdoor}] },
-    { id:uid(), title:'Product Story — Handcrafted Brand', cat:'Commercial',
-      desc:'A commercial product shoot for a local artisan brand — textures, details, hero shots.',
-      images:[{id:uid(), src:PHOTOS.product},{id:uid(), src:PHOTOS.indoor}] },
-    { id:uid(), title:'Maternity Portrait Series', cat:'Portraits',
-      desc:'A tender maternity session capturing the beauty of waiting.',
-      images:[{id:uid(), src:PHOTOS.model2},{id:uid(), src:PHOTOS.portrait}] }
+    { id:uid(), title:'Wedding — The First Look', cat:'Weddings', desc:'The most electric second of the day, captured from three angles and finished in our signature warm cinematic grade.',
+      images:[P.bride, P.dress, P.couple] },
+    { id:uid(), title:'Editorial Portrait Series', cat:'Portraits', desc:'A refined studio series exploring warm light, soft textures and honest expression.',
+      images:[P.beauty, P.golden, P.girl] },
+    { id:uid(), title:'Corporate Headshots', cat:'Commercial', desc:'Executive headshots for a leadership team — clean, consistent, finished in a single afternoon.',
+      images:[P.corporate, P.portrait] },
+    { id:uid(), title:'Rooftop Birthday', cat:'Events', desc:'An intimate rooftop celebration documented in warm natural light.',
+      images:[P.rooftop, P.friends] },
+    { id:uid(), title:'Family Portrait', cat:'Portraits', desc:'A relaxed family session in natural light — real connection, real laughter.',
+      images:[P.family, P.couple] },
+    { id:uid(), title:'Traditional Wedding Rites', cat:'Weddings', desc:'A vibrant documentation of a traditional Nigerian wedding.',
+      images:[P.groom, P.dress, P.couple] },
+    { id:uid(), title:'Annual Corporate Gala', cat:'Events', desc:'Coverage of an evening gala — speaker moments, candid connection, closing celebration.',
+      images:[P.conf, P.corporate] },
+    { id:uid(), title:'Fashion Editorial — Studio', cat:'Fashion', desc:'A fashion editorial with styling and set design for a brand campaign.',
+      images:[P.editorial, P.model] }
   ];
 }
-
-const SVC_ICONS = {
-  portrait:'<circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/>',
-  wedding:'<path d="M12 21s-7-4.4-7-9.4A3.6 3.6 0 0 1 12 8a3.6 3.6 0 0 1 7 2.6c0 5-7 9.4-7 9.4z"/>',
-  event:'<circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.4"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M14 20a5 5 0 0 1 7-4.5"/>',
-  brand:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/>',
-  fashion:'<path d="M12 2 3 7v13h18V7z"/><path d="M12 12v10"/>',
-  story:'<rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/>'
-};
 
 const DEFAULTS = {
   brand: { name:'Prophetic Photography', sub:'Capturing Moments · Revealing Destiny', logo:'' },
@@ -1188,149 +1046,120 @@ const DEFAULTS = {
     badgeText:'2025 sessions',
     line1:'Capturing moments.',
     line2:'Revealing destiny.',
-    sub:'Every face has a story. Every frame has a destiny. We shoot with intention — portraits, weddings, events and brands told with cinematic soul and obsessive detail.',
-    btn1:'Book a Session', btn2:'View Portfolio',
-    slides: HERO_IMAGES.map((src,i)=>({ id:uid(), src, title:'' })),
+    sub:'Every face has a story. Every frame has a destiny. We shoot with intention — portraits, weddings, events and brands told with cinematic soul.',
+    slides: HERO_IMAGES.map(src=>({ id:uid(), src })),
     meta: [
-      { id:uid(), n:'5.0', l:'Average rating' },
-      { id:uid(), n:'500+', l:'Sessions delivered' },
-      { id:uid(), n:'48hr', l:'Preview turnaround' }
-    ]
-  },
-  about: {
-    title:'Photography with a purpose.',
-    text1:'Prophetic Photography is a full-service studio built on one belief: every image should reveal something true. We shoot portraits, weddings, events, brands and editorials with cinematic soul — always with the story in mind.',
-    text2:'Every frame that leaves our studio passes through a dedicated post-production process — colour, contrast, texture, tone — designed to reveal the moment underneath.',
-    sig:'— Prophetic Photography',
-    features: FEATURE_IMAGES,
-    points: [
-      { id:uid(), n:'500+', l:'Sessions shot' },
-      { id:uid(), n:'5.0', l:'Average rating' },
-      { id:uid(), n:'48hr', l:'Preview turnaround' }
+      { n:'5.0', l:'Average rating' },
+      { n:'500+', l:'Sessions delivered' },
+      { n:'48hr', l:'Preview turnaround' }
     ]
   },
   services: seedServices(),
-  moment: { before: PHOTOS.model2, after: PHOTOS.beauty },
   gallery: {
     cats:['Portraits','Weddings','Events','Commercial','Fashion'],
     posts: seedGallery()
   },
-  contact: {
-    phone:'0705 273 1139',
-    whatsapp:'2347052731139',
-    instagram:'propheticphotography',
-    hours:'Within 1 hour · 7 days a week'
-  },
+  craft: { before: P.model, after: P.beauty },
+  contact: { phone:'0705 273 1139', whatsapp:'2347052731139', instagram:'propheticphotography', hours:'Within 1 hour · 7 days a week' },
   password:'prophetic2025'
 };
 
-const STORE_KEY = 'prophetic.v3';
-function loadState(){
+const STORE_KEY = 'prophetic.v4';
+function load(){
   const base = JSON.parse(JSON.stringify(DEFAULTS));
   try{
     const raw = localStorage.getItem(STORE_KEY);
-    if (raw) return deepMerge(base, JSON.parse(raw));
+    if (raw) return merge(base, JSON.parse(raw));
   }catch(e){}
   return base;
 }
-function deepMerge(base, patch){
+function merge(base, patch){
   if (!patch || typeof patch !== 'object') return base;
   Object.keys(patch).forEach(k=>{
     const v = patch[k];
     if (Array.isArray(v)) base[k] = v;
     else if (v && typeof v === 'object'){
       if (!base[k] || typeof base[k] !== 'object' || Array.isArray(base[k])) base[k] = {};
-      deepMerge(base[k], v);
+      merge(base[k], v);
     } else if (v !== undefined) base[k] = v;
   });
   return base;
 }
-let state = loadState();
+let state = load();
 
 function save(){
-  try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); updateStorage(); return true; }
-  catch(e){ updateStorage(); return false; }
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); return true; }
+  catch(e){ return false; }
 }
 function toast(msg){
   const el = $('#toast'); el.textContent = msg; el.classList.add('show');
   clearTimeout(el._t); el._t = setTimeout(()=>el.classList.remove('show'), 2400);
 }
-function updateStorage(){
-  const fill = $('#storageBarFill'), txt = $('#storageText');
-  if (!txt) return;
-  let bytes = 0;
-  try{ for (const k in localStorage){ if (Object.prototype.hasOwnProperty.call(localStorage,k)) bytes += (localStorage[k]||'').length + k.length; } }catch(e){}
-  const pct = Math.min(100, Math.round(bytes/(5*1024*1024)*100));
-  if (fill) fill.style.width = pct + '%';
-  if (txt) txt.textContent = (bytes/1024).toFixed(0)+' KB · '+pct+'%';
+
+/* ============================================================ */
+/* PHOTO HELPER — creates .photo wrapper with image that loads  */
+/* ============================================================ */
+function photoHTML(src, alt){
+  if (!src) return '<div class="photo"></div>';
+  return '<div class="photo"><img src="'+esc(src)+'" alt="'+esc(alt||'')+'" loading="lazy" onload="this.classList.add(\'loaded\')" onerror="this.style.display=\'none\'"></div>';
 }
 
+/* ============================================================ */
+/* BRAND                                                         */
+/* ============================================================ */
 function applyBrand(){
-  try {
-    const b = state.brand;
-    $$('[data-logo]').forEach(el=>{
-      if (b.logo) el.innerHTML = '<img src="'+b.logo+'" alt="logo" onerror="this.parentNode.innerHTML=logoSVG()">';
-      else el.innerHTML = logoSVG();
-    });
-    $$('[data-name]').forEach(el => {
-      const name = b.name;
-      const idx = name.indexOf(' ');
-      if (idx > 0) el.innerHTML = esc(name.slice(0, idx)) + ' <em>' + esc(name.slice(idx+1)) + '</em>';
-      else el.textContent = name;
-    });
-    $$('[data-sub]').forEach(el => el.textContent = b.sub);
-    document.title = b.name + ' — Capturing Moments, Revealing Destiny';
-  } catch(e){ console.error('brand', e); }
+  const b = state.brand;
+  $$('[data-logo]').forEach(el=>{
+    if (b.logo) el.innerHTML = '<img src="'+b.logo+'" alt="logo" onerror="this.parentNode.innerHTML=logoSVG()">';
+    else el.innerHTML = logoSVG();
+  });
+  $$('[data-name]').forEach(el => {
+    const n = b.name, idx = n.indexOf(' ');
+    if (idx > 0) el.innerHTML = esc(n.slice(0, idx)) + ' <em>' + esc(n.slice(idx+1)) + '</em>';
+    else el.textContent = n;
+  });
+  $$('[data-sub]').forEach(el => el.textContent = b.sub);
+  document.title = b.name + ' — Capturing Moments, Revealing Destiny';
 }
 
+/* ============================================================ */
+/* TICKER                                                        */
+/* ============================================================ */
 function renderTicker(){
-  try {
-    const items = ['Now booking 2025 sessions','Portraits · Weddings · Events · Brands','Cinematic storytelling','WhatsApp 0705 273 1139','More Shots · More Stories','@PropheticPhotography'];
-    const b = '<span>'+items.join('</span><span>')+'</span>';
-    if ($('#tickerTrack')) $('#tickerTrack').innerHTML = b + b;
-  } catch(e){}
+  const items = ['Now booking 2025 sessions','Portraits · Weddings · Events · Brands','Cinematic storytelling','WhatsApp 0705 273 1139','More Shots · More Stories','@PropheticPhotography'];
+  const b = '<span>'+items.join('</span><span>')+'</span>';
+  $('#tickerTrack').innerHTML = b + b;
 }
 
-/* HERO carousel + content */
+/* ============================================================ */
+/* HERO                                                          */
+/* ============================================================ */
 let heroIdx = 0, heroTimer = null;
 function renderHero(){
-  try {
-    const h = state.hero;
-    const $id = (id)=>document.getElementById(id);
-    if ($id('heroBrandTag')) $id('heroBrandTag').textContent = h.brandTag || 'More shots. More stories.';
-    if ($id('heroBadgeText')) $id('heroBadgeText').textContent = h.badgeText || 'Now booking';
-    if ($id('heroLine1')) $id('heroLine1').textContent = h.line1 || 'Capturing moments.';
-    if ($id('heroLine2')) $id('heroLine2').textContent = h.line2 || 'Revealing destiny.';
-    if ($id('heroSub')) $id('heroSub').innerHTML = esc(h.sub||'').replace('cinematic soul','<b>cinematic soul</b>');
-    if ($id('heroBtn1')) $id('heroBtn1').textContent = h.btn1 || 'Book a Session';
-    if ($id('heroBtn2')) $id('heroBtn2').textContent = h.btn2 || 'View Portfolio';
-
-    if ($id('heroMeta')) $id('heroMeta').innerHTML = (h.meta||[]).map(m=>
-      '<div class="hero__meta__item"><b>'+esc(m.n)+'</b><small>'+esc(m.l)+'</small></div>'
-    ).join('');
-
-    const slides = h.slides||[];
-    if ($id('heroCarousel')) {
-      $id('heroCarousel').innerHTML = slides.map((s,i)=>
-        '<div class="hero__photo'+(i===0?' active':'')+'"><img src="'+s.src+'" alt="" '+(i===0?'fetchpriority="high"':'loading="lazy"')+' onerror="this.src=imgFallback(\'Prophetic\')"></div>'
-      ).join('');
-    }
-    if ($id('heroDots')) {
-      $id('heroDots').innerHTML = slides.map((s,i)=>'<button class="'+(i===0?'active':'')+'" data-i="'+i+'"></button>').join('');
-      $$('#heroDots button').forEach(b => b.addEventListener('click', ()=> goHero(Number(b.dataset.i))));
-    }
-    heroIdx = 0;
-    updateHeroCaption();
-    startHero();
-  } catch(e){ console.error('hero', e); }
+  const h = state.hero;
+  if ($('#heroBrandTag')) $('#heroBrandTag').textContent = h.brandTag;
+  if ($('#heroBadgeText')) $('#heroBadgeText').textContent = h.badgeText;
+  if ($('#heroLine1')) $('#heroLine1').textContent = h.line1;
+  if ($('#heroLine2')) $('#heroLine2').textContent = h.line2;
+  if ($('#heroSub')) $('#heroSub').innerHTML = esc(h.sub).replace('cinematic soul','<b>cinematic soul</b>');
+  if ($('#heroMeta')) $('#heroMeta').innerHTML = (h.meta||[]).map(m=>'<div><b>'+esc(m.n)+'</b><small>'+esc(m.l)+'</small></div>').join('');
+  
+  const slides = h.slides||[];
+  $('#heroCarousel').innerHTML = slides.map((s,i)=>
+    '<div class="hero__photo'+(i===0?' active':'')+'" data-i="'+i+'">'+photoHTML(s.src, '')+'</div>'
+  ).join('');
+  $('#heroDots').innerHTML = slides.map((s,i)=>'<button data-i="'+i+'" class="'+(i===0?'active':'')+'"></button>').join('');
+  
+  $$('#heroDots button').forEach(b => b.addEventListener('click', ()=> goHero(+b.dataset.i)));
+  heroIdx = 0;
+  updateHeroCaption();
+  startHero();
 }
 function updateHeroCaption(){
-  const slides = state.hero.slides||[];
-  const s = slides[heroIdx];
-  if (!s) return;
-  const t = state.gallery.posts[heroIdx % state.gallery.posts.length];
-  if ($('#heroPhotoSmall')) $('#heroPhotoSmall').textContent = t ? t.cat : 'Featured Work';
-  if ($('#heroPhotoTitle')) $('#heroPhotoTitle').textContent = t ? t.title : 'Latest from the studio';
+  const posts = state.gallery.posts || [];
+  const p = posts[heroIdx % Math.max(posts.length,1)];
+  if ($('#heroPhotoSmall')) $('#heroPhotoSmall').textContent = p ? p.cat : 'Featured';
+  if ($('#heroPhotoTitle')) $('#heroPhotoTitle').textContent = p ? p.title : 'Latest from the studio';
 }
 function goHero(n){
   const s = state.hero.slides||[]; if (!s.length) return;
@@ -1342,153 +1171,137 @@ function goHero(n){
 }
 function startHero(){
   clearTimeout(heroTimer);
-  const n = (state.hero.slides||[]).length;
-  if (n < 2) return;
+  if ((state.hero.slides||[]).length < 2) return;
   heroTimer = setTimeout(()=> goHero(heroIdx+1), 4500);
 }
 
-/* FILM STRIP */
-function renderFilmStrip(){
-  try {
-    const t = $('#filmStrip'); if (!t) return;
-    const one = FILM_STRIP_IMAGES.map(f =>
-      '<div class="film-strip__item" data-post="'+(state.gallery.posts[0]?.id||'')+'">' +
-        '<img src="'+f.src+'" alt="'+esc(f.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(f.cat)+'\')">' +
-        '<div class="film-strip__caption"><small>'+esc(f.cat)+'</small><b>'+esc(f.title)+'</b></div>' +
-      '</div>'
-    ).join('');
-    t.innerHTML = one + one;
-  } catch(e){ console.error('film', e); }
+/* ============================================================ */
+/* STRIP                                                         */
+/* ============================================================ */
+function renderStrip(){
+  const one = STRIP_ITEMS.map(s=>
+    '<div class="strip__item">' + photoHTML(s.src, s.title) +
+      '<div class="strip__cap"><small>'+esc(s.cat)+'</small><b>'+esc(s.title)+'</b></div>' +
+    '</div>'
+  ).join('');
+  $('#stripTrack').innerHTML = one + one;
 }
 
-/* FEATURE GRID */
-function renderFeatureGrid(){
-  try {
-    const el = $('#featureGrid'); if (!el) return;
-    const features = state.about.features || FEATURE_IMAGES;
-    el.innerHTML = features.map((f,i)=>
-      '<article class="feature__card">' +
-        '<div class="feature__card__img"><img src="'+f.src+'" alt="'+esc(f.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(f.cat)+'\')"></div>' +
-        '<div class="feature__body"><small>'+esc(f.cat)+'</small><h3>'+esc(f.title)+'</h3><p>'+esc(f.desc)+'</p></div>' +
-      '</article>'
-    ).join('');
-  } catch(e){ console.error('feature', e); }
+/* ============================================================ */
+/* FEATURE GRID                                                  */
+/* ============================================================ */
+function renderFeature(){
+  $('#featureGrid').innerHTML = FEATURE.map(f=>
+    '<div class="feature__card">' + photoHTML(f.src, f.title) +
+      '<div class="feature__body"><small>'+esc(f.cat)+'</small><h3>'+esc(f.title)+'</h3><p>'+esc(f.desc)+'</p></div>' +
+    '</div>'
+  ).join('');
 }
 
-/* PORTFOLIO SLIDER */
-let portIdx = 0, portTimer = null;
-let portItems = [];
+/* ============================================================ */
+/* SERVICES                                                      */
+/* ============================================================ */
+const SVC_ICONS = {
+  portrait:'<circle cx="12" cy="8" r="4"/><path d="M4 22a8 8 0 0 1 16 0"/>',
+  wedding:'<path d="M12 21s-7-4.4-7-9.4A3.6 3.6 0 0 1 12 8a3.6 3.6 0 0 1 7 2.6c0 5-7 9.4-7 9.4z"/>',
+  event:'<circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.4"/><path d="M3 20a6 6 0 0 1 12 0"/>',
+  brand:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/>',
+  fashion:'<path d="M12 2 3 7v13h18V7z"/>',
+  story:'<rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3z"/>'
+};
+function renderServices(){
+  $('#svcGrid').innerHTML = state.services.map(s=>
+    '<div class="svc" data-svc="'+s.id+'">' +
+      '<div class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(SVC_ICONS[s.id]||SVC_ICONS.portrait)+'</svg></div>' +
+      '<h3>'+esc(s.name)+'</h3>' +
+      '<p>'+esc(s.desc)+'</p>' +
+      '<div class="svc__tags">'+(s.tags||[]).map(t=>'<span>'+esc(t)+'</span>').join('')+'</div>' +
+    '</div>'
+  ).join('');
+  $$('#svcGrid .svc').forEach(el => el.addEventListener('click', ()=> openService(el.dataset.svc)));
+  if ($('#footerSvc')) $('#footerSvc').innerHTML = state.services.map(s=>'<li><a href="#services">'+esc(s.name)+'</a></li>').join('');
+}
+function openService(id){
+  const s = state.services.find(x => x.id === id); if (!s) return;
+  $('#svcContent').innerHTML =
+    '<div class="sm__body"><h2>'+esc(s.name)+'</h2><p>'+esc(s.desc)+'</p>' +
+    '<a href="https://wa.me/2347052731139?text='+encodeURIComponent('Hi Prophetic Photography, I\'m interested in '+s.name)+'" target="_blank" rel="noopener" class="btn btn--primary btn--block">Enquire on WhatsApp</a></div>';
+  $('#svcModal').classList.add('open'); document.body.classList.add('locked');
+}
+
+/* ============================================================ */
+/* PORTFOLIO SLIDER                                              */
+/* ============================================================ */
+let portIdx = 0, portTimer = null, portItems = [];
 function renderPortfolio(){
-  try {
-    portItems = (state.gallery.posts||[]).map(p => ({
-      src: p.images && p.images[0] ? p.images[0].src : '',
-      cat: p.cat, title: p.title, desc: p.desc, id: p.id
-    }));
-    const stage = $('#portfolioStage'); if (!stage) return;
-    // insert imgs into stage
-    const existing = stage.querySelectorAll('.portfolio-slider__img');
-    existing.forEach(el => el.remove());
-    const frag = document.createDocumentFragment();
-    portItems.forEach((it,i)=>{
-      const d = document.createElement('div');
-      d.className = 'portfolio-slider__img'+(i===0?' active':'');
-      d.innerHTML = '<img src="'+it.src+'" alt="'+esc(it.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(it.cat)+'\')">';
-      frag.appendChild(d);
-    });
-    stage.insertBefore(frag, stage.firstChild);
-
-    if ($('#portfolioThumbs')) {
-      $('#portfolioThumbs').innerHTML = portItems.map((it,i)=>
-        '<div class="portfolio-slider__thumb'+(i===0?' active':'')+'" data-i="'+i+'">' +
-          '<img src="'+it.src+'" alt="" onerror="this.src=imgFallback(\''+esc(it.cat)+'\')">' +
-        '</div>'
-      ).join('');
-      $$('#portfolioThumbs .portfolio-slider__thumb').forEach(t => t.addEventListener('click', ()=> goPort(Number(t.dataset.i))));
-    }
-    portIdx = 0;
-    updatePortInfo();
-    startPortAuto();
-  } catch(e){ console.error('portfolio', e); }
+  const posts = state.gallery.posts || [];
+  portItems = posts.slice(0, 8).map(p => ({
+    src: p.images && p.images[0] ? p.images[0] : '',
+    cat: p.cat, title: p.title, desc: p.desc, id: p.id
+  }));
+  const stage = $('#psStage');
+  // clear existing slides
+  $$('.ps__slide', stage).forEach(el => el.remove());
+  // add fresh slides
+  portItems.forEach((it,i)=>{
+    const div = document.createElement('div');
+    div.className = 'ps__slide' + (i===0?' active':'');
+    div.innerHTML = photoHTML(it.src, it.title);
+    stage.insertBefore(div, stage.firstChild);
+  });
+  $('#psThumbs').innerHTML = portItems.map((it,i)=>
+    '<div class="ps__thumb'+(i===0?' active':'')+'" data-i="'+i+'">'+photoHTML(it.src,'')+'</div>'
+  ).join('');
+  $$('#psThumbs .ps__thumb').forEach(t => t.addEventListener('click', ()=> goPort(+t.dataset.i)));
+  portIdx = 0;
+  updatePortInfo();
+  startPortAuto();
 }
 function updatePortInfo(){
   const it = portItems[portIdx]; if (!it) return;
-  if ($('#portfolioCat')) $('#portfolioCat').textContent = it.cat || '';
-  if ($('#portfolioTitle')) $('#portfolioTitle').textContent = it.title || '';
-  if ($('#portfolioDesc')) $('#portfolioDesc').textContent = it.desc || '';
-  if ($('#portfolioCounter')) $('#portfolioCounter').innerHTML = String(portIdx+1).padStart(2,'0') + ' / <b>' + String(portItems.length).padStart(2,'0') + '</b>';
+  if ($('#psCat')) $('#psCat').textContent = it.cat;
+  if ($('#psTitle')) $('#psTitle').textContent = it.title;
+  if ($('#psDesc')) $('#psDesc').textContent = it.desc;
+  if ($('#psCounter')) $('#psCounter').innerHTML = String(portIdx+1).padStart(2,'0') + ' / <b>' + String(portItems.length).padStart(2,'0') + '</b>';
 }
 function goPort(n){
   if (!portItems.length) return;
   portIdx = (n + portItems.length) % portItems.length;
-  $$('.portfolio-slider__img').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
-  $$('#portfolioThumbs .portfolio-slider__thumb').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
+  $$('.ps__slide').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
+  $$('#psThumbs .ps__thumb').forEach((el,i)=> el.classList.toggle('active', i===portIdx));
   updatePortInfo();
   startPortAuto();
 }
 function startPortAuto(){
   clearInterval(portTimer);
   if (portItems.length < 2) return;
-  portTimer = setInterval(()=> goPort(portIdx+1), 6000);
+  portTimer = setInterval(()=> goPort(portIdx+1), 6500);
 }
 
-/* SERVICES */
-function renderServices(){
-  try {
-    const el = $('#svcGrid'); if (!el) return;
-    el.innerHTML = state.services.map((s,i)=>
-      '<article class="svc" data-svc="'+s.id+'">' +
-        '<span class="svc__n">0'+(i+1)+'</span>' +
-        '<div class="svc__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(SVC_ICONS[s.id]||SVC_ICONS.portrait)+'</svg></div>' +
-        '<h3>'+esc(s.name)+'</h3>' +
-        '<p>'+esc(s.desc)+'</p>' +
-        '<div class="svc__tags">'+(s.tags||[]).map(t=>'<span>'+esc(t)+'</span>').join('')+'</div>' +
-      '</article>'
-    ).join('');
-    $$('#svcGrid .svc').forEach(e => e.addEventListener('click', ()=> openService(e.dataset.svc)));
-    if ($('#footerSvc')) $('#footerSvc').innerHTML = state.services.map(s=>'<li><a href="#services">'+esc(s.name)+'</a></li>').join('');
-  } catch(e){ console.error('services', e); }
+/* ============================================================ */
+/* CRAFT SLIDER                                                  */
+/* ============================================================ */
+let craftPct = 50;
+function renderCraft(){
+  const c = state.craft;
+  const before = $('#craftBefore img'); const after = $('#craftAfter img');
+  if (before) { before.src = c.before || ''; before.onload = function(){ this.classList.add('loaded'); }; before.onerror = function(){ this.style.display='none'; }; }
+  if (after) { after.src = c.after || ''; after.onload = function(){ this.classList.add('loaded'); }; after.onerror = function(){ this.style.display='none'; }; }
+  updateCraft();
 }
-function openService(id){
-  const s = state.services.find(x => x.id === id);
-  if (!s) return;
-  $('#svcContent').innerHTML =
-    '<div class="sm__body">' +
-      '<h2>'+esc(s.name)+'</h2>' +
-      '<p>'+esc(s.desc)+'</p>' +
-      '<h3 style="font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:800">What\'s Included</h3>' +
-      '<ul class="sm__list">'+(s.list||[]).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>' +
-      '<a href="https://wa.me/2347052731139?text='+encodeURIComponent('Hi Prophetic Photography, I\'m interested in your '+s.name+' service.')+'" target="_blank" rel="noopener" class="btn btn--primary btn--block">' +
-        '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.6 11.6 0 0 0 3.4 17.9L2 22l4.2-1.4A11.6 11.6 0 0 0 12.1 22h.1a11.7 11.7 0 0 0 8.3-19.5z"/></svg>' +
-        'Enquire on WhatsApp' +
-      '</a>' +
-    '</div>';
-  $('#svcModal').classList.add('open');
-  document.body.classList.add('locked');
-}
-
-/* MOMENT SLIDER */
-let momentPct = 50;
-function renderMoment(){
-  try {
-    const m = state.moment;
-    if ($('#momentBefore')) { $('#momentBefore').src = m.before||''; $('#momentBefore').onerror = function(){ this.src = imgFallback('Raw'); }; }
-    if ($('#momentAfter')) { $('#momentAfter').src = m.after||''; $('#momentAfter').onerror = function(){ this.src = imgFallback('Prophetic'); }; }
-    updateMoment();
-  } catch(e){}
-}
-function updateMoment(){
-  const a = $('.moment__graded'), h = $('#momentHandle');
+function updateCraft(){
+  const a = $('#craftAfter'); const h = $('#craftHandle');
   if (!a || !h) return;
-  a.style.clipPath = 'inset(0 '+(100-momentPct)+'% 0 0)';
-  h.style.left = momentPct + '%';
+  a.style.clipPath = 'inset(0 '+(100-craftPct)+'% 0 0)';
+  h.style.left = craftPct + '%';
 }
-function initMomentSlider(){
-  const s = $('#momentSlider'); if (!s) return;
+function initCraftSlider(){
+  const s = $('#craftSlider'); if (!s) return;
   let dragging = false;
   const move = x => {
     const r = s.getBoundingClientRect();
-    momentPct = Math.max(0, Math.min(100, (x - r.left) / r.width * 100));
-    updateMoment();
+    craftPct = Math.max(0, Math.min(100, (x - r.left) / r.width * 100));
+    updateCraft();
   };
   s.addEventListener('mousedown', e=>{ dragging=true; move(e.clientX); });
   document.addEventListener('mousemove', e=>{ if (dragging) move(e.clientX); });
@@ -1498,133 +1311,121 @@ function initMomentSlider(){
   s.addEventListener('touchend', ()=>{ dragging=false; });
 }
 
-/* GRID GALLERY */
-let activeFilter = 'All';
-let visiblePosts = [];
+/* ============================================================ */
+/* GALLERY GRID                                                  */
+/* ============================================================ */
+let activeFilter = 'All', visiblePosts = [];
 function renderFilters(){
-  try {
-    const cats = ['All'].concat(state.gallery.cats);
-    const el = $('#filters'); if (!el) return;
-    el.innerHTML = cats.map(c =>
-      '<button class="chip'+(c===activeFilter?' active':'')+'" data-filter="'+esc(c)+'">'+esc(c)+'</button>'
-    ).join('');
-    $$('#filters .chip').forEach(b => b.addEventListener('click', ()=>{ activeFilter = b.dataset.filter; renderFilters(); renderGallery(); }));
-  } catch(e){}
+  const cats = ['All'].concat(state.gallery.cats);
+  $('#filters').innerHTML = cats.map(c =>
+    '<button class="chip'+(c===activeFilter?' active':'')+'" data-filter="'+esc(c)+'">'+esc(c)+'</button>'
+  ).join('');
+  $$('#filters .chip').forEach(b => b.addEventListener('click', ()=>{ activeFilter = b.dataset.filter; renderFilters(); renderGallery(); }));
 }
-function coverOf(p){ return p.images && p.images[0] ? p.images[0].src : ''; }
 function renderGallery(){
-  try {
-    const posts = state.gallery.posts || [];
-    visiblePosts = activeFilter === 'All' ? posts : posts.filter(p => p.cat === activeFilter);
-    const grid = $('#galleryGrid'); if (!grid) return;
-    if (!visiblePosts.length){ grid.innerHTML = '<div class="g-empty">No posts in this category yet.</div>'; return; }
-    grid.innerHTML = visiblePosts.map(p=>{
-      const n = (p.images||[]).length;
-      return '<figure class="g-post" data-post="'+p.id+'">' +
-        '<div class="g-post__cover">' +
-          '<span class="g-post__cat">'+esc(p.cat)+'</span>' +
-          '<span class="g-post__count">'+n+' '+(n===1?'photo':'photos')+'</span>' +
-          '<img src="'+coverOf(p)+'" alt="'+esc(p.title)+'" loading="lazy" onerror="this.src=imgFallback(\''+esc(p.cat)+'\')">' +
-          '<div class="g-post__info">' +
-            '<h3 class="g-post__title">'+esc(p.title)+'</h3>' +
-            '<p class="g-post__desc">'+esc(p.desc||'')+'</p>' +
-            '<span class="g-post__cta">Open Story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>' +
-          '</div>' +
-        '</div>' +
-      '</figure>';
-    }).join('');
-    $$('#galleryGrid .g-post').forEach(e => e.addEventListener('click', ()=> openLightbox(e.dataset.post, 0)));
-  } catch(e){ console.error('gallery', e); }
+  const posts = state.gallery.posts || [];
+  visiblePosts = activeFilter === 'All' ? posts : posts.filter(p => p.cat === activeFilter);
+  const grid = $('#galleryGrid');
+  if (!visiblePosts.length){ grid.innerHTML = '<div class="g-empty">No posts in this category yet.</div>'; return; }
+  grid.innerHTML = visiblePosts.map(p=>{
+    const cover = p.images && p.images[0] ? p.images[0] : '';
+    const n = (p.images||[]).length;
+    return '<figure class="g-post" data-post="'+p.id+'">' +
+      photoHTML(cover, p.title) +
+      '<span class="g-post__cat">'+esc(p.cat)+'</span>' +
+      '<span class="g-post__count">'+n+' photo'+(n===1?'':'s')+'</span>' +
+      '<div class="g-post__info"><h3 class="g-post__title">'+esc(p.title)+'</h3>' +
+        '<p class="g-post__desc">'+esc(p.desc||'')+'</p>' +
+        '<span class="g-post__cta">Open Story →</span>' +
+      '</div>' +
+    '</figure>';
+  }).join('');
+  $$('#galleryGrid .g-post').forEach(el => el.addEventListener('click', ()=> openLightbox(el.dataset.post, 0)));
 }
 
-/* LIGHTBOX */
+/* ============================================================ */
+/* LIGHTBOX                                                      */
+/* ============================================================ */
 let lbPostId = null, lbIdx = 0, lbImages = [];
-function openLightbox(postId, imgIdx){
-  const post = (state.gallery.posts||[]).find(p => p.id === postId);
-  if (!post || !post.images || !post.images.length) return;
-  lbPostId = postId; lbImages = post.images; lbIdx = imgIdx || 0;
+function openLightbox(postId, idx){
+  const post = (state.gallery.posts||[]).find(p => p.id === postId); if (!post) return;
+  lbPostId = postId; lbImages = post.images || []; lbIdx = idx || 0;
   updateLightbox();
-  $('#lightbox').classList.add('open');
-  document.body.classList.add('locked');
+  $('#lightbox').classList.add('open'); document.body.classList.add('locked');
 }
 function updateLightbox(){
-  const post = (state.gallery.posts||[]).find(p => p.id === lbPostId);
-  if (!post || !lbImages.length) return;
-  const img = lbImages[lbIdx];
-  $('#lbImg').src = img.src;
-  $('#lbImg').onerror = function(){ this.src = imgFallback(post.title); };
-  $('#lbCat').textContent = post.cat || '';
-  $('#lbTitle').textContent = post.title || '';
+  const post = (state.gallery.posts||[]).find(p => p.id === lbPostId); if (!post) return;
+  const src = lbImages[lbIdx]; if (!src) return;
+  const img = $('#lbImg');
+  img.src = src;
+  img.onload = function(){ this.classList.add('loaded'); };
+  img.onerror = function(){ this.style.display='none'; };
+  img.style.display = '';
+  $('#lbCat').textContent = post.cat;
+  $('#lbTitle').textContent = post.title;
   $('#lbDesc').textContent = post.desc || '';
-  $('#lbThumbs').innerHTML = lbImages.map((im,i)=>
-    '<button class="lb__thumb'+(i===lbIdx?' active':'')+'" data-i="'+i+'"><img src="'+im.src+'" alt="" onerror="this.parentNode.style.display=\'none\'"></button>'
+  $('#lbThumbs').innerHTML = lbImages.map((src,i)=>
+    '<div class="lb__thumb'+(i===lbIdx?' active':'')+'" data-i="'+i+'">'+photoHTML(src,'')+'</div>'
   ).join('');
-  $$('#lbThumbs .lb__thumb').forEach(b => b.addEventListener('click', ()=>{ lbIdx = Number(b.dataset.i); updateLightbox(); }));
+  $$('#lbThumbs .lb__thumb').forEach(b => b.addEventListener('click', ()=>{ lbIdx = +b.dataset.i; updateLightbox(); }));
 }
 function closeLightbox(){ $('#lightbox').classList.remove('open'); document.body.classList.remove('locked'); }
 function stepLightbox(d){ if (!lbImages.length) return; lbIdx = (lbIdx + d + lbImages.length) % lbImages.length; updateLightbox(); }
 
-/* TESTIMONIALS */
-const TESTIMONIALS = [
-  { q:'The photos of our wedding are beyond anything I imagined. Every frame feels like a film still.', n:'Ada & Kelechi', r:'Wedding · Lagos', a:'AK' },
-  { q:'Booked a portrait session and honestly — I didn\'t know I could look like this. The grading is on another level.', n:'Chiamaka O.', r:'Portrait Session', a:'CO' },
-  { q:'Coverage of our annual gala was impeccable. Every speaker, every candid, delivered within 48 hours.', n:'Ngozi M.', r:'Corporate Client', a:'NM' },
-  { q:'They shot our brand lookbook and the images are stunning. Magazine-quality retouching, effortless process.', n:'Tunde A.', r:'Fashion Brand Owner', a:'TA' },
-  { q:'We booked them for our product launch. They understood the story we were trying to tell.', n:'Fatima I.', r:'Marketing Director', a:'FI' },
-  { q:'Fast, professional, and the final gallery was extraordinary. Every shot has weight. 100% recommend.', n:'Emeka N.', r:'Client', a:'EN' }
-];
+/* ============================================================ */
+/* TESTIMONIALS                                                  */
+/* ============================================================ */
 function renderTestimonials(){
-  try {
-    const el = $('#tstGrid'); if (!el) return;
-    el.innerHTML = TESTIMONIALS.map(t =>
-      '<div class="tst">' +
-        '<div class="tst__q">“</div>' +
-        '<div class="tst__stars">★★★★★</div>' +
-        '<p>'+esc(t.q)+'</p>' +
-        '<div class="tst__who"><div class="tst__av">'+t.a+'</div><div><b>'+esc(t.n)+'</b><small>'+esc(t.r)+'</small></div></div>' +
-      '</div>'
-    ).join('');
-  } catch(e){}
+  const T = [
+    { q:'The photos of our wedding are beyond anything I imagined.', n:'Ada & Kelechi', r:'Wedding · Lagos', a:'AK' },
+    { q:'I didn\'t know I could look like this. The grading is on another level.', n:'Chiamaka O.', r:'Portrait Session', a:'CO' },
+    { q:'Coverage of our gala was impeccable. Delivered within 48 hours.', n:'Ngozi M.', r:'Corporate Client', a:'NM' },
+    { q:'Magazine-quality retouching, effortless process. Highly recommended.', n:'Tunde A.', r:'Brand Owner', a:'TA' },
+    { q:'They understood the story we were trying to tell.', n:'Fatima I.', r:'Marketing Director', a:'FI' },
+    { q:'Every shot has weight. Fast, professional. 100% recommend.', n:'Emeka N.', r:'Client', a:'EN' }
+  ];
+  $('#tstGrid').innerHTML = T.map(t =>
+    '<div class="tst"><div class="tst__stars">★★★★★</div>' +
+      '<p>'+esc(t.q)+'</p>' +
+      '<div class="tst__who"><div class="tst__av">'+t.a+'</div><div><b>'+esc(t.n)+'</b><small>'+esc(t.r)+'</small></div></div>' +
+    '</div>'
+  ).join('');
 }
 
+/* ============================================================ */
+/* CONTACT                                                       */
+/* ============================================================ */
 function renderContact(){
-  try {
-    const c = state.contact;
-    if ($('#contactPhone')) $('#contactPhone').innerHTML = '<a href="tel:+'+c.whatsapp+'">'+esc(c.phone)+'</a>';
-    if ($('#contactHours')) $('#contactHours').textContent = c.hours;
-  } catch(e){}
+  if ($('#contactPhone')) $('#contactPhone').innerHTML = '<a href="tel:+'+state.contact.whatsapp+'">'+esc(state.contact.phone)+'</a>';
+  if ($('#contactHours')) $('#contactHours').textContent = state.contact.hours;
 }
 
+/* ============================================================ */
+/* RENDER                                                        */
+/* ============================================================ */
 function renderSite(){
-  applyBrand();
-  renderTicker();
-  renderHero();
-  renderFilmStrip();
-  renderFeatureGrid();
-  renderServices();
-  renderPortfolio();
-  renderMoment();
-  renderFilters();
-  renderGallery();
-  renderTestimonials();
-  renderContact();
-  syncAdminPreviews();
+  applyBrand(); renderTicker(); renderHero(); renderStrip(); renderFeature();
+  renderServices(); renderPortfolio(); renderCraft(); renderFilters(); renderGallery();
+  renderTestimonials(); renderContact();
 }
 
+/* ============================================================ */
+/* HEADER                                                        */
+/* ============================================================ */
 function initHeader(){
   const burger = $('#burger'), mnav = $('#mobileNav');
-  if (burger && mnav){
-    burger.addEventListener('click', ()=>{
-      burger.classList.toggle('open'); mnav.classList.toggle('open');
-      document.body.classList.toggle('locked', mnav.classList.contains('open'));
-    });
-    $$('#mobileNav a').forEach(a => a.addEventListener('click', ()=>{
-      burger.classList.remove('open'); mnav.classList.remove('open'); document.body.classList.remove('locked');
-    }));
-  }
+  burger.addEventListener('click', ()=>{
+    burger.classList.toggle('open'); mnav.classList.toggle('open');
+    document.body.classList.toggle('locked', mnav.classList.contains('open'));
+  });
+  $$('#mobileNav a').forEach(a => a.addEventListener('click', ()=>{
+    burger.classList.remove('open'); mnav.classList.remove('open'); document.body.classList.remove('locked');
+  }));
 }
 
-/* ADMIN */
+/* ============================================================ */
+/* ADMIN                                                         */
+/* ============================================================ */
 let adminUnlocked = false;
 function openAdmin(){
   $('#admin').classList.add('open'); document.body.classList.add('locked');
@@ -1634,7 +1435,6 @@ function openAdmin(){
   if (adminUnlocked) syncAdminForms();
 }
 function closeAdmin(){ $('#admin').classList.remove('open'); document.body.classList.remove('locked'); }
-
 function initGate(){
   $('#gateForm').addEventListener('submit', e=>{
     e.preventDefault();
@@ -1649,14 +1449,12 @@ function initGate(){
   $('#adminLogout').addEventListener('click', ()=>{ adminUnlocked = false; closeAdmin(); toast('Logged out'); });
   $('#adminView').addEventListener('click', closeAdmin);
 }
-
 const PANEL_META = {
   branding:['Branding','Logo, name and identity'],
-  hero:['Hero','Copy, slides and meta'],
-  about:['About','Feature images and text'],
+  hero:['Hero','Copy and slider images'],
   services:['Services','What we shoot'],
   gallery:['Gallery','Multi-image posts'],
-  data:['Data & Backup','Export, import, reset']
+  data:['Data','Export, import, reset']
 };
 function initTabs(){
   $$('#adminTabs button').forEach(b => b.addEventListener('click', ()=>{
@@ -1667,53 +1465,38 @@ function initTabs(){
     $('#panelTitle').textContent = meta[0];
     $('#panelSub').textContent = meta[1];
     $('.admin__panels').scrollTop = 0;
-    if (t === 'hero') { renderHeroSlideList(); renderHeroMetaEditor(); }
-    if (t === 'about') { renderFeatureEditor(); renderAboutPointsEditor(); }
+    if (t === 'hero') renderHeroSlideList();
     if (t === 'services') renderSvcEditor();
     if (t === 'gallery') { renderGalleryAdmin(); renderCatSelect(); }
   }));
 }
-
 function initBindings(){
   $$('[data-bind]').forEach(el => {
     const path = el.dataset.bind;
     const handler = ()=>{
-      let v;
-      if (el.type === 'checkbox') v = el.checked;
-      else if (el.type === 'number') v = Number(el.value) || 0;
-      else v = el.value;
+      let v = el.type === 'checkbox' ? el.checked : el.value;
       const parts = path.split('.'); const last = parts.pop();
       const tgt = parts.reduce((o,k)=> (o[k]=o[k]||{}), state);
       tgt[last] = v; save();
       if (path.startsWith('brand.')) applyBrand();
       if (path.startsWith('hero.')) renderHero();
-      if (path.startsWith('about.')) renderFeatureGrid();
-      if (path.startsWith('contact.')) renderContact();
     };
     el.addEventListener('input', handler);
     el.addEventListener('change', handler);
   });
 }
-
 function syncAdminForms(){
   $$('[data-bind]').forEach(el => {
     const path = el.dataset.bind; const parts = path.split('.');
     let v = state; parts.forEach(k => { v = v && v[k]; });
-    if (el.type === 'checkbox') el.checked = !!v;
-    else el.value = v == null ? '' : v;
+    el.value = v == null ? '' : v;
   });
-  syncAdminPreviews(); renderHeroSlideList(); renderHeroMetaEditor();
-  renderFeatureEditor(); renderAboutPointsEditor(); renderSvcEditor();
-  renderGalleryAdmin(); renderCatSelect(); renderCatInput();
+  syncPreview('#logoPreview', state.brand.logo, 'No logo');
+  renderHeroSlideList(); renderSvcEditor(); renderGalleryAdmin(); renderCatSelect();
 }
-function syncAdminPreviews(){
-  setPreview('#logoPreview', state.brand.logo, 'No logo');
-  setPreview('#momentBeforePreview', state.moment.before, 'None');
-  setPreview('#momentAfterPreview', state.moment.after, 'None');
-}
-function setPreview(sel, src, empty){
+function syncPreview(sel, src, empty){
   const el = $(sel); if (!el) return;
-  el.innerHTML = src ? '<img src="'+src+'" alt="preview" onerror="this.parentNode.innerHTML=\'<span>Failed</span>\'">' : '<span>'+empty+'</span>';
+  el.innerHTML = src ? '<img src="'+src+'" alt="">' : '<span>'+empty+'</span>';
 }
 
 function wireUpload(inputSel, handler){
@@ -1724,7 +1507,7 @@ function wireUpload(inputSel, handler){
     input.value = '';
   });
 }
-function optimiseImage(file, maxDim, quality){
+function optimise(file, maxDim, quality){
   return new Promise((resolve, reject)=>{
     const r = new FileReader();
     r.onerror = reject;
@@ -1744,131 +1527,51 @@ function optimiseImage(file, maxDim, quality){
     r.readAsDataURL(file);
   });
 }
-
 function initUploads(){
   wireUpload('#logoInput', async files=>{
-    state.brand.logo = await optimiseImage(files[0], 600, .92);
-    save(); applyBrand(); syncAdminPreviews(); toast('✓ Logo updated');
+    state.brand.logo = await optimise(files[0], 600, .92);
+    save(); applyBrand(); syncPreview('#logoPreview', state.brand.logo, 'No logo'); toast('✓ Logo updated');
   });
-  $('#logoRemove').addEventListener('click', ()=>{ state.brand.logo=''; save(); applyBrand(); syncAdminPreviews(); toast('Logo removed'); });
-
+  $('#logoRemove').addEventListener('click', ()=>{ state.brand.logo=''; save(); applyBrand(); syncPreview('#logoPreview', '', 'No logo'); toast('Logo removed'); });
   wireUpload('#heroSlideInput', async files=>{
     for (const f of files){
-      const src = await optimiseImage(f, 1800, .8);
-      state.hero.slides.push({ id:uid(), src, title:'' });
+      const src = await optimise(f, 1600, .8);
+      state.hero.slides.push({ id:uid(), src });
     }
     save(); renderHero(); renderHeroSlideList(); toast(files.length+' slide(s) added');
   });
-
-  ['1','2','3'].forEach(n=>{
-    wireUpload('#featureImg'+n+'Input', async files=>{
-      if (!state.about.features) state.about.features = JSON.parse(JSON.stringify(FEATURE_IMAGES));
-      state.about.features[+n-1] = state.about.features[+n-1] || {};
-      state.about.features[+n-1].src = await optimiseImage(files[0], 1200, .82);
-      save(); renderFeatureGrid(); renderFeatureEditor(); toast('Feature ' + n + ' updated');
-    });
-  });
-
-  wireUpload('#momentBeforeInput', async files=>{
-    state.moment.before = await optimiseImage(files[0], 1400, .82);
-    save(); renderMoment(); syncAdminPreviews(); toast('Before image updated');
-  });
-  $('#momentBeforeRemove').addEventListener('click', ()=>{ state.moment.before=''; save(); renderMoment(); syncAdminPreviews(); toast('Removed'); });
-  wireUpload('#momentAfterInput', async files=>{
-    state.moment.after = await optimiseImage(files[0], 1400, .82);
-    save(); renderMoment(); syncAdminPreviews(); toast('After image updated');
-  });
-  $('#momentAfterRemove').addEventListener('click', ()=>{ state.moment.after=''; save(); renderMoment(); syncAdminPreviews(); toast('Removed'); });
-
   wireUpload('#gFileInput', async files=>{
-    if (files.length > 8){ toast('Max 8 at a time'); return; }
     const title = $('#gTitle').value.trim();
     const desc = $('#gDesc').value.trim();
     const cat = $('#gCat').value || state.gallery.cats[0];
     if (!title){ toast('Add a title first'); return; }
     const images = [];
-    for (const f of files){ const src = await optimiseImage(f, 1400, .75); images.push({ id:uid(), src }); }
+    for (const f of files){ images.push(await optimise(f, 1400, .75)); }
     state.gallery.posts.unshift({ id:uid(), title, desc: desc || (cat+' — from the Prophetic archive.'), cat, images });
-    save();
-    $('#gTitle').value=''; $('#gDesc').value='';
+    save(); $('#gTitle').value=''; $('#gDesc').value='';
     renderGallery(); renderPortfolio(); renderGalleryAdmin();
-    toast('✓ Post published with '+images.length+' image(s)');
+    toast('✓ Post published');
   });
 }
-
 function renderHeroSlideList(){
   const el = $('#heroSlideList'); if (!el) return;
   if (!state.hero.slides.length){ el.innerHTML = '<div class="empty-note">No slides yet.</div>'; return; }
-  el.innerHTML = state.hero.slides.map(s=>
-    '<div class="thumb"><img src="'+s.src+'" alt="" onerror="this.src=imgFallback(\'Slide\')"><button class="thumb__x" data-slide="'+s.id+'">✕</button></div>'
+  el.innerHTML = state.hero.slides.map(s =>
+    '<div class="thumb">'+photoHTML(s.src,'')+'<button class="thumb__x" data-slide="'+s.id+'">✕</button></div>'
   ).join('');
   $$('#heroSlideList .thumb__x').forEach(b => b.addEventListener('click', ()=>{
     state.hero.slides = state.hero.slides.filter(s => s.id !== b.dataset.slide);
     save(); renderHero(); renderHeroSlideList(); toast('Slide removed');
   }));
 }
-function renderHeroMetaEditor(){
-  const el = $('#heroMetaEditor'); if (!el) return;
-  el.innerHTML = (state.hero.meta||[]).map((m,i)=>
-    '<div style="display:grid;grid-template-columns:1fr 2fr auto;gap:8px;margin-bottom:8px;align-items:center">' +
-      '<input type="text" value="'+esc(m.n)+'" data-hm-idx="'+i+'" data-hm-field="n" style="padding:10px;background:var(--bg);border:1px solid var(--line-2);color:var(--text)">' +
-      '<input type="text" value="'+esc(m.l)+'" data-hm-idx="'+i+'" data-hm-field="l" style="padding:10px;background:var(--bg);border:1px solid var(--line-2);color:var(--text)">' +
-      '<button type="button" data-rm-hm="'+i+'" style="width:34px;height:34px;border:1px solid var(--line-2);background:transparent;color:#ff8080;cursor:pointer">✕</button>' +
-    '</div>'
-  ).join('');
-  $$('#heroMetaEditor [data-hm-idx]').forEach(inp=>{
-    inp.addEventListener('input', ()=>{ state.hero.meta[+inp.dataset.hmIdx][inp.dataset.hmField] = inp.value; save(); renderHero(); });
-  });
-  $$('#heroMetaEditor [data-rm-hm]').forEach(b=>{
-    b.addEventListener('click', ()=>{ state.hero.meta.splice(+b.dataset.rmHm,1); save(); renderHeroMetaEditor(); renderHero(); });
-  });
-}
-$('#heroMetaAdd') && $('#heroMetaAdd').addEventListener('click', ()=>{
-  state.hero.meta.push({ id:uid(), n:'100+', l:'New stat' });
-  save(); renderHeroMetaEditor(); renderHero();
-});
-
-function renderFeatureEditor(){
-  const feats = state.about.features || FEATURE_IMAGES;
-  ['1','2','3'].forEach((n,i)=>{
-    setPreview('#featureImg'+n+'Preview', feats[i] ? feats[i].src : '', 'None');
-  });
-}
-function renderAboutPointsEditor(){
-  const el = $('#aboutPointsEditor'); if (!el) return;
-  el.innerHTML = (state.about.points||[]).map((p,i)=>
-    '<div style="display:grid;grid-template-columns:1fr 2fr auto;gap:8px;margin-bottom:8px;align-items:center">' +
-      '<input type="text" value="'+esc(p.n)+'" data-ap-idx="'+i+'" data-ap-field="n" style="padding:10px;background:var(--bg);border:1px solid var(--line-2);color:var(--text)">' +
-      '<input type="text" value="'+esc(p.l)+'" data-ap-idx="'+i+'" data-ap-field="l" style="padding:10px;background:var(--bg);border:1px solid var(--line-2);color:var(--text)">' +
-      '<button type="button" data-rm-ap="'+i+'" style="width:34px;height:34px;border:1px solid var(--line-2);background:transparent;color:#ff8080;cursor:pointer">✕</button>' +
-    '</div>'
-  ).join('');
-  $$('#aboutPointsEditor [data-ap-idx]').forEach(inp=>{
-    inp.addEventListener('input', ()=>{ state.about.points[+inp.dataset.apIdx][inp.dataset.apField] = inp.value; save(); });
-  });
-  $$('#aboutPointsEditor [data-rm-ap]').forEach(b=>{
-    b.addEventListener('click', ()=>{ state.about.points.splice(+b.dataset.rmAp,1); save(); renderAboutPointsEditor(); });
-  });
-}
-$('#aboutPointAdd') && $('#aboutPointAdd').addEventListener('click', ()=>{
-  state.about.points.push({ id:uid(), n:'100+', l:'New stat' });
-  save(); renderAboutPointsEditor();
-});
-
 function renderSvcEditor(){
   const el = $('#svcEditor'); if (!el) return;
   el.innerHTML = state.services.map((s,i)=>
-    '<div style="padding:16px;border:1px solid var(--line);background:var(--bg);margin-bottom:10px">' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">' +
-        '<b style="font-family:var(--serif);font-size:.95rem">'+esc(s.name)+'</b>' +
-        '<button type="button" data-rm-svc="'+i+'" style="color:#ff8080">✕</button>' +
-      '</div>' +
+    '<div style="padding:14px;background:var(--bg);border:1px solid var(--line);margin-bottom:8px">' +
       '<div class="field-grid">' +
         '<label class="field"><span>Name</span><input type="text" value="'+esc(s.name)+'" data-svc-idx="'+i+'" data-svc-field="name"></label>' +
-        '<label class="field"><span>Tagline</span><input type="text" value="'+esc(s.tagline||'')+'" data-svc-idx="'+i+'" data-svc-field="tagline"></label>' +
+        '<label class="field"><span>Tags</span><input type="text" value="'+esc((s.tags||[]).join(', '))+'" data-svc-idx="'+i+'" data-svc-field="tags"></label>' +
         '<label class="field full"><span>Description</span><textarea rows="2" data-svc-idx="'+i+'" data-svc-field="desc">'+esc(s.desc)+'</textarea></label>' +
-        '<label class="field full"><span>Tags (comma separated)</span><input type="text" value="'+esc((s.tags||[]).join(', '))+'" data-svc-idx="'+i+'" data-svc-field="tags"></label>' +
-        '<label class="field full"><span>What\'s included (one per line)</span><textarea rows="4" data-svc-idx="'+i+'" data-svc-field="list">'+esc((s.list||[]).join('\n'))+'</textarea></label>' +
       '</div>' +
     '</div>'
   ).join('');
@@ -1876,20 +1579,11 @@ function renderSvcEditor(){
     inp.addEventListener('input', ()=>{
       const i = +inp.dataset.svcIdx, f = inp.dataset.svcField;
       if (f === 'tags') state.services[i].tags = inp.value.split(',').map(s=>s.trim()).filter(Boolean);
-      else if (f === 'list') state.services[i].list = inp.value.split('\n').map(s=>s.trim()).filter(Boolean);
       else state.services[i][f] = inp.value;
       save(); renderServices();
     });
   });
-  $$('#svcEditor [data-rm-svc]').forEach(b=>{
-    b.addEventListener('click', ()=>{ if(!confirm('Remove?'))return; state.services.splice(+b.dataset.rmSvc,1); save(); renderSvcEditor(); renderServices(); });
-  });
 }
-$('#svcAdd') && $('#svcAdd').addEventListener('click', ()=>{
-  state.services.push({ id:uid(), name:'New Service', tagline:'', desc:'', tags:[], list:[] });
-  save(); renderSvcEditor(); renderServices();
-});
-
 function renderGalleryAdmin(){
   const el = $('#gList'); if (!el) return;
   const posts = state.gallery.posts || [];
@@ -1897,15 +1591,13 @@ function renderGalleryAdmin(){
   if (!posts.length){ el.innerHTML = '<div class="empty-note">No posts yet.</div>'; return; }
   el.innerHTML = posts.map(p =>
     '<div class="ap-row">' +
-      '<div class="ap-row__cover"><img src="'+coverOf(p)+'" alt="" onerror="this.src=imgFallback(\''+esc(p.cat)+'\')"><span class="ap-row__count">'+(p.images||[]).length+'</span></div>' +
+      '<div class="ap-row__cover">'+photoHTML(p.images && p.images[0] ? p.images[0] : '', '')+'</div>' +
       '<div class="ap-row__body">' +
         '<div class="ap-row__cat">'+esc(p.cat)+'</div>' +
         '<div class="ap-row__title">'+esc(p.title)+'</div>' +
         '<div class="ap-row__desc">'+esc(p.desc||'')+'</div>' +
       '</div>' +
-      '<div class="ap-row__actions">' +
-        '<button class="danger" data-del="'+p.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button>' +
-      '</div>' +
+      '<div class="ap-row__actions"><button class="danger" data-del="'+p.id+'">✕</button></div>' +
     '</div>'
   ).join('');
   $$('#gList [data-del]').forEach(b => b.addEventListener('click', ()=>{
@@ -1914,52 +1606,13 @@ function renderGalleryAdmin(){
     save(); renderGallery(); renderPortfolio(); renderGalleryAdmin(); toast('Post deleted');
   }));
 }
-function renderCatSelect(){ if ($('#gCat')) $('#gCat').innerHTML = state.gallery.cats.map(c=>'<option>'+esc(c)+'</option>').join(''); }
-function renderCatInput(){
-  const el = $('#gCatInput'); if (!el) return;
-  el.value = state.gallery.cats.join(', ');
-  el.onchange = ()=>{
-    const cats = el.value.split(',').map(s=>s.trim()).filter(Boolean);
-    if (!cats.length) return;
-    state.gallery.cats = cats;
-    if (!cats.includes(activeFilter) && activeFilter !== 'All') activeFilter = 'All';
-    save(); renderFilters(); renderGallery(); renderCatSelect(); toast('Categories updated');
-  };
-}
-
-function initUrlPublish(){
-  $('#gModeFile').addEventListener('click', ()=>{
-    $('#gFilePanel').style.display='block'; $('#gUrlPanel').style.display='none';
-    $('#gModeFile').classList.add('btn--primary'); $('#gModeFile').classList.remove('btn--outline');
-    $('#gModeUrl').classList.add('btn--outline'); $('#gModeUrl').classList.remove('btn--primary');
-  });
-  $('#gModeUrl').addEventListener('click', ()=>{
-    $('#gFilePanel').style.display='none'; $('#gUrlPanel').style.display='block';
-    $('#gModeUrl').classList.add('btn--primary'); $('#gModeUrl').classList.remove('btn--outline');
-    $('#gModeFile').classList.add('btn--outline'); $('#gModeFile').classList.remove('btn--primary');
-  });
-  $('#gPublishUrl').addEventListener('click', ()=>{
-    const title = $('#gTitle').value.trim();
-    const desc = $('#gDesc').value.trim();
-    const cat = $('#gCat').value || state.gallery.cats[0];
-    if (!title){ toast('Add a title first'); return; }
-    const urls = ($('#gUrlInput').value||'').split(/[\n,\s]+/).map(s=>s.trim()).filter(s=>/^https?:\/\/.+/i.test(s));
-    if (!urls.length){ toast('Paste at least one URL'); return; }
-    state.gallery.posts.unshift({ id:uid(), title, desc: desc || (cat+' — from the Prophetic archive.'), cat, images: urls.map(src=>({ id:uid(), src })) });
-    save();
-    $('#gTitle').value=''; $('#gDesc').value=''; $('#gUrlInput').value='';
-    renderGallery(); renderPortfolio(); renderGalleryAdmin();
-    toast('✓ Post published with '+urls.length+' image(s)');
-  });
-}
+function renderCatSelect(){ $('#gCat').innerHTML = state.gallery.cats.map(c=>'<option>'+esc(c)+'</option>').join(''); }
 
 function initData(){
   $('#exportData').addEventListener('click', ()=>{
     const blob = new Blob([JSON.stringify(state, null, 2)], { type:'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'prophetic-photography-data.json';
-    a.click(); URL.revokeObjectURL(a.href);
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'prophetic-data.json'; a.click(); URL.revokeObjectURL(a.href);
     toast('Backup downloaded');
   });
   $('#importData').addEventListener('change', e=>{
@@ -1967,20 +1620,18 @@ function initData(){
     const fr = new FileReader();
     fr.onload = ()=>{
       try{
-        const p = JSON.parse(fr.result);
+        const parsed = JSON.parse(fr.result);
         const base = JSON.parse(JSON.stringify(DEFAULTS));
-        state = deepMerge(base, p);
-        save(); renderSite(); syncAdminForms();
-        toast('Data imported');
+        state = merge(base, parsed);
+        save(); renderSite(); syncAdminForms(); toast('Data imported');
       }catch(err){ toast('Invalid file'); }
     };
     fr.readAsText(file); e.target.value = '';
   });
   const reset = ()=>{
-    if (!confirm('Reset everything? All uploads will be lost.')) return;
+    if (!confirm('Reset everything?')) return;
     state = JSON.parse(JSON.stringify(DEFAULTS));
-    save(); renderSite(); syncAdminForms();
-    toast('Reset complete');
+    save(); renderSite(); syncAdminForms(); toast('Reset complete');
   };
   $('#resetAll').addEventListener('click', reset);
   $('#resetAll2').addEventListener('click', reset);
@@ -1992,66 +1643,59 @@ function initData(){
   });
 }
 
+/* ============================================================ */
+/* INIT                                                          */
+/* ============================================================ */
 function init(){
   try { $('#year').textContent = new Date().getFullYear(); } catch(e){}
-  try { renderSite(); } catch(e){ console.error('renderSite', e); }
-  try { updateStorage(); } catch(e){}
-  try { initHeader(); } catch(e){}
-  try { initGate(); } catch(e){}
-  try { initTabs(); } catch(e){}
-  try { initBindings(); } catch(e){}
-  try { initUploads(); } catch(e){}
-  try { initUrlPublish(); } catch(e){}
-  try { initData(); } catch(e){}
-  try { initMomentSlider(); } catch(e){}
+  renderSite();
+  initHeader();
+  initCraftSlider();
+  initGate();
+  initTabs();
+  initBindings();
+  initUploads();
+  initData();
 
-  try {
-    if ($('#portfolioPrev')) $('#portfolioPrev').addEventListener('click', ()=> goPort(portIdx-1));
-    if ($('#portfolioNext')) $('#portfolioNext').addEventListener('click', ()=> goPort(portIdx+1));
-  } catch(e){}
+  // slider nav
+  if ($('#psPrev')) $('#psPrev').addEventListener('click', ()=> goPort(portIdx-1));
+  if ($('#psNext')) $('#psNext').addEventListener('click', ()=> goPort(portIdx+1));
 
-  try {
-    $('#lbClose').addEventListener('click', closeLightbox);
-    $('#lbPrev').addEventListener('click', ()=> stepLightbox(-1));
-    $('#lbNext').addEventListener('click', ()=> stepLightbox(1));
-    $('#lightbox').addEventListener('click', e=>{ if (e.target.id === 'lightbox') closeLightbox(); });
-    $('#svcClose').addEventListener('click', ()=>{ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); });
-    $('#svcModal').addEventListener('click', e=>{ if (e.target.id === 'svcModal'){ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); } });
-    document.addEventListener('keydown', e=>{
-      if (e.key === 'Escape'){ closeLightbox(); $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); }
-      if (!$('#lightbox').classList.contains('open')) return;
-      if (e.key === 'ArrowLeft') stepLightbox(-1);
-      if (e.key === 'ArrowRight') stepLightbox(1);
-    });
-  } catch(e){}
+  // lightbox
+  $('#lbClose').addEventListener('click', closeLightbox);
+  $('#lbPrev').addEventListener('click', ()=> stepLightbox(-1));
+  $('#lbNext').addEventListener('click', ()=> stepLightbox(1));
+  $('#lightbox').addEventListener('click', e=>{ if (e.target.id === 'lightbox') closeLightbox(); });
+  $('#svcClose').addEventListener('click', ()=>{ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); });
+  $('#svcModal').addEventListener('click', e=>{ if (e.target.id === 'svcModal'){ $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); } });
+  document.addEventListener('keydown', e=>{
+    if (e.key === 'Escape'){ closeLightbox(); $('#svcModal').classList.remove('open'); document.body.classList.remove('locked'); }
+    if (!$('#lightbox').classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') stepLightbox(-1);
+    if (e.key === 'ArrowRight') stepLightbox(1);
+  });
 
-  try {
-    $('#bookingForm').addEventListener('submit', e=>{
-      e.preventDefault();
-      const inputs = e.target.querySelectorAll('input, select, textarea');
-      const text = 'Hi Prophetic Photography! New booking enquiry.\n\n' +
-        'Name: ' + (inputs[0].value||'') + '\n' +
-        'WhatsApp: ' + (inputs[1].value||'') + '\n' +
-        'Date: ' + (inputs[2].value||'') + '\n' +
-        'Session: ' + (inputs[3].value||'') + '\n' +
-        'Location: ' + (inputs[4].value||'') + '\n' +
-        'Details: ' + (inputs[5].value||'');
-      window.open('https://wa.me/2347052731139?text=' + encodeURIComponent(text), '_blank');
-      toast('Opening WhatsApp...');
-      e.target.reset();
-    });
-  } catch(e){}
+  // booking form
+  $('#bookingForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const inputs = e.target.querySelectorAll('input, select, textarea');
+    const text = 'Hi Prophetic Photography!\n\nName: ' + inputs[0].value + '\nWhatsApp: ' + inputs[1].value +
+      '\nDate: ' + inputs[2].value + '\nSession: ' + inputs[3].value +
+      '\nLocation: ' + inputs[4].value + '\nDetails: ' + inputs[5].value;
+    window.open('https://wa.me/2347052731139?text=' + encodeURIComponent(text), '_blank');
+    toast('Opening WhatsApp...');
+    e.target.reset();
+  });
 
-  try {
-    ['#openAdmin','#openAdminMobile','#footerAdmin'].forEach(sel => {
-      const el = $(sel); if (el) el.addEventListener('click', e=>{ e.preventDefault(); openAdmin(); });
-    });
-    if (location.hash === '#admin') openAdmin();
-  } catch(e){}
+  // admin entry
+  ['#openAdmin','#openAdminMobile','#footerAdmin'].forEach(sel => {
+    const el = $(sel); if (el) el.addEventListener('click', e=>{ e.preventDefault(); openAdmin(); });
+  });
+  if (location.hash === '#admin') openAdmin();
 }
 
 document.addEventListener('DOMContentLoaded', init);
 })();
 </script>
 </body>
-  </html>
+    </html>
